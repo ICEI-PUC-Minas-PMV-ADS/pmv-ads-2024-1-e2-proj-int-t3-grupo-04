@@ -1,23 +1,26 @@
 # TÍTULO DO PROJETO
 
-`CURSO`
+`Análise e Desenvolvimento de Sistemas`
 
-`DISCIPLINA`
+`Projeto: Desenvolvimento de uma Aplicação Interativa`
 
-`SEMESTRE`
+`Eixo 2`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+O objetivo é desenvolver um sistema online de recomendação de mídias (filmes, jogos, séries) baseado em análises feitas por usuários e tags associadas a cada mídia. 
+Usuários podem criar e atribuir tags distintas a diferentes mídias. O sistema recomenda mídias baseadas em filtros de tags positivas e negativas, conforme especificado pelo usuário, no momento da busca.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Aaron Carvalho Balbino
+* Bruno Medeiros 
+* Bruno Nogueira Martins Cardoso
+* Gustavo Vinicius de Souza Oliveira 
+* Lucas Marinho Ribeiro Guimarães 
+* Reinaldo Barbosa Lima 
 
 ## Orientador
 
-* Nome completo do professor 1
+*  José Wilson da Costa 
 
 ## Instruções de utilização
 
