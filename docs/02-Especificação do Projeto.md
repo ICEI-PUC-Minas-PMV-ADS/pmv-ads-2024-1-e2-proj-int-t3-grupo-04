@@ -207,7 +207,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
-|RNF-001| A aplicação deve ter senhas de caesso e identificação para os usuários. | ALTA | 
+| RNF-001 | A aplicação deve ter senhas de caesso e identificação para os usuários. | ALTA | 
 |RNF-002| Os dados pessoais devem ser armazenados sob Lei Geral de Proteção de Dados Pessoais (LGPD). |  ALTA | 
 |RNF-003| O sistema deve funcionar nos principais navegadores, como Chrome, Firefox, Edge e Opera. |  ALTA |
 |RNF-004| O site deve estar disponível e acessível para os usuários 24 horas por dia, 7 dias por semana, com um tempo de inatividade planejado mínimo para manutenção. |  ALTA | 
