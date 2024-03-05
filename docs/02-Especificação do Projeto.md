@@ -213,7 +213,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RNF-003| O sistema deve funcionar nos principais navegadores, como Chrome, Firefox, Edge e Opera. |  ALTA |
 |RNF-004| O site deve estar disponível e acessível para os usuários 24 horas por dia, 7 dias por semana, com um tempo de inatividade planejado mínimo para manutenção. |  ALTA | 
 |RNF-005| O site deverá ser fácil de usar, eficiente e acessível. |  ALTA |
-|RNF-006| Os dados do usuário devem ser armazenados e transmitidos de forma segura, utilizando criptografia forte. |  BAIXA | 
+|RNF-006| Os dados do usuário devem ser armazenados e transmitidos de forma segura, utilizando criptografia forte. |  ALTA | 
 
 
 ## Restrições
@@ -226,12 +226,6 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 |RE - 02| O aplicativo deve se restringir às tecnologias básicas da Web no Frontend. |
 |RE - 03| A equipe não pode subcontratar o desenvolvimento do trabalho. |
 
-
-Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
-
-> **Links Úteis**:
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
 
 ## Diagrama de Casos de Uso
 
