@@ -188,7 +188,6 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 |João Batista     | Atualizar dados e opiniar sobre os novos lances e jogadas do FIFA                 | Compartilhar aos usuários, informações sobre o jogo. |
 |José Maria| Dar Notas refrente a uma determinada série assitida.| Para melhor entendiemnto e interesse ao usuário.|
 |Fernanda Tavares| Pesquisar Sobre novas séries lançadas recentemente | Uma nova expeiência de novas séries.|
-|José Maria| Dar Notas refrente a uma determinada séri assitida.| Para melhor entendiemnto e interesse ao usuário.|
 |Ricardo Almeida| Cadastrar informações sobre um determinado filme assitido| Compartilhar aos usuários cadastrados toda a informação sobre o filme.|
 
 
