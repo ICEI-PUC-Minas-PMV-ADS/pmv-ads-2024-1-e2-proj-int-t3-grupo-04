@@ -184,17 +184,14 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-|Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-|Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
+|Bruna Tavares       | Cadastrar Filmes e series assistidas          | Compartilhar experiencias com os usuários sobre séries e filmes.             |
+|João Batista     | Atualizar dados e opiniar sobre os novos lances e jogadas do FIFA                 | Compartilhar aos usuários, informações sobre o jogo. |
+|José Maria| Dar Notas refrente a uma determinada série assitida.| Para melhor entendiemnto e interesse ao usuário.|
+|Fernanda Tavares| Pesquisar Sobre novas séries lançadas recentemente | Uma nova expeiência de novas séries.|
+|José Maria| Dar Notas refrente a uma determinada séri assitida.| Para melhor entendiemnto e interesse ao usuário.|
+|Ricardo Almeida| Cadastrar informações sobre um determinado filme assitido| Compartilhar aos usuários cadastrados toda a informação sobre o filme.|
 
-Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
 
-> **Links Úteis**:
-> - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-> - [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
-> - [User Stories: requisitos que humanos entendem](https://www.luiztools.com.br/post/user-stories-descricao-de-requisitos-que-humanos-entendem/)
-> - [Histórias de Usuários: mais exemplos](https://www.reqview.com/doc/user-stories-example.html)
-> - [9 Common User Story Mistakes](https://airfocus.com/blog/user-story-mistakes/)
 
 ## Requisitos
 
@@ -211,23 +208,13 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
-|RNF-001| A aplicação deve ser responsiva | MÉDIA | 
-|RNF-002| A aplicação deve processar requisições do usuário em no máximo 3s |  BAIXA | 
+|RNF-001| A aplicação deve ter senhas de caesso e identificação para os usuários. | ALTA | 
+|RNF-002| Os dados pessoais devem ser armazenados sob Lei Geral de Proteção de Dados Pessoais (LGPD). |  ALTA | 
+|RNF-003| O sistema deve funcionar nos principais navegadores, como Chrome, Firefox, Edge e Opera. |  ALTA |
+|RNF-004| O site deve estar disponível e acessível para os usuários 24 horas por dia, 7 dias por semana, com um tempo de inatividade planejado mínimo para manutenção. |  ALTA | 
+|RNF-005| O site deverá ser fácil de usar, eficiente e acessível. |  ALTA |
+|RNF-006| Os dados do usuário devem ser armazenados e transmitidos de forma segura, utilizando criptografia forte. |  BAIXA | 
 
-Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
-
-- [Requisitos Funcionais
- (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
- correspondem a uma funcionalidade que deve estar presente na
-  plataforma (ex: cadastro de usuário).
-- [Requisitos Não Funcionais
-  (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade,
-  desempenho, confiabilidade, segurança ou outro (ex: suporte a
-  dispositivos iOS e Android).
-Lembre-se que cada requisito deve corresponder à uma e somente uma
-característica alvo da sua solução. Além disso, certifique-se de que
-todos os aspectos capturados nas Histórias de Usuário foram cobertos.
 
 ## Restrições
 
@@ -235,8 +222,9 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 |ID| Restrição                                             |
 |--|-------------------------------------------------------|
-|01| O projeto deverá ser entregue até o final do semestre |
-|02| Não pode ser desenvolvido um módulo de backend        |
+|RE - 01| O projeto deverá ser entregue até o final do semestre letivo. |
+|RE - 02| O aplicativo deve se restringir às tecnologias básicas da Web no Frontend. |
+|RE - 03| A equipe não pode subcontratar o desenvolvimento do trabalho. |
 
 
 Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
