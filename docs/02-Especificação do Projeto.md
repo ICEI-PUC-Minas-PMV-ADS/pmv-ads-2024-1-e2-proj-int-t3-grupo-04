@@ -140,6 +140,8 @@ Hobbies, História
 
 ● Viagens
 
+● Assitir e pesquisar sobre séries.
+
 ## Ricardo Almeida
 
 Idade: 50
@@ -164,16 +166,17 @@ Motivações
 
 Frustrações
 
-● Não ter conquistado uma graduação
+● Não ter conquistado uma graduação.
 
 ● Más condições de trabalho.
 
-Hobbies, História
+Hobbies, História.
 
-● Ajudar a cuidar no neto
+● Ajudar a cuidar no neto.
 
 ● Viagens.
 
+● Assitir filmes.
 
 ## Histórias de Usuários
 
