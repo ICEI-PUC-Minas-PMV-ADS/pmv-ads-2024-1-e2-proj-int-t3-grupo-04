@@ -184,11 +184,11 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-|Bruna Tavares       | Cadastrar Filmes e series assistidas          | Compartilhar experiencias com os usuários sobre séries e filmes.             |
-|João Batista     | Atualizar dados e opiniar sobre os novos lances e jogadas do FIFA                 | Compartilhar aos usuários, informações sobre o jogo. |
-|José Maria| Dar Notas refrente a uma determinada série assitida.| Para melhor entendiemnto e interesse ao usuário.|
-|Fernanda Tavares| Pesquisar Sobre novas séries lançadas recentemente | Uma nova expeiência de novas séries.|
-|Ricardo Almeida| Cadastrar informações sobre um determinado filme assitido| Compartilhar aos usuários cadastrados toda a informação sobre o filme.|
+|Bruna Tavares       | Cadastrar filmes e séries assistidas          | Compartilhar experiencias com os usuários sobre séries e filmes             |
+|João Batista     | Atualizar dados e opiniar sobre os novos lances e jogadas do FIFA                 | Compartilhar aos usuários, informações sobre o jogo |
+|José Maria| Dar notas referente a uma determinada série assitida| Para melhor entendimento e interesse do usuário|
+|Fernanda Tavares| Pesquisar sobre novas séries lançadas recentemente | Uma nova experiência de novas séries|
+|Ricardo Almeida| Cadastrar informações sobre um determinado filme assistido| Compartilhar aos usuários cadastrados toda a informação sobre o filme|
 
 
 
