@@ -200,16 +200,16 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| O sistema deve ter página de cadastro de usuário.  | ALTA | 
-|RF-002| O sistema deve ter página de login.  | ALTA  |
+|RF-001| O sistema deve permitir cadastro de usuário.  | ALTA | 
+|RF-002| O sistema deve permitir login do usuário.  | ALTA  |
 |RF-003| O sistema deve permitir o usuário cadastrar filmes, séries, jogos e animanção. | ALTA | 
-|RF-004| O sistema deve ter TAGS.   | ALTA |
+|RF-004| O sistema deve permitir ao usuário criar TAGs a serem aplicadas a cada tipo de mídia.   | ALTA |
 |RF-005| O sistema deve listar as tags por ordem de 'força'.| ALTA | 
 |RF-006| Os usuários criam tags.| ALTA |
 |RF-007| O sistema deve listar os favoritos.  | MEDIA |
 |RF-008| O sistema deve permitir exibir o perfil do usuário. | MEDIA | 
-|RF-009| O sistema deve permitir exibir o perfil da midia.  | ALTA |
-|RF-010| O sistema deve permitir exibir o comentário dos usuários. | MEDIA | 
+|RF-009| O sistema deve permitir exibir o perfil da mídia.  | ALTA |
+|RF-010| O sistema deve permitir o usuário fazer e exibir comentários. | MEDIA | 
 |RF-011| O sistema deve listar as mídias para consumir. | ALTA |
 |RF-012| O sistema deve permitir buscas de mídias. | ALTA | 
 |RF-013| O sistema deve exibir as mídias top 10.  | MEDIA |
@@ -219,7 +219,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
-|RNF-001| A aplicação deve ter senhas de caesso e identificação para os usuários. | ALTA | 
+|RNF-001| A aplicação deve ter senhas de acesso e identificação para os usuários. | ALTA | 
 |RNF-002| Os dados pessoais devem ser armazenados sob Lei Geral de Proteção de Dados Pessoais (LGPD). |  ALTA | 
 |RNF-003| O sistema deve funcionar nos principais navegadores, como Chrome, Firefox, Edge e Opera. |  ALTA |
 |RNF-004| O site deve estar disponível e acessível para os usuários 24 horas por dia, 7 dias por semana, com um tempo de inatividade planejado mínimo para manutenção. |  ALTA | 
