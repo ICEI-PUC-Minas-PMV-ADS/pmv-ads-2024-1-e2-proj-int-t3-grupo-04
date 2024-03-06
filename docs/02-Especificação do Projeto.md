@@ -200,21 +200,20 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| O sistema deve ter página de cadastro de usuário  | ALTA | 
-|RF-002| O sistema deve ter página de login  | ALTA  |
-|RF-003| O sistema deve permitir o usuário cadastrar filmes, séries, jogos e animanção | ALTA | 
-|RF-004| O sistema deve ter TAGS   | ALTA |
-|RF-005| O sistema deve listar as tags por ordem de 'força'| ALTA | 
-|RF-006| Os usuários criam tags| ALTA |
-|RF-007| Os usuários podem adicionar mídias| ALTA | 
-|RF-008| O sistema deve listar os favoritos  | MEDIA |
-|RF-009| O sistema deve permitir exibir o perfil do usuário | MEDIA | 
-|RF-010| O sistema deve permitir exibir o perfil da midia.  | ALTA |
-|RF-011| O sistema deve permitir exibir o comentário dos usuários. | MEDIA | 
-|RF-012| O sistema deve listar as mídias para consumir. | ALTA |
-|RF-013| O sistema deve permitir buscas de mídias | ALTA | 
-|RF-014| O sistema deve exibir as mídias top 10.  | MEDIA |
-|RF-015| O sistema deve exibir as tag "do momento". | MEDIA |
+|RF-001| O sistema deve ter página de cadastro de usuário.  | ALTA | 
+|RF-002| O sistema deve ter página de login.  | ALTA  |
+|RF-003| O sistema deve permitir o usuário cadastrar filmes, séries, jogos e animanção. | ALTA | 
+|RF-004| O sistema deve ter TAGS.   | ALTA |
+|RF-005| O sistema deve listar as tags por ordem de 'força'.| ALTA | 
+|RF-006| Os usuários criam tags.| ALTA |
+|RF-007| O sistema deve listar os favoritos.  | MEDIA |
+|RF-008| O sistema deve permitir exibir o perfil do usuário. | MEDIA | 
+|RF-009| O sistema deve permitir exibir o perfil da midia.  | ALTA |
+|RF-010| O sistema deve permitir exibir o comentário dos usuários. | MEDIA | 
+|RF-011| O sistema deve listar as mídias para consumir. | ALTA |
+|RF-012| O sistema deve permitir buscas de mídias. | ALTA | 
+|RF-013| O sistema deve exibir as mídias top 10.  | MEDIA |
+|RF-014| O sistema deve exibir as tag "do momento". | MEDIA |
 
 ### Requisitos não Funcionais
 
