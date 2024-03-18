@@ -237,7 +237,13 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 |RE - 02| O aplicativo deve se restringir às tecnologias básicas da Web no Frontend. |
 |RE - 03| A equipe não pode subcontratar o desenvolvimento do trabalho. |
 
-
 ## Diagrama de Casos de Uso
 
 ![](Diagrama_Casos_Uso2.jpg)
+
+## Backlog do Projeto e Sprints
+
+As tarefas serão divididas por sprint de acordo com a necessidade, a fim de que todos os integrantes do projeto possam atuar em todas as frentes do sistema, tanto na documentação quanto no desenvolvimento front-end e back-end.
+O backlog atual do projeto, bem como a roadmap de sprints podem ser visualizados nas figuras abaixo.
+
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-grupo-04/assets/72924198/390ad421-2c1a-4270-9685-258f9991f13b)
