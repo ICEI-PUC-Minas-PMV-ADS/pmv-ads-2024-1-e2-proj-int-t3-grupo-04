@@ -9,16 +9,17 @@ Visão geral da interação do usuário pelas telas do sistema e protótipo inte
 
 ## Diagrama de Fluxo
 
-O diagrama apresenta o estudo do fluxo de interação do usuário com o sistema interativo e  muitas vezes sem a necessidade do desenho do design das telas da interface. Isso permite que o design das interações seja bem planejado e gere impacto na qualidade no design do wireframe interativo que será desenvolvido logo em seguida.
+> - Criação da Interface: Desenvolver a interface do usuário para facilitar a busca e descoberta de títulos de entretenimento. 
+> - Desenvolvimento do Sistema de Busca: Implementar um sistema de busca eficaz para os usuários encontrarem facilmente os títulos desejados. 
+> - Implementação do Sistema de Registro de Usuários: Permitir que os usuários se registrem na plataforma para acessar recursos adicionais, como avaliação e comentários.
+> - Desenvolvimento do Sistema de Avaliação e Comentários: Criar um sistema que permita aos usuários avaliarem e comentarem sobre os títulos listados.
+> - Construção do Sistema de Recomendação: Implementar um sistema de recomendação que sugira novos títulos com base nas preferências e avaliações dos usuários.
+> - Criação da Comunidade: Estabelecer ferramentas e recursos para promover a interação e engajamento dos usuários, formando uma comunidade ativa.
+> - Finalização da Aplicação: Realizar os ajustes finais e testes necessários para garantir que a aplicação esteja pronta para o lançamento. 
 
-O diagrama de fluxo pode ser desenvolvido com “boxes” que possuem internamente a indicação dos principais elementos de interface - tais como menus e acessos - e funcionalidades, tais como editar, pesquisar, filtrar, configurar - e a conexão entre esses boxes a partir do processo de interação. Você pode ver mais explicações e exemplos https://www.lucidchart.com/blog/how-to-make-a-user-flow-diagram.
+![image](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-grupo-04/assets/72924198/3bafc079-acd8-4af5-9d2e-6351480479be)
 
-![Exemplo de Diagrama de Fluxo](img/diagramafluxo2.jpg)
 
-As referências abaixo irão auxiliá-lo na geração do artefato “Diagramas de Fluxo”.
-
-> **Links Úteis**:
-> - [Fluxograma online: seis sites para fazer gráfico sem instalar nada | Produtividade | TechTudo](https://www.techtudo.com.br/listas/2019/03/fluxograma-online-seis-sites-para-fazer-grafico-sem-instalar-nada.ghtml)
 
 ## Wireframes
 
