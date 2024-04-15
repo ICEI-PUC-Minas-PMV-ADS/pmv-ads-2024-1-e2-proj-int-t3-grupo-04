@@ -35,3 +35,46 @@ São protótipos usados em design de interface para sugerir a estrutura de um si
 > - [Adobe XD](https://www.adobe.com/br/products/xd.html#scroll)
 > - [Axure](https://www.axure.com/edu) (Licença Educacional)
 > - [InvisionApp](https://www.invisionapp.com/) (Licença Educacional)
+
+## Testes de Usabilidade
+Estes testes têm como objetivo testar e validar o desenvolvimento da UX e UI do usuário. Estes testes deverão ser feitos com simulações de chamadas da API que será feito no back end. Esta simulação será feita para possibilitar os testes de usabilidade.
+
+A sequência de passos e cenários abaixo deve ser seguida para cada uma das telas da aplicação front end do projeto.
+
+### TU 01 - Caso Base:
+
+> **Etapa de Preparação**:
+>   Os testes de usabilidade serão feitos pela equipe de desenvolvedores responsáveis pelo projeto.
+>   Com base na tela que está sendo testada, o wireframe deve ser apresentado ao grupo de teste e após isso será feita uma sessão de testes com todos os elementos presentes no wireframe.
+
+> **Etapa de Coleta de Dados**:
+> Nesta etapa devem ser observados e registrados todos os possíveis problemas e melhorias na interface do sistema para que sejam analisados posteriormente. Esta análise deve ser feita com base no wireframe e por elemento.
+> Os problemas devem acompanhar a causa e uma sugestão de melhoria que é opcional e as melhorias devem ser relatadas junto a uma causa.
+
+> **Etapa de Consolidação dos Resultados**:
+Nesta etapa todos os dados levantados de experiências de usuários com a interface devem ser analisados e discutidos entre a equipe para a definição da tomada de decisão em relação aos designs apresentados. 
+
+### TU 02 - Redirecionamento via Tag:
+
+> **Etapa de Preparação**:
+>   Os testes de usabilidade serão feitos pela equipe de desenvolvedores responsáveis pelo projeto.
+>   Com base na tela inicial da aplicação usuário deve testar o redirecionamento para mídias disponíveis a partir da seleçao de diferentes tags.
+
+> **Etapa de Coleta de Dados**:
+> Nesta etapa devem ser observados e registrados todos os possíveis problemas neste redirecionamento como indicação errônea de mídias, associaçao incorreta de tags dentre outros.
+> Os problemas devem acompanhar a causa e uma sugestão de melhoria que é opcional e as melhorias devem ser relatadas junto a uma causa.
+
+> **Etapa de Consolidação dos Resultados**:
+Nesta etapa todos os dados levantados de experiências de usuários com a interface e redirecionamento devem ser analisados.
+
+### TU 03 - Mídias Favoritadas Pelo Usuário:
+
+> **Etapa de Preparação**:
+>   Os testes de usabilidade serão feitos pela equipe de desenvolvedores responsáveis pelo projeto.
+>   Com base na tela de usuário da aplicação, este deve ser capaz de ser redirecionado para uma lista de mídias favoritadas.
+
+> **Etapa de Coleta de Dados**:
+> Nesta etapa devem ser observados e registrados todos os possíveis problemas neste redirecionamento.
+
+> **Etapa de Consolidação dos Resultados**:
+Nesta etapa todos os dados levantados de experiências de usuários com a interface e listagem devem ser analisados.
