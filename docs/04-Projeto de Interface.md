@@ -23,18 +23,23 @@ Visão geral da interação do usuário pelas telas do sistema e protótipo inte
 
 ## Wireframes
 
-![Exemplo de Wireframe](img/wireframe-example.png)
+As images seguintes apresentam um wireframe das principais páginas.
 
-São protótipos usados em design de interface para sugerir a estrutura de um site web e seu relacionamentos entre suas páginas. Um wireframe web é uma ilustração semelhante do layout de elementos fundamentais na interface.
- 
-> **Links Úteis**:
-> - [Protótipos vs Wireframes](https://www.nngroup.com/videos/prototypes-vs-wireframes-ux-projects/)
-> - [Ferramentas de Wireframes](https://rockcontent.com/blog/wireframes/)
-> - [MarvelApp](https://marvelapp.com/developers/documentation/tutorials/)
-> - [Figma](https://www.figma.com/)
-> - [Adobe XD](https://www.adobe.com/br/products/xd.html#scroll)
-> - [Axure](https://www.axure.com/edu) (Licença Educacional)
-> - [InvisionApp](https://www.invisionapp.com/) (Licença Educacional)
+Página principal
+
+![1-Homepage](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-grupo-04/assets/75049187/5f30ef30-0657-496d-8201-0a111e9b85da)
+
+Página Midias
+![2-Midia](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-grupo-04/assets/75049187/f7502738-d1c5-470c-a770-8fc5e97823bf)
+
+Página TAGS
+![3-tags](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-grupo-04/assets/75049187/7dba6b71-480c-48bb-8dde-ff2bfd717aec)
+
+Página Favoritos
+![4-favoritos](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-grupo-04/assets/75049187/53674ea5-0548-43d6-9ca2-85e5ca063f54)
+
+Página do usuário 
+![5-conta](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-grupo-04/assets/75049187/ef7fa4d4-7e40-4794-9304-94e7b13270cd)
 
 ## Testes de Usabilidade
 Estes testes têm como objetivo testar e validar o desenvolvimento da UX e UI do usuário. Estes testes deverão ser feitos com simulações de chamadas da API que será feito no back end. Esta simulação será feita para possibilitar os testes de usabilidade.
