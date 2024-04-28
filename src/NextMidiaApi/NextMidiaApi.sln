@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NextMidiaApi", "NextMidiaApi\NextMidiaApi.csproj", "{B98AB24B-477C-477C-8D4B-2325089A6E5D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B98AB24B-477C-477C-8D4B-2325089A6E5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B98AB24B-477C-477C-8D4B-2325089A6E5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B98AB24B-477C-477C-8D4B-2325089A6E5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B98AB24B-477C-477C-8D4B-2325089A6E5D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {51F2D01B-D7CE-4166-A6F7-F969B85F991E}
+	EndGlobalSection
+EndGlobal
