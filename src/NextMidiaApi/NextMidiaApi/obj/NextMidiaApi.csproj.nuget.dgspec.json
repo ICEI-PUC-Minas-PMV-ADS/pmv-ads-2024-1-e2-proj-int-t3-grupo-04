@@ -1,24 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\LucasPC\\Workspace\\Faculdade\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaApi\\NextMidiaApi.csproj": {}
+    "C:\\Users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaApi\\NextMidiaApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\LucasPC\\Workspace\\Faculdade\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaApi\\NextMidiaApi.csproj": {
+    "C:\\Users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaApi\\NextMidiaApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\LucasPC\\Workspace\\Faculdade\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaApi\\NextMidiaApi.csproj",
+        "projectUniqueName": "C:\\Users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaApi\\NextMidiaApi.csproj",
         "projectName": "NextMidiaApi",
-        "projectPath": "C:\\Users\\LucasPC\\Workspace\\Faculdade\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaApi\\NextMidiaApi.csproj",
-        "packagesPath": "C:\\Users\\LucasPC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\LucasPC\\Workspace\\Faculdade\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaApi\\obj\\",
+        "projectPath": "C:\\Users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaApi\\NextMidiaApi.csproj",
+        "packagesPath": "C:\\Users\\aaron\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+          "C:\\Program Files\\DevExpress 22.1\\Components\\Offline Packages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\LucasPC\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\aaron\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.1.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +27,9 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "C:\\Program Files\\DevExpress 22.1\\Components\\System\\Components\\Packages": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://tfs.wgcsistemas.com.br/tfs/Projetos%20-%20WGC/_packaging/Nuget.WGC/nuget/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
@@ -53,7 +56,17 @@
               "target": "Package",
               "version": "[8.0.4, )"
             },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
             "Microsoft.EntityFrameworkCore.InMemory": {
+              "target": "Package",
+              "version": "[8.0.4, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[8.0.4, )"
             },

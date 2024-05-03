@@ -3,14 +3,14 @@ using NextMidiaApi.Domain.Persistence;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
-
 builder.Services.AddControllers();
 
 // Add contexts to the container.
-builder.Services.AddDbContext<UsuarioDbContext>(o => o.UseInMemoryDatabase("NextMidiaDb"));
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+builder.Services.AddDbContext<CategoriaDbContext>(options => options.UseSqlServer(connectionString));
 
 // Add services to the container.
-builder.Services.AddScoped<UsuarioService>();
+builder.Services.AddScoped<CategoriaService>();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

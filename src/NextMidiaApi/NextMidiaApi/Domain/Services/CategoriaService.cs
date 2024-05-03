@@ -12,33 +12,32 @@ namespace NextMidiaApi.Domain.Entities
             _context = context;
         }
 
-        public Categoria FindById(Guid id)
+        public Categoria FindById(int id)
         {
-            return  _context.categorias.SingleOrDefault(d => d.Id == id);
+            return  _context.categoria.SingleOrDefault(d => d.Id == id);
         }
 
         public Categoria FindByNome(string nome)
         {
-            return _context.categorias.SingleOrDefault(d => d.Nome == nome && d.IsDeleted == false);
+            return _context.categoria.SingleOrDefault(d => d.Nome == nome);
         }
 
-        public List<Categoria> FindAll() { return _context.categorias.Where(d => !d.IsDeleted).ToList(); }
+        public List<Categoria> FindAll() { return _context.categoria.ToList(); }
 
         public void Create(Categoria categoria)
         {
-            _context.categorias.Add(categoria);
+            _context.categoria.Add(categoria);
             _context.SaveChanges();
         }
 
         public void Update(Categoria categoria)
         {
-            _context.categorias.Update(categoria);
+            _context.categoria.Update(categoria);
             _context.SaveChanges();
         }
 
         public void Delete(Categoria categoria)
-        {
-            categoria.Delete();
+        {            
             _context.SaveChanges();
         }
     }

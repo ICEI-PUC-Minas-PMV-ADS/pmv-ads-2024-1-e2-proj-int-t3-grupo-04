@@ -10,7 +10,7 @@ namespace NextMidiaApi.Domain.Persistence
 
         }
 
-        public DbSet<Categoria> categorias { get; set; }
+        public DbSet<Categoria> categoria { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -21,8 +21,5 @@ namespace NextMidiaApi.Domain.Persistence
                 entity.Property(categoria => categoria.Nome).IsRequired();
             });
         }
-
-
-
     }
 }
