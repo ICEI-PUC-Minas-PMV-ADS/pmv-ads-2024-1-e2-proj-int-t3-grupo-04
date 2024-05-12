@@ -4,25 +4,19 @@
 
 Implementação do sistema descrita por meio dos requisitos funcionais e/ou não funcionais. Deve relacionar os requisitos atendidos com os artefatos criados (código fonte), deverão apresentadas as instruções para acesso e verificação da implementação que deve estar funcional no ambiente de hospedagem.
 
-Por exemplo: a tabela a seguir deverá ser preenchida considerando os artefatos desenvolvidos.
-
 |ID    | Descrição do Requisito  | Artefato(s) produzido(s) |
 |------|-----------------------------------------|----|
-|RF-001| A aplicação deve permitir que o usuário gerencie suas tarefas | tarefas.shtml / tarefas.cs / controllertarefas.cs | 
-|RF-002| A aplicação deve permitir a emissão de um relatório de tarefas realizadas no mês   | relatorio.shtml |
-
-# Instruções de acesso
-
-Não deixe de informar o link onde a aplicação estiver disponível para acesso (por exemplo: https://adota-pet.herokuapp.com/src/index.html).
-
-Se houver usuário de teste, o login e a senha também deverão ser informados aqui (por exemplo: usuário - admin / senha - admin).
-
-O link e o usuário/senha descritos acima são apenas exemplos de como tais informações deverão ser apresentadas.
-
-> **Links Úteis**:
->
-> - [Trabalhando com HTML5 Local Storage e JSON](https://www.devmedia.com.br/trabalhando-com-html5-local-storage-e-json/29045)
-> - [JSON Tutorial](https://www.w3resource.com/JSON)
-> - [JSON Data Set Sample](https://opensource.adobe.com/Spry/samples/data_region/JSONDataSetSample.html)
-> - [JSON - Introduction (W3Schools)](https://www.w3schools.com/js/js_json_intro.asp)
-> - [JSON Tutorial (TutorialsPoint)](https://www.tutorialspoint.com/json/index.htm)
+|RF-001| O sistema deve ter página de cadastro de usuário. | Login.html / UsuarioController.cs | 
+|RF-002| O sistema deve ter página de login.  | Login.html / LoginController.cs |
+|RF-003| O sistema deve permitir o usuário cadastrar filmes, séries, jogos e animação. | Home.html - Midia.html / UsuarioController.cs |
+|RF-004| O sistema deve permitir ao usuário criar TAGs a serem aplicadas a cada tipo de mídia. | Tag.html/ TagController.cs |
+|RF-005| O sistema deve listar as tags por ordem de 'força'. | TagController.cs |
+|RF-006| Permissão aos usuários criar tags. | Usuario.html/ UsuarioController.cs |
+|RF-007| O sistema deve listar os favoritos. | Usuario.html/ UsuarioController.cs |
+|RF-008| Acessar a página e o perfil do usuário. | Usuario.html/ UsuarioController.cs |
+|RF-009| O sistema deve permitir exibir o perfil da mídia. | Midia.html/ MidiaContrloler.cs |
+|RF-010| O sistema deve permitir o usuário realizar e exibir comentários. | Midia.html/ MidiaController.cs |
+|RF-011| O sistema deve permitir listar as mídias para consumir. | Midia.html/ MidiaController.cs |
+|RF-012| O sistema deve permitir buscas de mídias. | Home.html - Midia.html/ MidiaController.cs |
+|RF-013| O sistema deve permitir o usuário visualizar as mídias top 10. | Home.html - Midia.html/ MidiaController.cs |
+|RF-014| O sistema deve exibir as tags do momento. | Midia.html / MidiaController.cs |
