@@ -3,6 +3,8 @@ using NextMidiaApi.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NextMidiaApi.Domain.Persistence;
+using RestSharp;
+using Newtonsoft.Json;
 
 namespace NextMidiaApi.Api.Controllers
 {
@@ -10,11 +12,15 @@ namespace NextMidiaApi.Api.Controllers
     [ApiController]
     public class MidiaController : ControllerBase
     {
-
+        #region Properties
         private readonly MidiaService _service;
         private readonly TagService _tagService;
         private readonly MidiaTagDbContext _context;
+        private readonly string Lang = "pt-BR";
+        private readonly string TMDB_API_KEY = Configuration.ConfigurationManager.AppSetting["IntegrationAPIKeys:TMDB_API_KEY"] ?? "";
+        #endregion
 
+        #region Endpoints
         public MidiaController(MidiaService service, TagService tagService, MidiaTagDbContext context)
         {
             _service = service;
@@ -22,12 +28,54 @@ namespace NextMidiaApi.Api.Controllers
             _context = context;
         }
 
-        [HttpGet]
-        public IActionResult GetAll()
+        [HttpGet("topRated")]
+        public async Task<IActionResult> GetTopRatedMidia()
         {
-            var midias = _service.FindAll();
+            var client = new RestClient(new RestClientOptions($"https://api.themoviedb.org/3/movie/top_rated?language=pt-BR&page=1"));
+            var request = new RestRequest("");
+            request.AddHeaders(
+               [KeyValuePair.Create("accept", "application/json"),
+                KeyValuePair.Create("Authorization", $"Bearer {TMDB_API_KEY}")]
+            );
 
-            return Ok(midias);
+            var response = await client.GetAsync(request);
+            var midias = JsonConvert.DeserializeObject<TMDBReponseObject>(response.Content);
+            var midiasFormatadas = new List<Midia>();
+
+            if (midias != null)
+            {
+                if (midias.results.Count > 0)
+                    midias.results.ForEach(
+                        md => midiasFormatadas.Add(
+                                new Midia
+                                {
+                                    Nome = md.title,
+                                    Sinopse = md.overview,
+                                    VoteAverage = md.vote_average,
+                                    VoteCount = md.vote_count,
+                                    ImagemCapa = md.backdrop_path,
+                                    DataLancamento = md.release_date
+                                }
+                            ));
+                else
+                    return new StatusCodeResult(StatusCodes.Status204NoContent);
+            }            
+
+            return Ok(midiasFormatadas);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetAll()
+        {
+            var client = new RestClient(new RestClientOptions($"https://api.themoviedb.org/3/movie/popular?language={Lang}&page=1"));
+            var request = new RestRequest("");
+            request.AddHeaders(
+               [KeyValuePair.Create("accept", "application/json"),
+                KeyValuePair.Create("Authorization", $"Bearer {TMDB_API_KEY}")]
+            );
+
+            var midias = await client.GetAsync(request);
+            return Ok(new Midia());
         }
 
         [HttpGet("{id}")]
@@ -131,4 +179,5 @@ namespace NextMidiaApi.Api.Controllers
         }
 
     }
+    #endregion
 }

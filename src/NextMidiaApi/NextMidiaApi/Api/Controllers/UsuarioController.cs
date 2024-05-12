@@ -8,10 +8,12 @@ namespace NextMidiaApi.Api.Controllers
     [ApiController]
     public class UsuarioController : ControllerBase
     {
-
+        #region Properties
         private readonly UsuarioService _service;
         private readonly MidiaService _midiaService;
+        #endregion
 
+        #region Endpoints
         public UsuarioController(UsuarioService service)
         {
             _service = service;
@@ -30,7 +32,6 @@ namespace NextMidiaApi.Api.Controllers
 
             return BadRequest(new { Message = "Dados inválidos." });
         }
-
 
         [HttpGet]
         public IActionResult GetAll()
@@ -145,17 +146,15 @@ namespace NextMidiaApi.Api.Controllers
         public IActionResult FavoritarMidia(Guid id, Guid idMidia)
         {
             var usuario = _service.FindById(id);
-
             if (usuario == null)
             {
-                return NotFound();
+                return NotFound("Usuário não encontrado.");
             }
 
             var midia = _midiaService.FindById(idMidia);
-
             if (midia == null)
             {
-                return NotFound("Midia não encontrada");
+                return NotFound("Midia não encontrada.");
             }
 
             usuario.FavoritarMidia(midia);
@@ -208,5 +207,6 @@ namespace NextMidiaApi.Api.Controllers
 
             return NoContent();
         }
+        #endregion
     }
 }

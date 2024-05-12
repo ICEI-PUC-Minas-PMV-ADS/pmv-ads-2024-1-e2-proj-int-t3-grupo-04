@@ -3,36 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B98AB24B-477C-477C-8D4B-2325089A6E5D}|NextMidiaApi\\NextMidiaApi.csproj|c:\\users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\nextmidiaapi\\nextmidiaapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{B98AB24B-477C-477C-8D4B-2325089A6E5D}|NextMidiaApi\\NextMidiaApi.csproj|solutionrelative:nextmidiaapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{B98AB24B-477C-477C-8D4B-2325089A6E5D}|NextMidiaApi\\NextMidiaApi.csproj|c:\\users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\nextmidiaapi\\nextmidiaapi\\domain\\entities\\midiafavoritada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B98AB24B-477C-477C-8D4B-2325089A6E5D}|NextMidiaApi\\NextMidiaApi.csproj|solutionrelative:nextmidiaapi\\domain\\entities\\midiafavoritada.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B98AB24B-477C-477C-8D4B-2325089A6E5D}|NextMidiaApi\\NextMidiaApi.csproj|c:\\users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\nextmidiaapi\\nextmidiaapi\\api\\controllers\\categoriacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B98AB24B-477C-477C-8D4B-2325089A6E5D}|NextMidiaApi\\NextMidiaApi.csproj|solutionrelative:nextmidiaapi\\api\\controllers\\categoriacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B98AB24B-477C-477C-8D4B-2325089A6E5D}|NextMidiaApi\\NextMidiaApi.csproj|c:\\users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\nextmidiaapi\\nextmidiaapi\\domain\\services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B98AB24B-477C-477C-8D4B-2325089A6E5D}|NextMidiaApi\\NextMidiaApi.csproj|solutionrelative:nextmidiaapi\\domain\\services\\usuarioservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B98AB24B-477C-477C-8D4B-2325089A6E5D}|NextMidiaApi\\NextMidiaApi.csproj|c:\\users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\nextmidiaapi\\nextmidiaapi\\domain\\entities\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B98AB24B-477C-477C-8D4B-2325089A6E5D}|NextMidiaApi\\NextMidiaApi.csproj|solutionrelative:nextmidiaapi\\domain\\entities\\categoria.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B98AB24B-477C-477C-8D4B-2325089A6E5D}|NextMidiaApi\\NextMidiaApi.csproj|c:\\users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\nextmidiaapi\\nextmidiaapi\\domain\\services\\categoriaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B98AB24B-477C-477C-8D4B-2325089A6E5D}|NextMidiaApi\\NextMidiaApi.csproj|solutionrelative:nextmidiaapi\\domain\\services\\categoriaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B98AB24B-477C-477C-8D4B-2325089A6E5D}|NextMidiaApi\\NextMidiaApi.csproj|c:\\users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\nextmidiaapi\\nextmidiaapi\\domain\\persistence\\categoriadbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B98AB24B-477C-477C-8D4B-2325089A6E5D}|NextMidiaApi\\NextMidiaApi.csproj|solutionrelative:nextmidiaapi\\domain\\persistence\\categoriadbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B98AB24B-477C-477C-8D4B-2325089A6E5D}|NextMidiaApi\\NextMidiaApi.csproj|c:\\users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\nextmidiaapi\\nextmidiaapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B98AB24B-477C-477C-8D4B-2325089A6E5D}|NextMidiaApi\\NextMidiaApi.csproj|solutionrelative:nextmidiaapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A20F0F78-A7F8-447B-9439-40EE0412360F}|NextMidiaScripts\\NextMidiaScripts.sqlproj|C:\\Users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaScripts\\Scripts\\Script1.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}",
-      "RelativeMoniker": "D:0:0:{A20F0F78-A7F8-447B-9439-40EE0412360F}|NextMidiaScripts\\NextMidiaScripts.sqlproj|solutionrelative:NextMidiaScripts\\Scripts\\Script1.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A20F0F78-A7F8-447B-9439-40EE0412360F}|NextMidiaScripts\\NextMidiaScripts.sqlproj|C:\\Users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaScripts\\Scripts\\Script1.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame",
-      "RelativeMoniker": "D:0:0:{A20F0F78-A7F8-447B-9439-40EE0412360F}|NextMidiaScripts\\NextMidiaScripts.sqlproj|solutionrelative:NextMidiaScripts\\Scripts\\Script1.sql||{CC5D8DF0-88F4-4BB2-9DBB-B48CEE65C30A}|CodeFrame"
+      "AbsoluteMoniker": "D:0:0:{B98AB24B-477C-477C-8D4B-2325089A6E5D}|NextMidiaApi\\NextMidiaApi.csproj|c:\\users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\nextmidiaapi\\nextmidiaapi\\api\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B98AB24B-477C-477C-8D4B-2325089A6E5D}|NextMidiaApi\\NextMidiaApi.csproj|solutionrelative:nextmidiaapi\\api\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,96 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 2771,
-          "SelectedChildIndex": 5,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Categoria.cs",
-              "DocumentMoniker": "C:\\Users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaApi\\Domain\\Entities\\Categoria.cs",
-              "RelativeDocumentMoniker": "NextMidiaApi\\Domain\\Entities\\Categoria.cs",
-              "ToolTip": "C:\\Users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaApi\\Domain\\Entities\\Categoria.cs",
-              "RelativeToolTip": "NextMidiaApi\\Domain\\Entities\\Categoria.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAFAAAA",
+              "DocumentIndex": 0,
+              "Title": "MidiaFavoritada.cs",
+              "DocumentMoniker": "C:\\Users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaApi\\Domain\\Entities\\MidiaFavoritada.cs",
+              "RelativeDocumentMoniker": "NextMidiaApi\\Domain\\Entities\\MidiaFavoritada.cs",
+              "ToolTip": "C:\\Users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaApi\\Domain\\Entities\\MidiaFavoritada.cs",
+              "RelativeToolTip": "NextMidiaApi\\Domain\\Entities\\MidiaFavoritada.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T23:35:03.964Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CategoriaDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaApi\\Domain\\Persistence\\CategoriaDbContext.cs",
-              "RelativeDocumentMoniker": "NextMidiaApi\\Domain\\Persistence\\CategoriaDbContext.cs",
-              "ToolTip": "C:\\Users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaApi\\Domain\\Persistence\\CategoriaDbContext.cs",
-              "RelativeToolTip": "NextMidiaApi\\Domain\\Persistence\\CategoriaDbContext.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAwAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T23:32:04.653Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CategoriaService.cs",
-              "DocumentMoniker": "C:\\Users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaApi\\Domain\\Services\\CategoriaService.cs",
-              "RelativeDocumentMoniker": "NextMidiaApi\\Domain\\Services\\CategoriaService.cs",
-              "ToolTip": "C:\\Users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaApi\\Domain\\Services\\CategoriaService.cs",
-              "RelativeToolTip": "NextMidiaApi\\Domain\\Services\\CategoriaService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T23:29:51.218Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaApi\\Program.cs",
-              "RelativeDocumentMoniker": "NextMidiaApi\\Program.cs",
-              "ToolTip": "C:\\Users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaApi\\Program.cs",
-              "RelativeToolTip": "NextMidiaApi\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAvAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T23:11:21.729Z",
+              "WhenOpened": "2024-05-11T21:25:07.018Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CategoriaController.cs",
-              "DocumentMoniker": "C:\\Users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaApi\\Api\\Controllers\\CategoriaController.cs",
-              "RelativeDocumentMoniker": "NextMidiaApi\\Api\\Controllers\\CategoriaController.cs",
-              "ToolTip": "C:\\Users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaApi\\Api\\Controllers\\CategoriaController.cs",
-              "RelativeToolTip": "NextMidiaApi\\Api\\Controllers\\CategoriaController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAATAAAA",
+              "Title": "UsuarioService.cs",
+              "DocumentMoniker": "C:\\Users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaApi\\Domain\\Services\\UsuarioService.cs",
+              "RelativeDocumentMoniker": "NextMidiaApi\\Domain\\Services\\UsuarioService.cs",
+              "ToolTip": "C:\\Users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaApi\\Domain\\Services\\UsuarioService.cs",
+              "RelativeToolTip": "NextMidiaApi\\Domain\\Services\\UsuarioService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBAAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-02T23:10:56.465Z",
+              "WhenOpened": "2024-05-11T21:19:32.016Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaApi\\appsettings.json",
-              "RelativeDocumentMoniker": "NextMidiaApi\\appsettings.json",
-              "ToolTip": "C:\\Users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaApi\\appsettings.json",
-              "RelativeToolTip": "NextMidiaApi\\appsettings.json",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAVAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-05-02T22:54:09.78Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Script1.sql ",
-              "DocumentMoniker": "C:\\Users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaScripts\\Scripts\\Script1.sql",
-              "RelativeDocumentMoniker": "NextMidiaScripts\\Scripts\\Script1.sql",
-              "ToolTip": "C:\\Users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaScripts\\Scripts\\Script1.sql",
-              "RelativeToolTip": "NextMidiaScripts\\Scripts\\Script1.sql",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
-              "WhenOpened": "2024-04-30T00:39:01.361Z",
+              "DocumentIndex": 2,
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "C:\\Users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaApi\\Api\\Controllers\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "NextMidiaApi\\Api\\Controllers\\UsuarioController.cs",
+              "ToolTip": "C:\\Users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaApi\\Api\\Controllers\\UsuarioController.cs",
+              "RelativeToolTip": "NextMidiaApi\\Api\\Controllers\\UsuarioController.cs",
+              "ViewState": "AQIAAFQAAAAAAAAAAAAcwKAAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-11T21:15:13.215Z",
               "EditorCaption": ""
             }
           ]
