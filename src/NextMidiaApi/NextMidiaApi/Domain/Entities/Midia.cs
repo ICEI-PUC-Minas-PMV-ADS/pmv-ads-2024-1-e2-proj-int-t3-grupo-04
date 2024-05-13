@@ -5,7 +5,7 @@ namespace NextMidiaApi.Domain.Entities
     public class Midia
     {
         #region Properties
-        public Guid Id { get; set; }
+        public long Id { get; set; }
         public string Nome { get; set; }
         public string Sinopse { get; set; }
         public DateTime DataLancamento { get; set; }

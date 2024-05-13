@@ -12,7 +12,7 @@ namespace NextMidiaApi.Domain.Entities
             _context = context;
         }
 
-        public Midia FindById(Guid id)
+        public Midia FindById(long id)
         {
             return  _context.midias.SingleOrDefault(d => d.Id == id);
         }

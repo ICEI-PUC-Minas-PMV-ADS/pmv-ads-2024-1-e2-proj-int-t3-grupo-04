@@ -4,10 +4,11 @@ namespace NextMidiaApi.Domain.Entities
 {
     public class Tag
     {
-        public Guid Id { get; set; }
+        public long Id { get; set; }
         public string Nome { get; set; }
-        public List<MidiaTag> midias { get; set; }
-        public bool IsDeleted { get; set; }
+
+        //public List<MidiaTag> midias { get; set; }
+        //public bool IsDeleted { get; set; }
 
         public void Update(TagInput input)
         {
@@ -15,8 +16,7 @@ namespace NextMidiaApi.Domain.Entities
         }
 
         public void Delete()
-        {
-            IsDeleted = true;
+        {            
         }
 
     }

@@ -25,7 +25,7 @@ namespace NextMidiaApi.Api.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetById(Guid id)
+        public IActionResult GetById(int id)
         {
             var tag = _service.FindById(id);
 
@@ -52,7 +52,7 @@ namespace NextMidiaApi.Api.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Update(Guid id, TagInput input)
+        public IActionResult Update(int id, TagInput input)
         {
             var tag = _service.FindById(id);
 
@@ -69,7 +69,7 @@ namespace NextMidiaApi.Api.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(Guid id)
+        public IActionResult Delete(int id)
         {
             var tag = _service.FindById(id);
 

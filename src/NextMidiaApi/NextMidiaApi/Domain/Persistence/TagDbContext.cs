@@ -10,7 +10,7 @@ namespace NextMidiaApi.Domain.Persistence
 
         }
 
-        public DbSet<Tag> tags { get; set; }
+        public DbSet<Tag> tag { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

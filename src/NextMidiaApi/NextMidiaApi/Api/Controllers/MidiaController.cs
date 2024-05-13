@@ -79,7 +79,7 @@ namespace NextMidiaApi.Api.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetById(Guid id)
+        public IActionResult GetById(long id)
         {
             var midia = _service.FindById(id);
 
@@ -107,7 +107,7 @@ namespace NextMidiaApi.Api.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Update(Guid id, MidiaInput input)
+        public IActionResult Update(long id, MidiaInput input)
         {
             var midia = _service.FindById(id);
 
@@ -124,7 +124,7 @@ namespace NextMidiaApi.Api.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(Guid id)
+        public IActionResult Delete(long id)
         {
             var midia = _service.FindById(id);
 
@@ -139,7 +139,7 @@ namespace NextMidiaApi.Api.Controllers
         }
 
         [HttpPost("{id}/add-tag/{tagId}")]
-        public async Task<IActionResult> AddOrUpdateRelationship(Guid id, Guid tagId)
+        public async Task<IActionResult> AddOrUpdateRelationship(int id, int tagId)
         {
 
             var midia = _service.FindById(id);

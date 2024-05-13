@@ -12,27 +12,28 @@ namespace NextMidiaApi.Domain.Entities
             _context = context;
         }
 
-        public Tag FindById(Guid id)
+        public Tag FindById(int id)
         {
-            return  _context.tags.SingleOrDefault(d => d.Id == id);
+            return  _context.tag.SingleOrDefault(d => d.Id == id);
         }
 
         public Tag FindByNome(string nome)
         {
-            return _context.tags.SingleOrDefault(d => d.Nome == nome && d.IsDeleted == false);
+            return _context.tag.SingleOrDefault(d => d.Nome == nome);
         }
 
-        public List<Tag> FindAll() { return _context.tags.Where(d => !d.IsDeleted).ToList(); }
+        public List<Tag> FindAll() { return _context.tag.ToList(); }
 
         public void Create(Tag tag)
         {
-            _context.tags.Add(tag);
+            tag.Id = GetLastId() <= 0 ? 1 : GetLastId();
+            _context.tag.Add(tag);
             _context.SaveChanges();
         }
 
         public void Update(Tag tag)
         {
-            _context.tags.Update(tag);
+            _context.tag.Update(tag);
             _context.SaveChanges();
         }
 
@@ -40,6 +41,13 @@ namespace NextMidiaApi.Domain.Entities
         {
             tag.Delete();
             _context.SaveChanges();
+        }
+
+        private long GetLastId()
+        {
+            return _context.tag.SingleOrDefault() != null ?
+                _context.tag.OrderByDescending(t => t.Id).ToList()[0].Id + 1
+                : 1;
         }
     }
 }

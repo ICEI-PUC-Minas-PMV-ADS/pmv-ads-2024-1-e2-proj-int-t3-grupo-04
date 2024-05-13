@@ -4,8 +4,8 @@ namespace NextMidiaApi.Domain.Entities
 {
     public class MidiaFavoritada
     {
-        public Guid IdMidia { get; set; }
-        public Guid IdUsuario { get; set; }
+        public long IdMidia { get; set; }
+        public long IdUsuario { get; set; }
         public DateTime DataFavorito { get; set; }
     }
 }

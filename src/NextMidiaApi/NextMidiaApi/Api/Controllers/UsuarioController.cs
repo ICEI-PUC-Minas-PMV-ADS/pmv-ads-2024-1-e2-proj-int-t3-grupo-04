@@ -13,7 +13,7 @@ namespace NextMidiaApi.Api.Controllers
         private readonly MidiaService _midiaService;
         #endregion
 
-        #region Endpoints
+        #region Endpolongs
         public UsuarioController(UsuarioService service)
         {
             _service = service;
@@ -42,7 +42,7 @@ namespace NextMidiaApi.Api.Controllers
         }
 
         [HttpGet("{id}")]
-        public IActionResult GetById(Guid id)
+        public IActionResult GetById(long id)
         {
             var usuario = _service.FindById(id);
 
@@ -82,7 +82,7 @@ namespace NextMidiaApi.Api.Controllers
         }
 
         [HttpPut("{id}")]
-        public IActionResult Update(Guid id, UsuarioInput input)
+        public IActionResult Update(long id, UsuarioInput input)
         {
             var usuario = _service.FindById(id);
 
@@ -106,7 +106,7 @@ namespace NextMidiaApi.Api.Controllers
         }
 
         [HttpPut("{id}/mudar-senha")]
-        public IActionResult UpdatePassword(Guid id, UsuarioChangePasswordInput input)
+        public IActionResult UpdatePassword(long id, UsuarioChangePasswordInput input)
         {
             var usuario = _service.FindById(id);
 
@@ -128,7 +128,7 @@ namespace NextMidiaApi.Api.Controllers
         }
 
         [HttpDelete("{id}")]
-        public IActionResult Delete(Guid id)
+        public IActionResult Delete(long id)
         {
             var usuario = _service.FindById(id);
 
@@ -143,7 +143,7 @@ namespace NextMidiaApi.Api.Controllers
         }
 
         [HttpPost("{id}/favoritar-midia/{idMidia}")]
-        public IActionResult FavoritarMidia(Guid id, Guid idMidia)
+        public IActionResult FavoritarMidia(long id, long idMidia)
         {
             var usuario = _service.FindById(id);
             if (usuario == null)
@@ -164,7 +164,7 @@ namespace NextMidiaApi.Api.Controllers
         }
 
         [HttpGet("{id}/midia-favoritas")]
-        public IActionResult MidiasFavoritas(Guid id)
+        public IActionResult MidiasFavoritas(long id)
         {
             var usuario = _service.FindById(id);
 
@@ -177,7 +177,7 @@ namespace NextMidiaApi.Api.Controllers
         }
 
         [HttpPost("{id}/comentar-midia/{idMidia}")]
-        public IActionResult ComentarMidia(Guid id, Guid idMidia, ComentarioInput comentarioInput)
+        public IActionResult ComentarMidia(long id, long idMidia, ComentarioInput comentarioInput)
         {
             var usuario = _service.FindById(id);
 

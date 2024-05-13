@@ -7,7 +7,7 @@ namespace NextMidiaApi.Domain.Entities
         #region Constructors
         public Usuario()
         {
-            Id = Guid.NewGuid();
+            Id = -1;
             Nome = string.Empty;
             Email = string.Empty;
             Senha = string.Empty;
@@ -18,7 +18,7 @@ namespace NextMidiaApi.Domain.Entities
         #endregion
 
         #region Properties
-        public Guid Id { get; set; }
+        public long Id { get; set; }
         public string Nome { get; set; }
         public string Email { get; set; }
         public string Senha { get; set; }

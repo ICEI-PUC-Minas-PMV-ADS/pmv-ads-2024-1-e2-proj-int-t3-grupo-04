@@ -24,7 +24,7 @@ namespace NextMidiaApi.Domain.Entities
             return _context.Usuarios.SingleOrDefault(d => d.Email == email && d.Senha == senha);
         }
 
-        public Usuario FindById(Guid id)
+        public Usuario FindById(long id)
         {
             return _context.Usuarios.SingleOrDefault(d => d.Id == id);
         }
