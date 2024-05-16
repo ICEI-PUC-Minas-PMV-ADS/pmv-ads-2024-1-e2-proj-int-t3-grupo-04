@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NextMidiaApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+11841edf0c77af12182cd8c2c11b2f872e8bd119")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3d1eb31c60b97b1ae56fda0995d04f6ad775e88f")]
 [assembly: System.Reflection.AssemblyProductAttribute("NextMidiaApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NextMidiaApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

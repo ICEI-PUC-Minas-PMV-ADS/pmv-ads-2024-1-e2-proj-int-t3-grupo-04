@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - NextMidiaWeb</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/NextMidiaWeb.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header class="header">
+        <img src="img/logos/logotype.png" alt="Nextmidia logo" class="logo" />
+        <nav class="main-nav">
+            <ul class="main-nav-list">
+                @if (Html.ViewContext.HttpContext.Request.Path.Value.ToString() == "/")
+                {
+                    <div></div>
+                }
+                else
+                {
+                    <li class="nav-item"> <a class="main-nav-link" href="#"> Mídias </a> </li>
+                    <li class="nav-item"> <a class="main-nav-link" href="#"> TAGS </a> </li>
+                    <li class="nav-item"> <a class="main-nav-link" href="#"> Conta </a> </li>
+                    <li class="nav-item"> <a class="main-nav-link" href="#"> Sobre </a> </li>
+                    <li class="nav-item"> <a class="main-nav-link nav-cta" href="#"> Experimente já </a> </li>
+                }
+            </ul>
+        </nav>
+    </header>
+    <div class="">
+        <main role="main" class="">
+            @RenderBody()
+        </main>
+    </div>
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - NextMidiaWeb - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

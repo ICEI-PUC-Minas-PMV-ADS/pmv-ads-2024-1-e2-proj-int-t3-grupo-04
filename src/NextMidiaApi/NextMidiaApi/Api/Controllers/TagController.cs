@@ -35,7 +35,7 @@ namespace NextMidiaApi.Api.Controllers
             }
 
             return Ok(tag);
-        }
+        }        
 
         [HttpPost]
         public IActionResult Create(TagInput input)
