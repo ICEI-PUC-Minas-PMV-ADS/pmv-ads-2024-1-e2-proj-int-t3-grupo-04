@@ -1,4 +1,4 @@
-﻿namespace NextMidiaWeb.Api.Models
+﻿namespace NextMidiaWeb.Models.ReponseObjects
 {
     public class TMDBReponseObject
     {
@@ -13,13 +13,13 @@
         public bool adult { get; set; }
         public string backdrop_path { get; set; }
         public List<string> genre_ids { get; set; }
-        public long id {  get; set; }
+        public long id { get; set; }
         public string original_language { get; set; }
         public string overview { get; set; }
         public DateTime release_date { get; set; }
         public string title { get; set; }
         public bool video { get; set; }
         public decimal vote_average { get; set; }
-        public int vote_count { get; set; }                
+        public int vote_count { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿using NextMidiaWeb.Api.Models;
+﻿using NextMidiaWeb.Models.Input;
 
 namespace NextMidiaWeb.Domain.Entities
 {

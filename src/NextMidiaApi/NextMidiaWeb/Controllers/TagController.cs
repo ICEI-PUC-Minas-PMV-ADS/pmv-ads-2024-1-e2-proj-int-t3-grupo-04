@@ -1,6 +1,6 @@
-﻿using NextMidiaWeb.Api.Models;
-using NextMidiaWeb.Domain.Entities;
+﻿using NextMidiaWeb.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
+using NextMidiaWeb.Models.Input;
 
 namespace NextMidiaWeb.Api.Controllers
 {

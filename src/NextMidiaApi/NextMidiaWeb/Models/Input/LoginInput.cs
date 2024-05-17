@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Numerics;
 
-namespace NextMidiaWeb.Api.Models
+namespace NextMidiaWeb.Models.Input
 {
     public class LoginInput
     {
@@ -10,7 +10,7 @@ namespace NextMidiaWeb.Api.Models
         [EmailAddress]
         [MinLength(5)]
         public string Email { get; set; }
-        
+
         [Required]
         [MinLength(5)]
         public string Senha { get; set; }

@@ -9,25 +9,30 @@
     <link rel="stylesheet" href="~/NextMidiaWeb.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header class="header">
-        <img src="img/logos/logotype.png" alt="Nextmidia logo" class="logo" />
-        <nav class="main-nav">
-            <ul class="main-nav-list">
-                @if (Html.ViewContext.HttpContext.Request.Path.Value.ToString() == "/")
-                {
-                    <div></div>
-                }
-                else
-                {
+    @if (Html.ViewContext.HttpContext.Request.Path.Value.ToString() == "/RedirectToLogin")
+    {
+        <div></div>
+    }
+    else
+    {
+        <header class="header">
+            <img src="img/logos/logotype.png" alt="Nextmidia logo" class="logo" />
+            <nav class="main-nav">
+                <ul class="main-nav-list">
                     <li class="nav-item"> <a class="main-nav-link" href="#"> Mídias </a> </li>
                     <li class="nav-item"> <a class="main-nav-link" href="#"> TAGS </a> </li>
                     <li class="nav-item"> <a class="main-nav-link" href="#"> Conta </a> </li>
                     <li class="nav-item"> <a class="main-nav-link" href="#"> Sobre </a> </li>
-                    <li class="nav-item"> <a class="main-nav-link nav-cta" href="#"> Experimente já </a> </li>
-                }
-            </ul>
-        </nav>
-    </header>
+                    <li class="nav-item">
+                        <a class="main-nav-link nav-cta"
+                           asp-controller="Home"
+                           asp-action="RedirectToLogin"> Experimente já as Guest </a>
+                    </li>
+
+                </ul>
+            </nav>
+        </header>
+    }
     <div class="">
         <main role="main" class="">
             @RenderBody()

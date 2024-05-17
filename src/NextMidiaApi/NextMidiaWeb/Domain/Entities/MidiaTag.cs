@@ -1,6 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using NextMidiaWeb.Api.Models;
-using System.Numerics;
 
 namespace NextMidiaWeb.Domain.Entities
 {

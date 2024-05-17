@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Numerics;
 
-namespace NextMidiaWeb.Api.Models
+namespace NextMidiaWeb.Models.Input
 {
-    public class TagInput
+    public class CategoriaInput
     {
         [Required]
         public string Nome { get; set; }

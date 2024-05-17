@@ -1,18 +1,19 @@
-﻿using NextMidiaWeb.Api.Models;
-using NextMidiaWeb.Domain.Entities;
+﻿using NextMidiaWeb.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using NextMidiaWeb.Domain.Persistence;
 using RestSharp;
 using Newtonsoft.Json;
+using NextMidiaWeb.Models.Input;
+using NextMidiaWeb.Models.ReponseObjects;
+using NextMidiaWeb.Models.ViewModel;
+using NextMidiaWeb.Controllers;
 
 namespace NextMidiaWeb.Api.Controllers
-{
-    [Route("api/midia")]
-    [ApiController]
-    public class MidiaController : ControllerBase
+{    
+    public class MidiaController : Controller
     {
         #region Properties
+        private readonly ILogger<LoginController> _logger;
         private readonly MidiaService _service;
         private readonly TagService _tagService;
         private readonly MidiaTagDbContext _context;
@@ -20,48 +21,56 @@ namespace NextMidiaWeb.Api.Controllers
         private readonly string TMDB_API_KEY = Configuration.ConfigurationManager.AppSetting["IntegrationAPIKeys:TMDB_API_KEY"] ?? "";
         #endregion
 
-        #region Endpoints
-        public MidiaController(MidiaService service, TagService tagService, MidiaTagDbContext context)
+        #region Constructors
+        public MidiaController(MidiaService service, TagService tagService, MidiaTagDbContext context, ILogger<LoginController> logger)
         {
             _service = service;
             _tagService = tagService;
             _context = context;
+            _logger = logger;
         }
+        #endregion
 
-        [HttpGet("topRated")]
-        public async Task<IActionResult> GetTopRatedMidia()
+        #region Endpoints    
+        [Route("Midia")]
+        public async Task<IActionResult> Index()
         {
-            var client = new RestClient(new RestClientOptions($"https://api.themoviedb.org/3/movie/top_rated?language=pt-BR&page=1"));
-            var request = new RestRequest("");
-            request.AddHeaders(
-               [KeyValuePair.Create("accept", "application/json"),
-                KeyValuePair.Create("Authorization", $"Bearer {TMDB_API_KEY}")]
-            );
-
-            var response = await client.GetAsync(request);
-            var midias = JsonConvert.DeserializeObject<TMDBReponseObject>(response.Content);
-            var midiasFormatadas = new List<Midia>();
-
-            if (midias != null)
+            return await Task.Run(async () =>
             {
-                if (midias.results.Count > 0)
-                    midias.results.ForEach(
-                        md => midiasFormatadas.Add(
-                                new Midia
-                                {
-                                    Nome = md.title,
-                                    Sinopse = md.overview,
-                                    VoteAverage = md.vote_average,
-                                    VoteCount = md.vote_count,
-                                    ImagemCapa = md.backdrop_path,
-                                    DataLancamento = md.release_date
-                                }
-                            ));
-                else
-                    return new StatusCodeResult(StatusCodes.Status204NoContent);
-            }            
+                var client = new RestClient(new RestClientOptions($"https://api.themoviedb.org/3/movie/top_rated?language=pt-BR&page=1"));
+                var request = new RestRequest("");
+                request.AddHeaders(
+                   [KeyValuePair.Create("accept", "application/json"),
+                    KeyValuePair.Create("Authorization", $"Bearer {TMDB_API_KEY}")]
+                );
 
-            return Ok(midiasFormatadas);
+                var response = await client.GetAsync(request);
+                var midias = JsonConvert.DeserializeObject<TMDBReponseObject>(response.Content!);
+                var midiasFormatadas = new List<Midia>();
+
+                if (midias != null)
+                {
+                    if (midias.results.Count > 0)
+                        foreach (var md in midias.results)
+                        {
+                            midiasFormatadas.Add(
+                                    new Midia
+                                    {
+                                        Nome = md.title,
+                                        Sinopse = md.overview,
+                                        VoteAverage = md.vote_average,
+                                        VoteCount = md.vote_count,
+                                        ImagemCapa = md.backdrop_path,
+                                        DataLancamento = md.release_date
+                                    }
+                                );
+                        }
+                }
+                else
+                    Content("Ocorreu um erro ao retornar os dados, retorna a página e teste novamente.");
+
+                return View(new MidiaViewModel { midias = midiasFormatadas });
+            });                     
         }
 
         [HttpGet]
@@ -78,7 +87,7 @@ namespace NextMidiaWeb.Api.Controllers
             return Ok(new Midia());
         }
 
-        [HttpGet("{id}")]
+        //[HttpGet("{id}")]
         public IActionResult GetById(long id)
         {
             var midia = _service.FindById(id);

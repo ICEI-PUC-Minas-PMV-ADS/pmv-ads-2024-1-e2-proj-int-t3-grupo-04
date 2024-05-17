@@ -1,11 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
-using NextMidiaWeb.Api.Models;
 using NextMidiaWeb.Domain.Entities;
-using NextMidiaWeb.Models;
-using System.ComponentModel;
+using NextMidiaWeb.Models.ViewModel;
 using System.Diagnostics;
-using System.Net;
 
 namespace NextMidiaWeb.Controllers
 {
@@ -20,37 +16,17 @@ namespace NextMidiaWeb.Controllers
             _service = service;
         }
 
-        [Route("")]        
         public IActionResult Index()
         {
             return View();
         }
 
-        public IActionResult Midia()
+        [HttpGet]
+        [Route("Login")]        
+        public IActionResult RedirectToLogin(bool? param = false)
         {
-            return View();
-        }
-
-        [HttpPost]
-        [Route("")]        
-        public IActionResult Index([FromForm] LoginInput input)
-        {
-            try
-            {
-                if(input.Email == null || input.Senha == null)
-                    return Content("Preencha os dados para realizar o login.");
-
-                var user = _service.FindByEmailAndSenha(input.Email, input.Senha);
-                if (user != null)                
-                    return View("Midia");
-                                
-                return PartialView("ErrorMessageView", new ErrorMessageViewModel { ErrorMessage = "Não foi encontrado nenhum login para os dados indicados.", StackTrace = null });
-            }
-            catch (Exception e)
-            {
-                return BadRequest();
-            }          
-        }
+            return View("~/Views/Login/Login.cshtml");
+        }               
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

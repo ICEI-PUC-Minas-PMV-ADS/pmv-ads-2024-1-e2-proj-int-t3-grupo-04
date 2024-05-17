@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Numerics;
 
-namespace NextMidiaWeb.Api.Models
+namespace NextMidiaWeb.Models.Input
 {
     public class MidiaInput
     {

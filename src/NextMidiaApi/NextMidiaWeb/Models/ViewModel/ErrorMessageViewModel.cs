@@ -1,4 +1,4 @@
-﻿namespace NextMidiaWeb.Models
+﻿namespace NextMidiaWeb.Models.ViewModel
 {
     public class ErrorMessageViewModel
     {

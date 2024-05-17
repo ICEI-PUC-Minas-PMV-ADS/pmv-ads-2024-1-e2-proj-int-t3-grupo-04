@@ -1,5 +1,4 @@
-﻿using NextMidiaWeb.Api.Models;
-using NextMidiaWeb.Domain.Persistence;
+﻿using NextMidiaWeb.Domain.Persistence;
 
 namespace NextMidiaWeb.Domain.Entities
 {
