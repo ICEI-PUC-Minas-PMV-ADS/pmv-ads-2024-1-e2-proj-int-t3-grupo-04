@@ -1,7 +1,5 @@
-﻿@using NextMidiaWeb.Models.Input
-@model LoginInput
-@{
-    ViewData["Title"] = "Login";
+﻿@{
+    ViewData["Title"] = "Criar Conta";       
 }
 
 <!DOCTYPE html>
@@ -25,33 +23,52 @@
             </h1>
             <div class="login-input-wrapper">
                 <p class="heading-secondary">
-                    Login
-                </p>
-                @using (Html.BeginForm("Midia", "Login", FormMethod.Post))
+                    Criar Conta
+                </p>                             
+                @using (Html.BeginForm("CriarConta", "Conta", FormMethod.Post))
                 {
                     <div class="input-group-wrapper">
                         <div class="input-wrapper">
+                            <div class="input-label">Nome de Usuário</div>
+                            <input name="Nome" id="Nome" type="text" />
+                            @if (ViewData["UsuarioError"] != null)
+                            {
+                                <div class="input-error-label">@ViewData["UsuarioError"]</div>
+                            }
+                        </div>
+                        <div class="input-wrapper">
                             <div class="input-label">E-mail</div>
                             <input name="Email" id="Email" type="email" />
+                            @if (ViewData["EmailError"] != null)
+                            {
+                                <div class="input-error-label">@ViewData["EmailError"]</div>
+                            }
                         </div>
                         <div class="input-wrapper">
                             <div class="input-label">Senha</div>
                             <input name="Senha" id="Senha" type="password" />
+                            @if (ViewData["SenhaError"] != null)
+                            {
+                                <div class="input-error-label">@ViewData["SenhaError"]</div>
+                            }
                         </div>
-                    </div>
-                    <div class="buttom-group-wrapper">
-                        <button class="home-btn" type="submit">Login</button>
-                        <button class="home-btn"
-                                type="button"
-                                onclick="window.location.href='@Url.Action("Index", "Midia")';">
-                            Entrar como convidado
-                        </button>
-                    </div>
+                        <div class="input-wrapper">
+                            <div class="input-label">Confirme a senha</div>
+                            <input name="ConfirmacaoSenha" id="ConfirmacaoSenha" type="password" />
+                            @if (ViewData["ConfirmacaoSenhaError"] != null)
+                            {
+                                <div class="input-error-label">@ViewData["ConfirmacaoSenhaError"]</div>
+                            }
+                        </div>
+                    </div>               
                     <button class="home-create-btn"
-                            type="button"
-                            onclick="window.location.href='@Url.Action("CriarConta", "Conta")';">
+                            type="submit">
                         Criar Conta
                     </button>
+                    @if (ViewData["GeneralError"] != null)
+                    {
+                        <div class="input-error-label">@ViewData["GeneralError"]</div>
+                    }
                 }
             </div>
         </div>

@@ -1,0 +1,55 @@
+﻿/*----------------------- */
+/*-------- Midia Info --------- */
+/*----------------------- */
+.midia-wrapper {
+    display: flex;
+    background-color: lightgray;
+    padding: 15px;
+}
+
+.midia-info-wrapper {
+    width: 60%;
+}
+
+    .midia-info-wrapper .sinopse-wrapper {
+        width: stretch;
+        font-size: 20px;
+    }
+
+    .midia-info-wrapper .tags-wrapper {
+        font-size: 20px;
+        margin-top: 50px;
+        display: flex;
+    }
+
+    .midia-info-wrapper .tag {
+        width: 15px;
+        height: 15px;
+        background-color: royalblue;
+        color: white;
+        border: 2px solid black;
+        border-radius: 20px;
+    }
+
+/*----------------------- */
+/*-------- Banner e Midias Associadas --------- */
+/*----------------------- */
+.midia-image-wrapper {
+    width: 40%;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+}
+
+    .midia-image-wrapper .vote-info-wrapper {
+        width: stretch;
+        height: 50px;
+        padding: 5px;
+        font-size: 2.5rem;
+        margin-top: 15px;
+    }
+
+img {
+    margin-left: auto;
+    margin-right: auto;
+}

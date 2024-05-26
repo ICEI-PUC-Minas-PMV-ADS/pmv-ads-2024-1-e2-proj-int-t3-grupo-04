@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="~/NextMidiaWeb.styles.css" asp-append-version="true" />
 </head>
 <body>
-    @if (Html.ViewContext.HttpContext.Request.Path.Value.ToString() == "/RedirectToLogin")
+    @if (Html.ViewContext.HttpContext.Request.Path.Value.ToString() == "/Login"
+    || Html.ViewContext.HttpContext.Request.Path.Value.ToString() == "/Conta/CriarConta")
     {
         <div></div>
     }
@@ -19,16 +20,24 @@
             <img src="img/logos/logotype.png" alt="Nextmidia logo" class="logo" />
             <nav class="main-nav">
                 <ul class="main-nav-list">
-                    <li class="nav-item"> <a class="main-nav-link" href="#"> Mídias </a> </li>
-                    <li class="nav-item"> <a class="main-nav-link" href="#"> TAGS </a> </li>
-                    <li class="nav-item"> <a class="main-nav-link" href="#"> Conta </a> </li>
-                    <li class="nav-item"> <a class="main-nav-link" href="#"> Sobre </a> </li>
-                    <li class="nav-item">
-                        <a class="main-nav-link nav-cta"
-                           asp-controller="Home"
-                           asp-action="RedirectToLogin"> Experimente já as Guest </a>
-                    </li>
-
+                    <ul class="main-nav-list">
+                        @if (Html.ViewContext.HttpContext.Request.Path.Value.ToString() == "/")
+                        {
+                            <li class="nav-item"> <a class="main-nav-link" href="#" onclick="window.location.href='@Url.Action("Index", "Sobre")';"> Sobre </a> </li>
+                            <li class="nav-item">
+                                <a class="main-nav-link nav-cta"
+                                   asp-controller="Home"
+                                   asp-action="RedirectToLogin"> Experimente já</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="nav-item"> <a class="main-nav-link" href="#" onclick="window.location.href='@Url.Action("Explorar", "Midia")';"> Midias </a> </li>
+                            <li class="nav-item"> <a class="main-nav-link" href="#" onclick="window.location.href='@Url.Action("Index", "Tag")';"> Tags </a> </li>
+                            <li class="nav-item"> <a class="main-nav-link" href="#" onclick="window.location.href='@Url.Action("Index", "Conta")';"> Conta </a> </li>                                                        
+                            <li class="nav-item"> <a class="main-nav-link" href="#" onclick="window.location.href='@Url.Action("Index", "Sobre")';"> Sobre </a> </li>
+                        }
+                    </ul>
                 </ul>
             </nav>
         </header>

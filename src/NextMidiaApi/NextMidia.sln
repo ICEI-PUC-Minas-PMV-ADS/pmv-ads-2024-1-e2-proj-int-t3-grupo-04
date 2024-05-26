@@ -3,11 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34728.123
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NextMidiaApi", "NextMidiaApi\NextMidiaApi.csproj", "{B98AB24B-477C-477C-8D4B-2325089A6E5D}"
-EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "NextMidiaScripts", "NextMidiaScripts\NextMidiaScripts.sqlproj", "{A20F0F78-A7F8-447B-9439-40EE0412360F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NextMidiaWeb", "NextMidiaWeb\NextMidiaWeb.csproj", "{20EF7A0E-B71D-4981-9933-F91C9AF2EFF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NextMidiaWeb", "NextMidiaWeb\NextMidiaWeb.csproj", "{20EF7A0E-B71D-4981-9933-F91C9AF2EFF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +13,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{B98AB24B-477C-477C-8D4B-2325089A6E5D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B98AB24B-477C-477C-8D4B-2325089A6E5D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B98AB24B-477C-477C-8D4B-2325089A6E5D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B98AB24B-477C-477C-8D4B-2325089A6E5D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A20F0F78-A7F8-447B-9439-40EE0412360F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A20F0F78-A7F8-447B-9439-40EE0412360F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A20F0F78-A7F8-447B-9439-40EE0412360F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU

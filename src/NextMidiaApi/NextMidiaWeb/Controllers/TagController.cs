@@ -3,10 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 using NextMidiaWeb.Models.Input;
 
 namespace NextMidiaWeb.Api.Controllers
-{
-    [Route("api/tag")]
-    [ApiController]
-    public class TagController : ControllerBase
+{        
+    public class TagController : Controller
     {
 
         private readonly TagService _service;
@@ -14,6 +12,13 @@ namespace NextMidiaWeb.Api.Controllers
         public TagController(TagService service)
         {
             _service = service;
+        }
+
+        [HttpGet]
+        [Route("Tag")]
+        public IActionResult Index()
+        {
+            return View();
         }
 
         [HttpGet]

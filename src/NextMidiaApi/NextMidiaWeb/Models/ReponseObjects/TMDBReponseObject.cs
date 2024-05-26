@@ -12,6 +12,7 @@
     {
         public bool adult { get; set; }
         public string backdrop_path { get; set; }
+        public string poster_path { get; set; }
         public List<string> genre_ids { get; set; }
         public long id { get; set; }
         public string original_language { get; set; }

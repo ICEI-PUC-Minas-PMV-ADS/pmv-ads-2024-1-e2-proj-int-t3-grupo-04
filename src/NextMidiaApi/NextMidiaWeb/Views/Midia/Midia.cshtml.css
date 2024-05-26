@@ -1,1 +1,36 @@
-﻿
+﻿h1 {
+    margin-top: 20px;
+    font-weight: bold;
+    font-size: 80px;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: x-large;
+}
+
+h3 {
+    font-weight: bold;
+    font-size: x-large;
+    text-decoration: underline;
+}
+
+.page-wrapper {
+    padding: 40px;
+}
+
+    .page-wrapper .midia-dia-wrapper {
+        display: flex;
+        margin-top: 50px;
+    }
+
+/* Style for carousel controls */
+.carrousel-container {
+    padding: 5px;
+    margin-top: 150px;
+    margin-bottom: 150px;
+}
+
+    .carrousel-container .carrousel-wrappper {
+        margin-top: 50px;
+    }

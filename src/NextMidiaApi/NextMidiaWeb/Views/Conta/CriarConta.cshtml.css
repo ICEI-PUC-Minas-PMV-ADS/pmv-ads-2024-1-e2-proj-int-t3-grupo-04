@@ -33,6 +33,14 @@
     margin-bottom: 5px;
 }
 
+.input-error-label {
+    font-size: 1.8rem;
+    font-size: 1.8;
+    text-align: left;
+    margin-bottom: 5px;
+    color: red;
+}
+
 .input-label {
     font-size: 1.8rem;
     font-size: 1.8;
@@ -151,26 +159,26 @@ home-btn-link:active {
     padding: 5px;
 }
 
-.home-create-btn:hover {
-    background-color: seagreen;
-    color: white;
-}
+    .home-create-btn:hover {
+        background-color: seagreen;
+        color: white;
+    }
 
-.home-create-btn:link {
-    text-decoration: none;
-}
+    .home-create-btn:link {
+        text-decoration: none;
+    }
 
-.home-create-btn:visited {
-    text-decoration: none;
-}
+    .home-create-btn:visited {
+        text-decoration: none;
+    }
 
-.home-create-btn:hover {
-    text-decoration: none;
-}
+    .home-create-btn:hover {
+        text-decoration: none;
+    }
 
-.home-create-btn:active {
-    text-decoration: none;
-}
+    .home-create-btn:active {
+        text-decoration: none;
+    }
 
 /**************************/
 /* INFO SECTION */

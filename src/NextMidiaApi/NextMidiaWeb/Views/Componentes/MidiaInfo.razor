@@ -1,0 +1,35 @@
+﻿<div class="midia-wrapper">
+    @* Info *@
+    <div class="midia-info-wrapper">
+        <h2>@midia.Nome</h2>
+        <div class="sinopse-wrapper">
+            @midia.Sinopse
+        </div>
+        <div class="tags-wrapper">
+            <h2>Tags</h2>
+            @if (midia.Tags != null)
+            {
+                @foreach (var tag in midia.Tags)
+                {
+                    <span class="tag">@midia.Tags</span>
+                }
+            }
+        </div>
+    </div>
+    @* Banner e Midias Associadas *@
+    <div class="midia-image-wrapper">
+        <img src=@("https://image.tmdb.org/t/p/w500" + @midia.ImagemPoster) />
+        <div class="vote-info-wrapper">
+            <div>Nota Média: @midia.MediaDeVotos/10</div>
+            <div>Número de Votos: @midia.ContagemDeVotos</div>
+        </div>
+        <div class="midia-associada-wrapper">
+            @* Lógica de Mídia Associada *@
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public NextMidiaWeb.Domain.Entities.Midia midia { get; set; }    
+}
