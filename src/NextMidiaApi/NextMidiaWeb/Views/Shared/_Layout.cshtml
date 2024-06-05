@@ -34,15 +34,20 @@
                         {
                             <li class="nav-item"> <a class="main-nav-link" href="#" onclick="window.location.href='@Url.Action("Explorar", "Midia")';"> Midias </a> </li>
                             <li class="nav-item"> <a class="main-nav-link" href="#" onclick="window.location.href='@Url.Action("Index", "Tag")';"> Tags </a> </li>
-                            <li class="nav-item"> <a class="main-nav-link" href="#" onclick="window.location.href='@Url.Action("Index", "Conta")';"> Conta </a> </li>                                                        
                             <li class="nav-item"> <a class="main-nav-link" href="#" onclick="window.location.href='@Url.Action("Index", "Sobre")';"> Sobre </a> </li>
+
+                            @if (this.Context.Session.GetString("UserId") != null)
+                            {
+                                <li class="nav-item"> <a class="main-nav-link" href="#" onclick="window.location.href='@Url.Action("Index", "Conta")';"> Conta </a> </li>
+                                <li class="nav-item">@this.Context.Session.GetString("UserId") - @this.Context.Session.GetString("Username")</li>
+                            }
                         }
                     </ul>
                 </ul>
             </nav>
         </header>
     }
-    <div class="">
+    <div class="" style="margin-bottom: 85px;">
         <main role="main" class="">
             @RenderBody()
         </main>

@@ -38,8 +38,13 @@ namespace NextMidiaWeb.Controllers
 
                 var user = _service.FindByEmailAndSenha(input.Email, input.Senha);
                 if (user != null)
-                    return RedirectToAction("Index","Midia");
-
+                {                    
+                    HttpContext.Session.SetString("UserId", user.Id.ToString());
+                    HttpContext.Session.SetString("UserUsername", user.Nome);
+                    HttpContext.Session.SetString("UserEmail", user.Email);
+                    HttpContext.Session.SetString("UserPassword", user.Senha);
+                    return RedirectToAction("Index", "Midia");
+                }
                 return Content("Não foi encontrado nenhum login para os dados indicados.");
             }
             catch (Exception e)

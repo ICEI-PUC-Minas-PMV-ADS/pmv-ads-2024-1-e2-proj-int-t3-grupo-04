@@ -22,7 +22,7 @@
         {
             <component type="typeof(MidiaInfo)"
                        render-mode="ServerPrerendered"
-                       param-midia="@Model.midias[0]" />
+                       param-midia="@Model.midiaDia" />
 
             <div class="carrousel-container">
                 <h3>Sua próxima mídia:</h3>
@@ -39,21 +39,40 @@
                             <!-- Wrapper for slides -->
                             <div class="carousel-inner">
                                 <div class="item active">
-                                    <img alt="Sua próxima mídia"
+                                    <div class="next-media-wrapper">
+                                        <span>@Model.midias[1].Nome - @Model.midias[1].DataLancamento.ToShortDateString()</span>
+                                    </div>
+                                    <img class="image-next-media"
+                                         alt="Sua próxima mídia"
                                          src="@Url.Content("https://image.tmdb.org/t/p/w500" + Model.midias[1].ImagemCapa)"
-                                         style="width:100%;" />
+                                         style="width:100%;"
+                                         onclick="window.location.href='@Url.Action("Midia", "Midia", new { id = Model.midias[1].Id })';" />
+                                    />
                                 </div>
 
                                 <div class="item">
-                                    <img alt="Sua próxima mídia"
+                                    <div class="next-media-wrapper">
+                                        <span>@Model.midias[2].Nome - @Model.midias[2].DataLancamento.ToShortDateString()</span>
+                                    </div>
+                                    <img class="image-next-media"
+                                         alt="Sua próxima mídia"
                                          src="@Url.Content("https://image.tmdb.org/t/p/w500" + Model.midias[2].ImagemCapa)"
-                                         style="width:100%;" />
+                                         style="width:100%;"
+                                         onclick="window.location.href='@Url.Action("Midia", "Midia", new { id = Model.midias[2].Id })';" />
+
+                                    />
                                 </div>
 
                                 <div class="item">
-                                    <img alt="Sua próxima mídia"
+                                    <div class="next-media-wrapper">
+                                        <span>@Model.midias[3].Nome - @Model.midias[3].DataLancamento.ToShortDateString()</span>
+                                    </div>
+                                    <img class="image-next-media"
+                                         alt="Sua próxima mídia"
                                          src="@Url.Content("https://image.tmdb.org/t/p/w500" + Model.midias[3].ImagemCapa)"
-                                         style="width:100%;" />
+                                         style="width:100%;"
+                                         onclick="window.location.href='@Url.Action("Midia", "Midia", new { id = Model.midias[3].Id })';" />
+                                    />
                                 </div>
                             </div>
 

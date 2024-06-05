@@ -1,35 +1,64 @@
 ﻿<div class="midia-wrapper">
+    @* Banner e Midias Associadas *@
+    <div class="midia-image-wrapper">
+        <img src=@("https://image.tmdb.org/t/p/w500" + @midia.ImagemPoster) />
+        <div class="vote-info-wrapper">            
+            <div><strong>@midia.MediaDeVotos/10 ⭐ - @midia.ContagemDeVotos voto(os)</strong></div>
+        </div>
+        <div class="midia-associada-wrapper">
+            @* Lógica de Mídia Associada *@
+        </div>
+    </div>
+
     @* Info *@
     <div class="midia-info-wrapper">
         <h2>@midia.Nome</h2>
         <div class="sinopse-wrapper">
             @midia.Sinopse
         </div>
-        <div class="tags-wrapper">
-            <h2>Tags</h2>
-            @if (midia.Tags != null)
+        <div class="extra-info-wrapper">
+            @if (midia.Status != null)
             {
-                @foreach (var tag in midia.Tags)
+                <div><strong>Status:</strong> @midia.Status</div>
+                <div><strong>Lançamento:</strong> @midia.DataLancamento.ToString("d")</div>
+            }
+            @if (midia.Verba != null && midia.Bilheteria != null)
+            {
+                <div><strong>Verba:</strong> $ @midia.Verba</div>
+                <div><strong>Biilheteria:</strong> $ @midia.Bilheteria</div>
+            }
+        </div>
+        <div>
+            @if (midia.Produtoras != null)
+            {
+                <h2>Produtoras</h2>
+                foreach (var produtora in midia.Produtoras)
                 {
-                    <span class="tag">@midia.Tags</span>
+                    <div>º @produtora.Nome</div>
                 }
             }
         </div>
-    </div>
-    @* Banner e Midias Associadas *@
-    <div class="midia-image-wrapper">
-        <img src=@("https://image.tmdb.org/t/p/w500" + @midia.ImagemPoster) />
-        <div class="vote-info-wrapper">
-            <div>Nota Média: @midia.MediaDeVotos/10</div>
-            <div>Número de Votos: @midia.ContagemDeVotos</div>
+        <div class="tags-wrapper">
+            <div>
+                @if (midia.Generos != null)
+                {
+                    <h2>Tags</h2>
+                    @foreach (var genero in midia.Generos)
+                    {
+                        <span class="tag">@genero.Nome</span>
+                    }
+                }
+                else
+                    @foreach (var genero in midia.IdsGenero)
+                    {
+                        <span class="tag">@genero</span>
+                    }
+            </div>
         </div>
-        <div class="midia-associada-wrapper">
-            @* Lógica de Mídia Associada *@
-        </div>
-    </div>
+    </div>   
 </div>
 
 @code {
     [Parameter]
-    public NextMidiaWeb.Domain.Entities.Midia midia { get; set; }    
+    public NextMidiaWeb.Domain.Entities.Midia midia { get; set; }
 }

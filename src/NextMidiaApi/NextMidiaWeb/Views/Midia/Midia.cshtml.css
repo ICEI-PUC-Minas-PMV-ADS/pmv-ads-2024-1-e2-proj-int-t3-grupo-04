@@ -33,4 +33,15 @@ h3 {
 
     .carrousel-container .carrousel-wrappper {
         margin-top: 50px;
-    }
+    } 
+
+.image-next-media:hover {
+    cursor: pointer;
+}
+
+.next-media-wrapper {
+    padding: 3px;
+    font-size: 3rem;
+    text-align: center;
+    font-weight: bold;
+}

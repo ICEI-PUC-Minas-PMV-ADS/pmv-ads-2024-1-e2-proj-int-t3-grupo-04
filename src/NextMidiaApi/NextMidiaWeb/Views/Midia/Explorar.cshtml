@@ -2,19 +2,10 @@
 @using NextMidiaWeb.Views.Componentes
 @model MidiaViewModel
 @{
-    ViewData["Title"] = "Explorar";
-    int contador = 0;
-
-    void FiltrarMidia(string filtro)
+    var contador = 0;
+    void FiltrarMidia()
     {
-        if (filtro == "popularidade")
-            Model.midias.OrderBy(md => md.ContagemDeVotos);
-
-        if (filtro == "nota")
-            Model.midias.OrderBy(md => md.MediaDeVotos);
-
-        if (filtro == "antigos")
-            Model.midias.OrderByDescending(md => md.ContagemDeVotos);
+        this.Model.midias = @Model.midias.OrderBy(md => md.ContagemDeVotos).ToList();
     }
 }
 
@@ -39,54 +30,68 @@
             @if (Model != null)
             {
                 <div class="">
+                    @************* Filtros ************@
                     <div class="explorar-buttons">
                         <div class="nav-item">
                             <label for="filter-selection">Filtrar Por:</label>
                             <div class="selecao-filtro-wrappper">
-                                <select class="filter-selection">
-                                    <option onclick="@Model.midias.OrderBy(md => md.ContagemDeVotos);" value="popularidade">Popularidade</option>
-                                    <option onclick="@Model.midias.OrderBy(md => md.MediaDeVotos);" value="nota">Visualizaçoes</option>
-                                    <option onclick="@Model.midias.OrderBy(md => md.DataLancamento);" value="recentes">Data de Lançamento</option>
-                                    <option onclick="@Model.midias.OrderByDescending(md => md.ContagemDeVotos);" value="antigos">Data de Lançamento (Mais Antigos)</option>
+                                <select>
+                                    <option onclick="@Model.midias = @Model.midias.OrderBy(md => md.ContagemDeVotos);" value="popularidade">Popularidade</option>
+                                    <option onclick="@Model.midias = @Model.midias.OrderBy(md => md.MediaDeVotos);" value="nota">Visualizaçoes</option>
+                                    <option onclick="@Model.midias = @Model.midias.OrderBy(md => md.DataLancamento);" value="recentes">Data de Lançamento</option>
+                                    <option onclick="@Model.midias = @Model.midias.OrderByDescending(md => md.ContagemDeVotos);" value="antigos">Data de Lançamento (Mais Antigos)</option>
                                 </select>
                             </div>
                         </div>
                         <div class="nav-item">
-                            <a class="main-nav-link nav-cta"
-                               asp-controller="Home"
-                               asp-action="RedirectToLogin"> Atualizar Midias</a>
+                            <label for="filter-selection">Pesquise o nome da mídia:</label>
+                            <div class="selecao-filtro-wrappper">
+                                <input type="text" />
+                            </div>
+                        </div>
+                        <div class="nav-item">
+                            <div class="selecao-filtro-wrappper">
+                                <button>Buscar</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="row">
-                        @for (int i = contador; i <= contador + 3; ++i)
-                        {
-                            <div class="col-3">
-                                <img alt="@Model.midias[i].Nome"
-                                     src="@Url.Content("https://image.tmdb.org/t/p/w500" + Model.midias[i].ImagemCapa)" />
-                            </div>
-                        }
-                        <div class="row-gap"></div>
-                        @for (int i = contador + 4; i <= contador + 7; ++i)
-                        {
-                            <div class="col-3">
-                                <img alt="@Model.midias[i].Nome"
-                                     src="@Url.Content("https://image.tmdb.org/t/p/w500" + Model.midias[i].ImagemCapa)" />
-                            </div>
-                        }
+
+                    @************* Exibiço ************@
+                    <div class="explorar-midias-wrapper">
+                        <div class="row">
+                            @for (int i = contador; i <= contador + 3; ++i)
+                            {
+                                <div class="col-3">
+                                    <img alt="@Model.midias[i].Nome"
+                                         src="@Url.Content("https://image.tmdb.org/t/p/w500" + Model.midias[i].ImagemCapa)"
+                                         onclick="window.location.href='@Url.Action("Midia", "Midia", new { id = Model.midias[i].Id })';" />
+                                </div>
+                            }
+                            <div class="row-gap"></div>
+                            @for (int i = contador + 4; i <= contador + 7; ++i)
+                            {
+                                <div class="col-3">
+                                    <img alt="@Model.midias[i].Nome"
+                                         src="@Url.Content("https://image.tmdb.org/t/p/w500" + Model.midias[i].ImagemCapa)"
+                                         onclick="window.location.href='@Url.Action("Midia", "Midia", new { id = Model.midias[i].Id })';" />
+                                </div>
+                            }
+                        </div>
+                    </div>
+
+                    @************* Melhores Midias ************@
+                    <div class="melhores-midias-wrapper">
+                        <h2>Melhores Mídias</h2>
+                        <component type="typeof(MidiaInfo)"
+                                   render-mode="ServerPrerendered"
+                                   param-midia="@Model.midias.OrderBy(md => md.MediaDeVotos).FirstOrDefault()" />
+                        <div class="gap"></div>
+                        <br />
+                        <component type="typeof(MidiaInfo)"
+                                   render-mode="ServerPrerendered"
+                                   param-midia="@Model.midias.OrderBy(md => md.MediaDeVotos).ToList<NextMidiaWeb.Domain.Entities.Midia>()[1]" />
                     </div>
                 </div>
             }
-        </div>
-        <div class="melhores-midias-wrapper">
-            <h2>Melhores Mídias</h2>
-            <component type="typeof(MidiaInfo)"
-                       render-mode="ServerPrerendered"
-                       param-midia="@Model.midias.OrderBy(md => md.MediaDeVotos).FirstOrDefault()" />
-            <div class="gap"></div>
-            <component type="typeof(MidiaInfo)"
-                       render-mode="ServerPrerendered"
-                       param-midia="@Model.midias.OrderBy(md => md.MediaDeVotos).ToList<NextMidiaWeb.Domain.Entities.Midia>()[1]" />
-        </div>
-    </div>
 </body>
 </html>

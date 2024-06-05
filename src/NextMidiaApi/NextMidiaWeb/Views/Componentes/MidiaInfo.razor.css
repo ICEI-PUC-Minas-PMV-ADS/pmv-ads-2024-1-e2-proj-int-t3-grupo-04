@@ -1,24 +1,35 @@
-﻿/*----------------------- */
+﻿h2 {
+    font-size: 5rem;
+}
+
+/*----------------------- */
 /*-------- Midia Info --------- */
 /*----------------------- */
 .midia-wrapper {
     display: flex;
-    background-color: lightgray;
-    padding: 15px;
+    padding: 35px;
+    font-size: 2rem;
 }
 
 .midia-info-wrapper {
     width: 60%;
+    text-align: left;
 }
 
     .midia-info-wrapper .sinopse-wrapper {
-        width: stretch;
-        font-size: 20px;
+        width: inherit;
+        font-size: 2rem;
+    }
+
+    .midia-info-wrapper .extra-info-wrapper {
+        margin-top: 35px;
+        margin-bottom: 35px;
+        font-size: 2rem;
     }
 
     .midia-info-wrapper .tags-wrapper {
         font-size: 20px;
-        margin-top: 50px;
+        margin-top: 30px;
         display: flex;
     }
 
@@ -29,7 +40,15 @@
         color: white;
         border: 2px solid black;
         border-radius: 20px;
+        padding: 5px;
+        margin-top: 20px;
+        margin-left: 10px;
+        padding: 10px;
     }
+
+        .midia-info-wrapper .tag :hover {
+            cursor: pointer;
+        }
 
 /*----------------------- */
 /*-------- Banner e Midias Associadas --------- */
@@ -39,17 +58,14 @@
     align-content: center;
     align-items: center;
     justify-items: center;
+    text-align: center;
 }
 
     .midia-image-wrapper .vote-info-wrapper {
-        width: stretch;
+        text-align: center;
+        width: initial;
         height: 50px;
         padding: 5px;
         font-size: 2.5rem;
-        margin-top: 15px;
+        margin-top: 15px;        
     }
-
-img {
-    margin-left: auto;
-    margin-right: auto;
-}

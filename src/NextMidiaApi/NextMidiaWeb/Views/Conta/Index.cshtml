@@ -1,14 +1,10 @@
-﻿@page
-@model NextMidiaWeb.Views.Conta.IndexModel
-@{
-}
-
+﻿@model NextMidiaWeb.Models.ViewModel.ContaVidewModel
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -16,8 +12,31 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div>
-        Página de Conta
+    <div class="page-wrapper">
+        <h1>Perfil de Usuário</h1>
+        @if (Model != null)
+        {
+            @using (Html.BeginForm("AtualizarCadastro", "Login", FormMethod.Post))
+            {
+                <div class="input-group-wrapper">
+                    <div class="input-wrapper">
+                        <div class="input-label">Username</div>
+                        <input name="Username" id="Username" type="text" value="@Model.Username" />
+                    </div>
+                    <div class="input-wrapper">
+                        <div class="input-label">E-mail</div>
+                        <input name="Email" id="Email" type="email" value="@Model.Email" />
+                    </div>
+                    <div class="input-wrapper">
+                        <div class="input-label">Senha</div>
+                        <input name="Senha" id="Senha" type="password" value="@Model.Password" />
+                    </div>
+                    <div class="buttom-group-wrapper">
+                        <button class="home-btn" type="submit">Atualizar Dados</button>                     
+                    </div>
+                </div>
+            }
+        }
     </div>
 </body>
 </html>

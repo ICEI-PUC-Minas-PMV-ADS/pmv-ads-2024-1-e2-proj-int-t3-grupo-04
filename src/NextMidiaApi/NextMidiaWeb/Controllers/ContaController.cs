@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NextMidiaWeb.Domain.Entities;
 using NextMidiaWeb.Models.Input;
+using NextMidiaWeb.Models.ViewModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace NextMidiaWeb.Controllers
 {
@@ -15,11 +17,26 @@ namespace NextMidiaWeb.Controllers
             _service = service;
         }
 
-
         [Route("Conta")]
         public IActionResult Index()
         {
-            return View();
+            string email = HttpContext.Session.GetString("UserEmail") ?? "";
+            string senha = HttpContext.Session.GetString("UserPassword") ?? "";
+
+            var user = _service.FindByEmailAndSenha(email, senha);
+            if (user != null)
+            {
+                ContaVidewModel model = new ContaVidewModel
+                {
+                    Userid = user.Id,
+                    Username = user.Nome,
+                    Email = user.Email,
+                    Password = user.Senha
+                };
+                return View("~/Views/Conta/Index.cshtml", model);
+            }
+            else
+                return Content("Erro ao carregar perfil de usuário, tente novamente.");
         }
 
         [Route("Conta/CriarConta")]

@@ -18,6 +18,9 @@ namespace NextMidiaWeb.Controllers
 
         public IActionResult Index()
         {
+            //HttpContext.Session.SetString("UserId", null);
+            //HttpContext.Session.SetString("UserUsername", null);
+            //HttpContext.Session.SetString("UserPassword", null);
             return View();
         }
 
