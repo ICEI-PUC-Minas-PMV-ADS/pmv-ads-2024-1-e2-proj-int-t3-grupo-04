@@ -1,3 +1,3 @@
 ﻿<Project>
-  <Import Project="..\build\NextMidiaApi.props" />
+  <Import Project="../build/NextMidiaApi.props" />
 </Project>

@@ -1,35 +1,27 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaApi\\NextMidiaApi.csproj": {}
+    "/Users/bruno/Projects/pmv-ads-2024-1-e2-proj-int-t3-grupo-04/src/NextMidiaApi/NextMidiaApi/NextMidiaApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaApi\\NextMidiaApi.csproj": {
+    "/Users/bruno/Projects/pmv-ads-2024-1-e2-proj-int-t3-grupo-04/src/NextMidiaApi/NextMidiaApi/NextMidiaApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaApi\\NextMidiaApi.csproj",
+        "projectUniqueName": "/Users/bruno/Projects/pmv-ads-2024-1-e2-proj-int-t3-grupo-04/src/NextMidiaApi/NextMidiaApi/NextMidiaApi.csproj",
         "projectName": "NextMidiaApi",
-        "projectPath": "C:\\Users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaApi\\NextMidiaApi.csproj",
-        "packagesPath": "C:\\Users\\aaron\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaApi\\obj\\",
+        "projectPath": "/Users/bruno/Projects/pmv-ads-2024-1-e2-proj-int-t3-grupo-04/src/NextMidiaApi/NextMidiaApi/NextMidiaApi.csproj",
+        "packagesPath": "/Users/bruno/.nuget/packages/",
+        "outputPath": "/Users/bruno/Projects/pmv-ads-2024-1-e2-proj-int-t3-grupo-04/src/NextMidiaApi/NextMidiaApi/obj/",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files\\DevExpress 22.1\\Components\\Offline Packages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-        ],
         "configFilePaths": [
-          "C:\\Users\\aaron\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.1.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/bruno/NuGet.Config",
+          "/Users/bruno/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\DevExpress 22.1\\Components\\System\\Components\\Packages": {},
-          "https://api.nuget.org/v3/index.json": {},
-          "https://tfs.wgcsistemas.com.br/tfs/Projetos%20-%20WGC/_packaging/Nuget.WGC/nuget/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
@@ -102,7 +94,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.301/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

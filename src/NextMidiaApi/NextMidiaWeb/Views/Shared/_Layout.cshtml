@@ -5,8 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - NextMidiaWeb</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/NextMidiaWeb.styles.css" asp-append-version="true" />
+    @*<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+        <link rel="stylesheet" href="~/NextMidiaWeb.styles.css" asp-append-version="true" />*@
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/general.css" />
 </head>
 <body>
     @if (Html.ViewContext.HttpContext.Request.Path.Value.ToString() == "/Login"
@@ -16,46 +18,100 @@
     }
     else
     {
-        <header class="header">
-            <img src="img/logos/logotype.png" alt="Nextmidia logo" class="logo" />
-            <nav class="main-nav">
-                <ul class="main-nav-list">
-                    <ul class="main-nav-list">
-                        @if (Html.ViewContext.HttpContext.Request.Path.Value.ToString() == "/")
-                        {
-                            <li class="nav-item"> <a class="main-nav-link" href="#" onclick="window.location.href='@Url.Action("Index", "Sobre")';"> Sobre </a> </li>
-                            <li class="nav-item">
-                                <a class="main-nav-link nav-cta"
-                                   asp-controller="Home"
-                                   asp-action="RedirectToLogin"> Experimente já</a>
-                            </li>
-                        }
-                        else
-                        {
-                            <li class="nav-item"> <a class="main-nav-link" href="#" onclick="window.location.href='@Url.Action("Explorar", "Midia")';"> Midias </a> </li>
-                            <li class="nav-item"> <a class="main-nav-link" href="#" onclick="window.location.href='@Url.Action("Index", "Tag")';"> Tags </a> </li>
-                            <li class="nav-item"> <a class="main-nav-link" href="#" onclick="window.location.href='@Url.Action("Index", "Sobre")';"> Sobre </a> </li>
+<header class="header">
+    <img src="Images/logotype.webp" alt="Nextmidia logo" class="logo" />
+    <nav class="main-nav">
+        <ul class="main-nav-list">
+            <ul class="main-nav-list">
+                @if (Html.ViewContext.HttpContext.Request.Path.Value.ToString() == "/")
+                {
+                    <li class="nav-item"> <a class="main-nav-link" href="#" onclick="window.location.href='@Url.Action("Index", "Sobre")';"> Sobre </a> </li>
+                    <li class="nav-item">
+                        <a class="main-nav-link nav-cta"
+                           asp-controller="Home"
+                           asp-action="RedirectToLogin"> Experimente já</a>
+                    </li>
+                }
+                else
+                {
+                    <li class="nav-item"> <a class="main-nav-link" href="#" onclick="window.location.href='@Url.Action("Explorar", "Midia")';"> Midias </a> </li>
+                    <li class="nav-item"> <a class="main-nav-link" href="#" onclick="window.location.href='@Url.Action("Index", "Tag")';"> Tags </a> </li>
+                    <li class="nav-item"> <a class="main-nav-link" href="#" onclick="window.location.href='@Url.Action("Index", "Sobre")';"> Sobre </a> </li>
 
-                            @if (this.Context.Session.GetString("UserId") != null)
-                            {
-                                <li class="nav-item"> <a class="main-nav-link" href="#" onclick="window.location.href='@Url.Action("Index", "Conta")';"> Conta </a> </li>
-                                <li class="nav-item">@this.Context.Session.GetString("UserId") - @this.Context.Session.GetString("Username")</li>
-                            }
-                        }
-                    </ul>
-                </ul>
-            </nav>
-        </header>
+                    @if (this.Context.Session.GetString("UserId") != null)
+                    {
+                        <li class="nav-item"> <a class="main-nav-link" href="#" onclick="window.location.href='@Url.Action("Index", "Conta")';"> Conta </a> </li>
+                        <li class="nav-item">@this.Context.Session.GetString("UserId") - @this.Context.Session.GetString("Username")</li>
+                    }
+                }
+            </ul>
+        </ul>
+    </nav>
+</header>
     }
-    <div class="" style="margin-bottom: 85px;">
+    <div >
         <main role="main" class="">
             @RenderBody()
         </main>
     </div>
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - NextMidiaWeb - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
+    <footer>
+        <footer class="footer">
+            <div class="container grid grid--5-cols grid--footer">
+                <div class="logo-col">
+                    <a href="#" class="footer-logo">
+                        <img src="Images/logotype.webp" alt="Nextmidia logo" class="logo" />
+                    </a>
+
+                    <ul class="social-links">
+                        <li><a class="footer-link" href="#"><ion-icon class="social-icon" name="logo-instagram"></ion-icon></a></li>
+                        <li><a class="footer-link" href="#"><ion-icon class="social-icon" name="logo-facebook"></ion-icon></a></li>
+                        <li><a class="footer-link" href="#"><ion-icon class="social-icon" name="logo-twitter"></ion-icon></a></li>
+
+                    </ul>
+                    <p class="copyright">Copyright &copy; 2024. Todos os direitos reservados.</p>
+
+                </div>
+                <div class="address-col">
+                    <p class="footer-heading">Entre em contato.</p>
+                    <address class="contacts">
+                        <p class="address">
+                            Local, Bairro, Belo Horizonte, MG, Brasil.
+                        </p>
+                        <p>
+                            <a class="footer-link" href="tel:(31)99999-9999">(31)99999-9999</a>
+                            <a class="footer-link" href="mailto:contato@nextmidia.com">contato@nextmidia.com</a>
+                        </p>
+                    </address>
+                </div>
+                <div class="nav-col">
+                    <p class="footer-heading">Conta</p>
+                    <ul class="footer-nav">
+                        <li> <a class="footer-link" href="#">Criar conta</a></li>
+                        <li> <a class="footer-link" href="#">Entrar</a></li>
+                        <li> <a class="footer-link" href="#">Criar conta</a></li>
+                        <li> <a class="footer-link" href="#">Criar conta</a></li>
+                    </ul>
+                </div>
+                <div class="nav-col">
+                    <p class="footer-heading">Recursos</p>
+                    <ul class="footer-nav">
+                        <li> <a class="footer-link" href="#">Saiba mais</a></li>
+                        <li> <a class="footer-link" href="#">Criar conta</a></li>
+                        <li> <a class="footer-link" href="#">Criar conta</a></li>
+                        <li> <a class="footer-link" href="#">Criar conta</a></li>
+                    </ul>
+                </div>
+                <div class="nav-col">
+                    <p class="footer-heading">Sobre</p>
+                    <ul class="footer-nav">
+                        <li> <a class="footer-link" href="#">Criar conta</a></li>
+                        <li> <a class="footer-link" href="#">Criar conta</a></li>
+                        <li> <a class="footer-link" href="#">Criar conta</a></li>
+                        <li> <a class="footer-link" href="#">Criar conta</a></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

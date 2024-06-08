@@ -3175,7 +3175,7 @@
       ]
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
-      "sha512": "+qEBknIT34jbnjtV6vFSkCIprO7Hae6/l3GjoEgLzHDrUktDK/oOe87IKoflaQX4yfNYy7APcXAzYTVQZ4uEgw==",
+      "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
       "type": "package",
       "path": "microsoft.netcore.platforms/1.1.0",
       "files": [
@@ -3190,11 +3190,12 @@
       ]
     },
     "Microsoft.NETCore.Targets/1.1.0": {
-      "sha512": "BNWx3BIIiocyAbcnT5Z5TlAk4mRxtpxQ4NOwn5h3f6nVh9YRmZ+XPASZJ1vnBYoe7DkogTPosaYYNmzbyDYyGw==",
+      "sha512": "aOZA3BWfz9RXjpzt0sRJJMjAscAUm3Hoa4UWAfceV9UTYxgwZ1lZt5nO2myFf+/jetYQo4uTP7zS8sJY67BBxg==",
       "type": "package",
       "path": "microsoft.netcore.targets/1.1.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -3909,11 +3910,12 @@
       ]
     },
     "System.Runtime/4.3.0": {
-      "sha512": "SZCLRNIxzRjbhn0gZuudb6V84YilSkiUmPkVVFvd8Oaxv5YxrNdQwGNBTPaPgfk7AsQEHbb4vu6Sn/yJB8xN0Q==",
+      "sha512": "JufQi0vPQ0xGnAczR13AUFglDyVYt4Kqnz1AZaiKZ5+GICq0/1MH/mO/eAJHt/mHW1zjKBJd7kV26SrxddAhiw==",
       "type": "package",
       "path": "system.runtime/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4291,11 +4293,12 @@
       ]
     },
     "System.Text.Encoding/4.3.0": {
-      "sha512": "bvt1vgCOPzc0B2/xiUNWuQRYUBUVScndlRA0h/ryGU2ygIhCFPCwCWrwUf1WfvID7FrjoiFziBFn7fGl+5pFng==",
+      "sha512": "BiIg+KWaSDOITze6jGQynxg64naAPtqGHBwDrLaCtixsa5bKiR8dpPOHA7ge3C0JJQizJE+sfkz1wV+BAKAYZw==",
       "type": "package",
       "path": "system.text.encoding/4.3.0",
       "files": [
         ".nupkg.metadata",
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -4604,36 +4607,26 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\aaron\\.nuget\\packages\\": {},
-    "C:\\Program Files\\DevExpress 22.1\\Components\\Offline Packages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "/Users/bruno/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaApi\\NextMidiaApi.csproj",
+      "projectUniqueName": "/Users/bruno/Projects/pmv-ads-2024-1-e2-proj-int-t3-grupo-04/src/NextMidiaApi/NextMidiaApi/NextMidiaApi.csproj",
       "projectName": "NextMidiaApi",
-      "projectPath": "C:\\Users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaApi\\NextMidiaApi.csproj",
-      "packagesPath": "C:\\Users\\aaron\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\aaron\\source\\repos\\espotei\\pmv-ads-2024-1-e2-proj-int-t3-grupo-04\\src\\NextMidiaApi\\NextMidiaApi\\obj\\",
+      "projectPath": "/Users/bruno/Projects/pmv-ads-2024-1-e2-proj-int-t3-grupo-04/src/NextMidiaApi/NextMidiaApi/NextMidiaApi.csproj",
+      "packagesPath": "/Users/bruno/.nuget/packages/",
+      "outputPath": "/Users/bruno/Projects/pmv-ads-2024-1-e2-proj-int-t3-grupo-04/src/NextMidiaApi/NextMidiaApi/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\DevExpress 22.1\\Components\\Offline Packages",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
-        "C:\\Users\\aaron\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 22.1.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/bruno/NuGet.Config",
+        "/Users/bruno/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\DevExpress 22.1\\Components\\System\\Components\\Packages": {},
-        "https://api.nuget.org/v3/index.json": {},
-        "https://tfs.wgcsistemas.com.br/tfs/Projetos%20-%20WGC/_packaging/Nuget.WGC/nuget/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net8.0": {
@@ -4706,7 +4699,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.301/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
