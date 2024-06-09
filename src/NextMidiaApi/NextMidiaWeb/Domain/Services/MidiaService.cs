@@ -13,25 +13,25 @@ namespace NextMidiaWeb.Domain.Entities
 
         public Midia FindById(long id)
         {
-            return  _context.midias.SingleOrDefault(d => d.Id == id);
+            return  _context.midia.SingleOrDefault(d => d.Id == id);
         }
 
         public Midia FindByNome(string nome)
         {
-            return _context.midias.SingleOrDefault(d => d.Nome == nome && d.IsDeleted == false);
+            return _context.midia.SingleOrDefault(d => d.Nome == nome && d.IsDeleted == false);
         }
 
-        public List<Midia> FindAll() { return _context.midias.Where(d => !d.IsDeleted).ToList(); }
+        public List<Midia> FindAll() { return _context.midia.Where(d => !d.IsDeleted).ToList(); }
 
         public void Create(Midia midia)
         {
-            _context.midias.Add(midia);
+            _context.midia.Add(midia);
             _context.SaveChanges();
         }
 
         public void Update(Midia midia)
         {
-            _context.midias.Update(midia);
+            _context.midia.Update(midia);
             _context.SaveChanges();
         }
 

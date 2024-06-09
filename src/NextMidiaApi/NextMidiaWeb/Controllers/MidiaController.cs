@@ -9,6 +9,7 @@ using NextMidiaWeb.Models.ViewModel;
 using NextMidiaWeb.Controllers;
 using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using NextMidiaWeb.Domain.Services;
 
 namespace NextMidiaWeb.Api.Controllers
 {
@@ -18,16 +19,19 @@ namespace NextMidiaWeb.Api.Controllers
         private readonly ILogger<LoginController> _logger;
         private readonly MidiaService _service;
         private readonly TagService _tagService;
+        private readonly MidiaFavoritadaService _midiaFavoritadaService;
         private readonly MidiaTagDbContext _context;
         private readonly string Lang = "pt-BR";
         private readonly string TMDB_API_KEY = Configuration.ConfigurationManager.AppSetting["IntegrationAPIKeys:TMDB_API_KEY"] ?? "";
+        private int pagExplorar = 1;
         #endregion
 
         #region Constructors
-        public MidiaController(MidiaService service, TagService tagService, MidiaTagDbContext context, ILogger<LoginController> logger)
+        public MidiaController(MidiaService service, TagService tagService, MidiaFavoritadaService midiaFavoritadaService, MidiaTagDbContext context, ILogger<LoginController> logger)
         {
             _service = service;
             _tagService = tagService;
+            _midiaFavoritadaService = midiaFavoritadaService;
             _context = context;
             _logger = logger;
         }
@@ -52,6 +56,36 @@ namespace NextMidiaWeb.Api.Controllers
             else
                 return JsonConvert.DeserializeObject<TMDBTrailersListObject>(response.Content!);
         }
+
+        private List<Midia> PreencherListaMidias(TMDBMediaListReponseObject midias)
+        {
+            if (midias != null)
+            {
+                var listaMidiasDTO = new List<Midia>();
+                if (midias.results.Count > 0)
+                    foreach (var md in midias.results)
+                    {
+                        listaMidiasDTO.Add(
+                                new Midia
+                                {
+                                    Id = md.id,
+                                    Nome = md.title,
+                                    Sinopse = md.overview,
+                                    MediaDeVotos = md.vote_average,
+                                    ContagemDeVotos = md.vote_count,
+                                    ImagemCapa = md.backdrop_path,
+                                    ImagemPoster = md.poster_path,
+                                    DataLancamento = md.release_date,
+                                    IdsGenero = md.genre_ids
+                                }
+                            );
+                    }
+
+                return listaMidiasDTO;
+            }
+            else
+                return new List<Midia>();
+        }
         #endregion
 
         #region Endpoints    
@@ -62,7 +96,7 @@ namespace NextMidiaWeb.Api.Controllers
             {
                 var midias =
                 (TMDBMediaListReponseObject)GetRequestContent(
-                    "https://api.themoviedb.org/3/movie/popular",
+                    "https://api.themoviedb.org/3/trending/all/day",
                     ReponseType.List
                 ).Result;
 
@@ -151,42 +185,22 @@ namespace NextMidiaWeb.Api.Controllers
         }
 
         [Route("Midia/Explorar")]
-        public IActionResult Explorar()
+        public IActionResult Explorar(int page = 1)
         {
             try
-            {
+            {                                
                 var midiaDTO = new List<Midia>();
                 var midias =
                 (TMDBMediaListReponseObject)GetRequestContent(
-                    $"https://api.themoviedb.org/3/movie/top_rated?language=pt-BR&page=1",
+                    $"https://api.themoviedb.org/3/movie/top_rated?language={Lang}&page={page}",
                     ReponseType.List
-                ).Result;
+                ).Result;                
 
-                if (midias != null)
-                {
-                    if (midias.results.Count > 0)
-                        foreach (var md in midias.results)
-                        {
-                            midiaDTO.Add(
-                                    new Midia
-                                    {
-                                        Id = md.id,
-                                        Nome = md.title,
-                                        Sinopse = md.overview,
-                                        MediaDeVotos = md.vote_average,
-                                        ContagemDeVotos = md.vote_count,
-                                        ImagemCapa = md.backdrop_path,
-                                        ImagemPoster = md.poster_path,
-                                        DataLancamento = md.release_date,
-                                        IdsGenero = md.genre_ids
-                                    }
-                                );
-                        }
-                }
+                var lista = PreencherListaMidias(midias);
+                if (lista.Count > 0)
+                    return View("~/Views/Midia/Explorar.cshtml", new MidiaViewModel { midias = lista });
                 else
-                    Content("Ocorreu um erro ao retornar os dados, retorna a página e teste novamente.");
-
-                return View("~/Views/Midia/Explorar.cshtml", new MidiaViewModel { midias = midiaDTO });
+                    return Content("A busca nao retornou resultados.");
             }
             catch (Exception ex)
             {
@@ -201,7 +215,7 @@ namespace NextMidiaWeb.Api.Controllers
             {
                 var midiaObj =
                     (TMDBMediaDetailObject)GetRequestContent(
-                        $"https://api.themoviedb.org/3/movie/{id}",
+                        $"https://api.themoviedb.org/3/movie/{id}language={Lang}",
                         ReponseType.Object
                     ).Result;
 
@@ -244,7 +258,7 @@ namespace NextMidiaWeb.Api.Controllers
                         Generos = generos,
                         Status = midiaObj.status,
                         Produtoras = produtoras,
-                        Trailer = traillerDTO.key
+                        Trailer = traillerDTO == null ? null : traillerDTO.key
                     };
 
                     return View("~/Views/Midia/DetalheMidia.cshtml", new DetalheMidiaViewModel { midia = midiaDTO });
@@ -258,52 +272,90 @@ namespace NextMidiaWeb.Api.Controllers
             }
         }
 
+        [Route("Midia/{id}/Favoritar")]
+        public IActionResult FavoritarMidia(int id)
+        {
+            try
+            {
+                var idUsuario = HttpContext.Session.GetString("UserId") ?? "";
+                if (idUsuario != "")
+                {
+                    var midia = this._service.FindById(id);
+                    if (midia == null || midia.Id < 0) // Criar referência da mídia no banco de dados caso não exista.
+                        this._service.Create(new Midia
+                        {
+                            Id = id,
+                            Nome = ""
+                        });
+
+                    _midiaFavoritadaService.Create(new MidiaFavoritada
+                    {
+                        Data = DateTime.Now.Date,
+                        Midia_Id = id,
+                        Usuario_Id = long.Parse(idUsuario)
+                    }); ;
+
+                    return this.Midia(id).Result;
+                }
+                else
+                    return Content("É necessário fazer o login para favoritar esta mídia.");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         [HttpPost]
-        public IActionResult Create(MidiaInput input)
+        [Route("Midia/RealizarBusca")]
+        public IActionResult RealizarBusca([FromForm] PesquisaFiltrosInput input)
         {
-
-            Midia midia = new()
+            try
             {
-                Nome = input.Nome,
-                Sinopse = input.Sinopse,
-            };
+                if (input.TextoLivre == null)
+                    return Content("A caixa de texto deve ser preenchida para realizar buscas.");
 
-            _service.Create(midia);
+                var midias =
+               (TMDBMediaListReponseObject)GetRequestContent(
+                    $"https://api.themoviedb.org/3/search/collection?query={input.TextoLivre}&language={Lang}",
+                   ReponseType.List
+               ).Result;
 
-            //return CreatedAtAction(nameof(GetById), new { id = midia.Id }, midia);
-            return Ok();
-        }
+                var lista = PreencherListaMidias(midias);
+                if (input.FiltrarPor != null)
+                {
+                    switch (input.FiltrarPor)
+                    {
+                        case eFiltrarPor.DataLancamento:
+                            lista = lista.OrderBy(lst => lst.DataLancamento).ToList();
+                            break;
 
-        [HttpPut("{id}")]
-        public IActionResult Update(long id, MidiaInput input)
-        {
-            var midia = _service.FindById(id);
+                        case eFiltrarPor.DataLancamentoDescrescente:
+                            lista = lista.OrderByDescending(lst => lst.DataLancamento).ToList();
+                            break;
 
-            if (midia == null)
-            {
-                return NotFound();
+                        case eFiltrarPor.Visualizacoes:
+                            lista = lista.OrderBy(lst => lst.Bilheteria).ToList();
+                            break;
+
+                        case eFiltrarPor.Popularidade:
+                            lista = lista.OrderBy(lst => lst.MediaDeVotos).ToList();
+                            break;
+
+                        default:
+                            break;
+                    }
+                }
+
+                if (lista.Count > 0)
+                    return View("~/Views/Midia/Explorar.cshtml", new MidiaViewModel { midias = lista });
+                else
+                    return Content("A busca nao retornou resultados.");
             }
-
-            midia.Update(input);
-
-            _service.Update(midia);
-
-            return NoContent();
-        }
-
-        [HttpDelete("{id}")]
-        public IActionResult Delete(long id)
-        {
-            var midia = _service.FindById(id);
-
-            if (midia == null)
+            catch (Exception)
             {
-                return NotFound();
+                throw;
             }
-
-            _service.Delete(midia);
-
-            return NoContent();
         }
 
         [HttpPost("{id}/add-tag/{tagId}")]

@@ -36,6 +36,9 @@ namespace NextMidiaWeb.Domain.Entities
 
         public void Create(Usuario usuario)
         {
+            var id = _context.Usuario.OrderByDescending(u => u.Id).First().Id;
+            usuario.Id = id + 1;
+
             _context.Usuario.Add(usuario);
             _context.SaveChanges();
         }
@@ -47,9 +50,9 @@ namespace NextMidiaWeb.Domain.Entities
                 var jaExisteFavorito = serviceMidiaFavoritada.GetById(md.Id, usuario.Id) != null;
 
                 if (!jaExisteFavorito)
-                    serviceMidiaFavoritada.Create(new MidiaFavoritada { IdMidia = md.Id, IdUsuario = usuario.Id });
+                    serviceMidiaFavoritada.Create(new MidiaFavoritada { Midia_Id = md.Id, Usuario_Id = usuario.Id });
                 else
-                    _contextMidiaFavorita.Remove(new MidiaFavoritada { IdMidia = md.Id, IdUsuario = usuario.Id });
+                    _contextMidiaFavorita.Remove(new MidiaFavoritada { Midia_Id = md.Id, Usuario_Id = usuario.Id });
             }
 
             _context.Usuario.Update(usuario);

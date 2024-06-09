@@ -5,52 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - NextMidiaWeb</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    @*<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-        <link rel="stylesheet" href="~/NextMidiaWeb.styles.css" asp-append-version="true" />*@
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/NextMidiaWeb.styles.css" asp-append-version="true" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/general.css" />
 </head>
-<body>
-    @if (Html.ViewContext.HttpContext.Request.Path.Value.ToString() == "/Login"
-    || Html.ViewContext.HttpContext.Request.Path.Value.ToString() == "/Conta/CriarConta")
-    {
-        <div></div>
-    }
-    else
-    {
-<header class="header">
-    <img src="Images/logotype.webp" alt="Nextmidia logo" class="logo" />
-    <nav class="main-nav">
-        <ul class="main-nav-list">
+@if (Html.ViewContext.HttpContext.Request.Path.Value.ToString() == "/Login"
+|| Html.ViewContext.HttpContext.Request.Path.Value.ToString() == "/Conta/CriarConta")
+{
+    <div></div>
+}
+else
+{
+    <header class="header">
+        <img src="Images/logotype.webp"
+             alt="Nextmidia logo"
+             class="logo"
+             onclick="window.location.href='@Url.Action("Index", "Midia")'" />
+        <nav class="main-nav">
             <ul class="main-nav-list">
-                @if (Html.ViewContext.HttpContext.Request.Path.Value.ToString() == "/")
-                {
-                    <li class="nav-item"> <a class="main-nav-link" href="#" onclick="window.location.href='@Url.Action("Index", "Sobre")';"> Sobre </a> </li>
-                    <li class="nav-item">
-                        <a class="main-nav-link nav-cta"
-                           asp-controller="Home"
-                           asp-action="RedirectToLogin"> Experimente já</a>
-                    </li>
-                }
-                else
-                {
-                    <li class="nav-item"> <a class="main-nav-link" href="#" onclick="window.location.href='@Url.Action("Explorar", "Midia")';"> Midias </a> </li>
-                    <li class="nav-item"> <a class="main-nav-link" href="#" onclick="window.location.href='@Url.Action("Index", "Tag")';"> Tags </a> </li>
-                    <li class="nav-item"> <a class="main-nav-link" href="#" onclick="window.location.href='@Url.Action("Index", "Sobre")';"> Sobre </a> </li>
-
-                    @if (this.Context.Session.GetString("UserId") != null)
+                <ul class="main-nav-list">
+                    @if (Html.ViewContext.HttpContext.Request.Path.Value.ToString() == "/")
                     {
-                        <li class="nav-item"> <a class="main-nav-link" href="#" onclick="window.location.href='@Url.Action("Index", "Conta")';"> Conta </a> </li>
-                        <li class="nav-item">@this.Context.Session.GetString("UserId") - @this.Context.Session.GetString("Username")</li>
+                        <li class="nav-item"> <a class="main-nav-link" href="#" onclick="window.location.href='@Url.Action("Index", "Sobre")';"> Sobre </a> </li>
+                        <li class="nav-item">
+                            <a class="main-nav-link nav-cta"
+                               asp-controller="Home"
+                               asp-action="RedirectToLogin"> Experimente já</a>
+                        </li>
                     }
-                }
+                    else
+                    {
+                        <li class="nav-item"> <a class="main-nav-link" href="#" onclick="window.location.href='@Url.Action("Explorar", "Midia")';"> Midias </a> </li>
+                        <li class="nav-item"> <a class="main-nav-link" href="#" onclick="window.location.href='@Url.Action("Index", "Tag")';"> Tags </a> </li>
+                        <li class="nav-item"> <a class="main-nav-link" href="#" onclick="window.location.href='@Url.Action("Index", "Sobre")';"> Sobre </a> </li>
+
+                        @if (this.Context.Session.GetString("UserId") != null)
+                        {
+                            <li class="nav-item"> <a class="main-nav-link" href="#" onclick="window.location.href='@Url.Action("Index", "Conta")';"> Conta </a> </li>
+                            <li class="nav-item">@this.Context.Session.GetString("UserId") - @this.Context.Session.GetString("UserUsername")</li>
+                        }
+                    }
+                </ul>
             </ul>
-        </ul>
-    </nav>
-</header>
-    }
-    <div >
-        <main role="main" class="">
+        </nav>
+    </header>
+}
+<body>
+    <div>
+        <main role="main" class="renderedBody">
             @RenderBody()
         </main>
     </div>
@@ -113,9 +116,9 @@
             </div>
         </footer>
     </footer>
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @await RenderSectionAsync("Scripts", required: false)
 </body>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+@await RenderSectionAsync("Scripts", required: false)
 </html>

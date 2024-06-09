@@ -1,7 +1,36 @@
-﻿.trailer-wrapper {
+﻿.page-wrapper {
+    padding: 40px;
+}
+
+.trailer-wrapper {
     padding: 5px;
     justify-items: center;
     align-items: center;
     align-content: center;
     text-align: center;
 }
+
+
+.custom-btn {
+    background-color: goldenrod;
+    padding: 5px;
+    width: min-content;
+    text-align: left;
+    margin-top: auto;
+ /*   margin-left: auto;
+    margin-right: auto;*/
+}
+
+    .custom-btn:hover {
+        cursor: pointer;
+        background-color: darkorange;
+    }
+
+    .custom-btn .btn-link {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+    }

@@ -10,7 +10,7 @@ namespace NextMidiaWeb.Domain.Persistence
 
         }
 
-        public DbSet<Midia> midias { get; set; }
+        public DbSet<Midia> midia { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

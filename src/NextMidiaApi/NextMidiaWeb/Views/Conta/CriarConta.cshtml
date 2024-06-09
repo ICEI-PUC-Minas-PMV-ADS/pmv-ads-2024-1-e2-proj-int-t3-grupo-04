@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Criar Conta";       
+    ViewData["Title"] = "Criar Conta";    
 }
 
 <!DOCTYPE html>
@@ -19,12 +19,12 @@
         @* Login *@
         <div class="login-divisor">
             <h1 class="heading-primary">
-                Next Midia Logo
+                <img src="Images/logotype.webp" alt="Nextmidia logo" class="logo" />
             </h1>
             <div class="login-input-wrapper">
                 <p class="heading-secondary">
                     Criar Conta
-                </p>                             
+                </p>
                 @using (Html.BeginForm("CriarConta", "Conta", FormMethod.Post))
                 {
                     <div class="input-group-wrapper">
@@ -60,7 +60,7 @@
                                 <div class="input-error-label">@ViewData["ConfirmacaoSenhaError"]</div>
                             }
                         </div>
-                    </div>               
+                    </div>
                     <button class="home-create-btn"
                             type="submit">
                         Criar Conta

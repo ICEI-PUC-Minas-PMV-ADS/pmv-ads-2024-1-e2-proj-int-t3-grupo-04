@@ -10,12 +10,12 @@ namespace NextMidiaWeb.Domain.Persistence
 
         }
 
-        public DbSet<MidiaFavoritada> midiaFavoritada { get; set; }
+        public DbSet<MidiaFavoritada> midia_Favoritada { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             builder.Entity<MidiaFavoritada>()
-                .HasKey(midiaTag => new { midiaTag.IdMidia, midiaTag.IdUsuario });
+                .HasKey(midiaTag => new { midiaTag.Midia_Id, midiaTag.Usuario_Id });
         }
     }
 }

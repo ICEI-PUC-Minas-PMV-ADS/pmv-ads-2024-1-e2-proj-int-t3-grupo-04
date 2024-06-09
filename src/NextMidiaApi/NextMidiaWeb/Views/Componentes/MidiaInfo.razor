@@ -2,9 +2,9 @@
     @* Banner e Midias Associadas *@
     <div class="midia-image-wrapper">
         <img src=@("https://image.tmdb.org/t/p/w500" + @midia.ImagemPoster) />
-        <div class="vote-info-wrapper">            
+        <div class="vote-info-wrapper">
             <div><strong>@midia.MediaDeVotos/10 ⭐ - @midia.ContagemDeVotos voto(os)</strong></div>
-        </div>
+        </div>        
         <div class="midia-associada-wrapper">
             @* Lógica de Mídia Associada *@
         </div>
@@ -49,16 +49,20 @@
                     }
                 }
                 else
+                if (midia.IdsGenero != null)
                     @foreach (var genero in midia.IdsGenero)
                     {
                         <span class="tag">@genero</span>
                     }
             </div>
         </div>
-    </div>   
+    </div>
 </div>
 
 @code {
     [Parameter]
     public NextMidiaWeb.Domain.Entities.Midia midia { get; set; }
+
+    [Parameter]
+    public string? idUsuario { get; set; }
 }

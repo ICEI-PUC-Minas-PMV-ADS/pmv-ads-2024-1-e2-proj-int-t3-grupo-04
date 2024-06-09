@@ -7,16 +7,21 @@ namespace NextMidiaWeb.Domain.Services
     {
         private readonly MidiaFavoritadaDbContext _context;
 
+        public MidiaFavoritadaService(MidiaFavoritadaDbContext midiaFavDbContext)
+        {
+            this._context = midiaFavDbContext;
+        }
+
         public void Create(MidiaFavoritada fav)
         {
-            _context.midiaFavoritada.Add(fav);
+            _context.midia_Favoritada.Add(fav);
             _context.SaveChanges();
         }
 
         public MidiaFavoritada GetById(long idMidia, long idUsuario)
         {
-            return _context.midiaFavoritada                
-                .SingleOrDefault(s => s.IdMidia == idMidia && s.IdUsuario == idUsuario);
+            return _context.midia_Favoritada                
+                .SingleOrDefault(s => s.Midia_Id == idMidia && s.Usuario_Id == idUsuario);
         }
     }
 }

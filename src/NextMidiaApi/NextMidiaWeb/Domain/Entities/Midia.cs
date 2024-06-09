@@ -7,26 +7,43 @@ namespace NextMidiaWeb.Domain.Entities
     {
         #region Properties
         public long Id { get; set; }
+        [NotMapped]
         public string Nome { get; set; }
+        [NotMapped]
         public string Sinopse { get; set; }
+        [NotMapped]
         public DateTime DataLancamento { get; set; }
+        [NotMapped]
         public string ImagemCapa { get; set; }
+        [NotMapped]
         public string ImagemPoster { get; set; }
+        [NotMapped]
         public Categoria Categoria { get; set; }
         [NotMapped]
         public List<MidiaTag> Tags { get; set; }
+        [NotMapped]
         public List<string> IdsGenero { get; set; }
+        [NotMapped]
         public string LinguaOrigem { get; set; }
+        [NotMapped]
         public int ContagemDeVotos { get; set; }
+        [NotMapped]
         public decimal MediaDeVotos { get; set; }
-        public bool IsDeleted { get; set; }        
+        [NotMapped]
+        public bool IsDeleted { get; set; }
+        [NotMapped]
         public string? Status { get; set; }
+        [NotMapped]
         public long? Verba { get; set; }
+        [NotMapped]
         public long? Bilheteria { get; set; }
-        public string? PaginaMidia { get; set; }                
+        [NotMapped]
+        public string? PaginaMidia { get; set; }
+        [NotMapped]
         public List<Genero>? Generos { get; set; }
+        [NotMapped]
         public List<Produtora>? Produtoras { get; set; }
-
+        [NotMapped]
         public string? Trailer { get; set; }
         #endregion
 

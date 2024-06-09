@@ -17,73 +17,77 @@
           rel="stylesheet" />
 </head>
 <body>
-    <div class="index-wrapper">
-        @* Login *@
-        <div class="login-divisor">
-            <h1 class="heading-primary">
-                Next Midia Logo
-            </h1>
-            <div class="login-input-wrapper">
-                <p class="heading-secondary">
-                    Login
-                </p>
-                @using (Html.BeginForm("Midia", "Login", FormMethod.Post))
-                {
-                    <div class="input-group-wrapper">
-                        <div class="input-wrapper">
-                            <div class="input-label">E-mail</div>
-                            <input name="Email" id="Email" type="email" />
+    <main>
+        <section>
+            <div class="page-wrapper">
+                @* Login *@
+                <div class="login-divisor">
+                    <h1 class="heading-primary">
+                        <img src="Images/logotype.webp" alt="Nextmidia logo" class="logo" />
+                    </h1>
+                    <div class="login-input-wrapper">
+                        <p class="heading-secondary">
+                            Login
+                        </p>
+                        @using (Html.BeginForm("Midia", "Login", FormMethod.Post))
+                        {
+                            <div class="input-group-wrapper">
+                                <div class="input-wrapper">
+                                    <div class="input-label">E-mail</div>
+                                    <input name="Email" id="Email" type="email" />
+                                </div>
+                                <div class="input-wrapper">
+                                    <div class="input-label">Senha</div>
+                                    <input name="Senha" id="Senha" type="password" />
+                                </div>
+                            </div>
+                            <div class="buttom-group-wrapper">
+                                <button class="home-btn" type="submit">Login</button>
+                                <button class="home-btn"
+                                        type="button"
+                                        onclick="window.location.href='@Url.Action("Index", "Midia")';">
+                                    Entrar como convidado
+                                </button>
+                            </div>
+                            <button class="home-create-btn"
+                                    type="button"
+                                    onclick="window.location.href='@Url.Action("CriarConta", "Conta")';">
+                                Criar Conta
+                            </button>
+                        }
+                    </div>
+                </div>
+                @* Info *@
+                <div class="info-divisor">
+                    <div class="info-text-wrapper">
+                        <div class="info-text">
+                            Com a diversidade de opções de entretenimento disponíveis hoje,
+                            torna-se cada vez mais importante oferecer aos consumidores uma forma eficiente de
+                            descobrir, avaliar e discutir seus filmes, séries, animes e jogos favoritos.
+                            Este projeto visa desenvolver uma aplicação web que não apenas liste estas opções de
+                            entretenimento, mas também permita que os usuários interajam com o conteúdo por
+                            meio de avaliações e comentários, enriquecendo a experiência de todos os usuários.
                         </div>
-                        <div class="input-wrapper">
-                            <div class="input-label">Senha</div>
-                            <input name="Senha" id="Senha" type="password" />
+                        <div class="info-text">
+                            Objetivo Geral:
+                            <ul>
+                                <li>
+                                    Desenvolver uma aplicação web centralizada para a listagem de filmes, séries, animes e jogos, oferecendo aos usuários a possibilidade de avaliar, comentar e descobrir novos
+                                    títulos baseados em preferências comuns.
+                                </li>
+                            </ul>
+                            Objetivos específicos:
+                            <ul>
+                                <li>Oferecer uma interface intuitiva para a busca e descoberta de títulos de entretenimento.</li>
+                                <li>Permitir que os usuários registrem e compartilhem suas avaliações e comentários sobre cada título.</li>
+                                <li>Implementar sistemas de recomendação baseados nas preferências e avaliações dos usuários.</li>
+                                <li>Assegurar a criação de uma comunidade ativa e engajada em torno dos títulos listados.</li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="buttom-group-wrapper">
-                        <button class="home-btn" type="submit">Login</button>
-                        <button class="home-btn"
-                                type="button"
-                                onclick="window.location.href='@Url.Action("Index", "Midia")';">
-                            Entrar como convidado
-                        </button>
-                    </div>
-                    <button class="home-create-btn"
-                            type="button"
-                            onclick="window.location.href='@Url.Action("CriarConta", "Conta")';">
-                        Criar Conta
-                    </button>
-                }
-            </div>
-        </div>
-        @* Info *@
-        <div class="info-divisor">
-            <div class="info-text-wrapper">
-                <div class="info-text">
-                    Com a diversidade de opções de entretenimento disponíveis hoje,
-                    torna-se cada vez mais importante oferecer aos consumidores uma forma eficiente de
-                    descobrir, avaliar e discutir seus filmes, séries, animes e jogos favoritos.
-                    Este projeto visa desenvolver uma aplicação web que não apenas liste estas opções de
-                    entretenimento, mas também permita que os usuários interajam com o conteúdo por
-                    meio de avaliações e comentários, enriquecendo a experiência de todos os usuários.
-                </div>
-                <div class="info-text">
-                    Objetivo Geral:
-                    <ul>
-                        <li>
-                            Desenvolver uma aplicação web centralizada para a listagem de filmes, séries, animes e jogos, oferecendo aos usuários a possibilidade de avaliar, comentar e descobrir novos
-                            títulos baseados em preferências comuns.
-                        </li>
-                    </ul>
-                    Objetivos específicos:
-                    <ul>
-                        <li>Oferecer uma interface intuitiva para a busca e descoberta de títulos de entretenimento.</li>
-                        <li>Permitir que os usuários registrem e compartilhem suas avaliações e comentários sobre cada título.</li>
-                        <li>Implementar sistemas de recomendação baseados nas preferências e avaliações dos usuários.</li>
-                        <li>Assegurar a criação de uma comunidade ativa e engajada em torno dos títulos listados.</li>
-                    </ul>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
 </body>
 </html>

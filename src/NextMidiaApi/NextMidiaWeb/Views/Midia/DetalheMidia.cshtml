@@ -18,19 +18,30 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-    @if (@Model != null)
-    {
-        <div>
-            <component type="typeof(MidiaInfo)"
-                       render-mode="ServerPrerendered"
-                       param-midia="@Model.midia" />
-        </div>
-        @if (@Model.midia.Trailer != null)
-        {
-            <div class="trailer-wrapper">
-                <iframe width="1728" height="972" src=@($"https://youtube.com/embed/{@Model.midia.Trailer}?controls=0")></iframe>
+    <main>
+        <section>
+            <div class="page-wrapper">
+                @if (@Model != null)
+                {
+                    <div class="custom-btn">
+                        <a class="btn-link"
+                           onclick="window.location.href='@Url.Action("FavoritarMidia", "Midia", new { id = Model.midia.Id })';">Favoritar</a>
+                    </div>
+                    <div>
+                        <component type="typeof(MidiaInfo)"
+                                   render-mode="ServerPrerendered"
+                                   param-midia="@Model.midia"
+                                   param-idUsuario="@Html.ViewContext.HttpContext.Session.GetString("")" />
+                    </div>
+                    @if (@Model.midia.Trailer != null)
+                    {
+                        <div class="trailer-wrapper">
+                            <iframe width="1728" height="972" src=@($"https://youtube.com/embed/{@Model.midia.Trailer}?controls=0")></iframe>
+                        </div>
+                    }
+                }
             </div>
-        }
-    }
+        </section>
+    </main>
 </body>
 </html>

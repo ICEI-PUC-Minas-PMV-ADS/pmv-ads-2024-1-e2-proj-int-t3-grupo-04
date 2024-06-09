@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Migrations;
 using NextMidiaWeb.Domain.Entities;
 using NextMidiaWeb.Domain.Persistence;
+using NextMidiaWeb.Domain.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +19,7 @@ builder.Services.AddDbContext<MidiaDbContext>(options => options.UseSqlServer(co
 builder.Services.AddDbContext<MidiaTagDbContext>(options => options.UseSqlServer(connectionString));
 builder.Services.AddDbContext<UsuarioDbContext>(options => options.UseSqlServer(connectionString));
 builder.Services.AddDbContext<TagDbContext>(options => options.UseSqlServer(connectionString));
+builder.Services.AddDbContext<MidiaFavoritadaDbContext>(options => options.UseSqlServer(connectionString));
 #endregion
 
 // Add services to the container.
@@ -26,6 +28,7 @@ builder.Services.AddScoped<CategoriaService>();
 builder.Services.AddScoped<MidiaService>();
 builder.Services.AddScoped<TagService>();
 builder.Services.AddScoped<UsuarioService>();
+builder.Services.AddScoped<MidiaFavoritadaService>();
 #endregion
 
 builder.Services.AddDistributedMemoryCache();

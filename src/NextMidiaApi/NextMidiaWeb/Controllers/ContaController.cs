@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 using NextMidiaWeb.Domain.Entities;
 using NextMidiaWeb.Models.Input;
 using NextMidiaWeb.Models.ViewModel;
@@ -97,12 +98,23 @@ namespace NextMidiaWeb.Controllers
             }
 
             if (!temErro)
-                _service.Create(new Usuario
-                {
-                    Nome = usuarioInpt.Nome,
-                    Email = usuarioInpt.Email,
-                    Senha = usuarioInpt.Senha
-                });
+            {
+                if (_service.FindAll()
+                    .Where(user => user.Nome == usuarioInpt.Nome).Count() > 0)
+                    ViewBag.GeneralError = "Já existe um usuário com este username cadastrado.";
+                if (_service.FindAll()
+                   .Where(user => user.Email == usuarioInpt.Email).Count() > 0)
+                    ViewBag.GeneralError = "Já existe um usuário com este email cadastrado.";
+                else
+                    _service.Create(new Usuario
+                    {
+                        Nome = usuarioInpt.Nome,
+                        Email = usuarioInpt.Email,
+                        Senha = usuarioInpt.Senha
+                    });
+            }
+            else
+                return View("~/Views/Login/CriarConta.cshtml");
 
             return View("~/Views/Login/Login.cshtml");
         }
