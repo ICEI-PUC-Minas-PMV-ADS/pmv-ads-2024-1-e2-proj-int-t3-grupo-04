@@ -57,7 +57,10 @@
                     }
                     <div class="nav-item">
                         <div class="selecao-filtro-wrappper">
-                            <button onclick="window.location.href='@Url.Action("Explorar", "Midia", new { page = long.Parse(Html.ViewContext.HttpContext.Request.Query["page"]) + 1 })';">
+                            <button onclick="window.location.href='@Url.Action("Explorar", "Midia", new { page = 
+                                (string.IsNullOrEmpty(Html.ViewContext.HttpContext.Request.Query["page"]) ? 
+                                0 
+                                : long.Parse(Html.ViewContext.HttpContext.Request.Query["page"])) + 1 })';">
                                 Atualizar Busca
                             </button>
                         </div>
