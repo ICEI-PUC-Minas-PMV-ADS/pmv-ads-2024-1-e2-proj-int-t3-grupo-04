@@ -12,31 +12,41 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div class="page-wrapper">
-        <h1>Perfil de Usuário</h1>
-        @if (Model != null)
-        {
-            @using (Html.BeginForm("AtualizarCadastro", "Login", FormMethod.Post))
-            {
-                <div class="input-group-wrapper">
-                    <div class="input-wrapper">
-                        <div class="input-label">Username</div>
-                        <input name="Username" id="Username" type="text" value="@Model.Username" />
-                    </div>
-                    <div class="input-wrapper">
-                        <div class="input-label">E-mail</div>
-                        <input name="Email" id="Email" type="email" value="@Model.Email" />
-                    </div>
-                    <div class="input-wrapper">
-                        <div class="input-label">Senha</div>
-                        <input name="Senha" id="Senha" type="password" value="@Model.Password" />
-                    </div>
-                    <div class="buttom-group-wrapper">
-                        <button class="home-btn" type="submit">Atualizar Dados</button>                     
-                    </div>
-                </div>
-            }
-        }
-    </div>
+    <main>
+        <section>
+            <nav>
+                <ul>
+                    <li><button onclick="window.location.href='@Url.Action("Index", "Conta")';">Conta</button></li>
+                    <li><button onclick="window.location.href='@Url.Action("MidiasFavoritas", "Conta")';">Mídias Favoritas</button></li>
+                </ul>
+            </nav>
+            <div class="page-wrapper">
+                <h1>Perfil de Usuário</h1>
+                @if (Model != null)
+                {
+                    @using (Html.BeginForm("AtualizarCadastro", "Login", FormMethod.Post))
+                    {
+                        <div class="input-group-wrapper">
+                            <div class="input-wrapper">
+                                <div class="input-label">Username</div>
+                                <input name="Username" id="Username" type="text" value="@Model.Username" />
+                            </div>
+                            <div class="input-wrapper">
+                                <div class="input-label">E-mail</div>
+                                <input name="Email" id="Email" type="email" value="@Model.Email" />
+                            </div>
+                            <div class="input-wrapper">
+                                <div class="input-label">Senha</div>
+                                <input name="Senha" id="Senha" type="password" value="@Model.Password" />
+                            </div>
+                            <div class="buttom-group-wrapper">
+                                <button class="home-btn" type="submit">Atualizar Dados</button>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </section>
+    </main>
 </body>
 </html>

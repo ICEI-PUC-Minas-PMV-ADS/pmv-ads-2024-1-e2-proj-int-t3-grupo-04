@@ -7,15 +7,20 @@ namespace NextMidiaWeb.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger; 
+        #region Private Properties
+        private readonly ILogger<HomeController> _logger;
         private readonly UsuarioService _service;
+        #endregion
 
+        #region Constructors
         public HomeController(ILogger<HomeController> logger, UsuarioService service)
         {
             _logger = logger;
             _service = service;
         }
+        #endregion
 
+        #region Endpoints
         public IActionResult Index()
         {
             //HttpContext.Session.SetString("UserId", null);
@@ -25,16 +30,17 @@ namespace NextMidiaWeb.Controllers
         }
 
         [HttpGet]
-        [Route("Login")]        
+        [Route("Login")]
         public IActionResult RedirectToLogin(bool? param = false)
         {
             return View("~/Views/Login/Login.cshtml");
-        }               
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-        }    
+        }
+        #endregion            
     }
 }

@@ -188,13 +188,13 @@ namespace NextMidiaWeb.Api.Controllers
         public IActionResult Explorar(int page = 1)
         {
             try
-            {                                
+            {
                 var midiaDTO = new List<Midia>();
                 var midias =
                 (TMDBMediaListReponseObject)GetRequestContent(
                     $"https://api.themoviedb.org/3/movie/top_rated?language={Lang}&page={page}",
                     ReponseType.List
-                ).Result;                
+                ).Result;
 
                 var lista = PreencherListaMidias(midias);
                 if (lista.Count > 0)
@@ -292,7 +292,7 @@ namespace NextMidiaWeb.Api.Controllers
                     {
                         Data = DateTime.Now.Date,
                         Midia_Id = id,
-                        Usuario_Id = long.Parse(idUsuario)
+                        Usuario_Id = int.Parse(idUsuario)
                     }); ;
 
                     return this.Midia(id).Result;
@@ -397,6 +397,6 @@ namespace NextMidiaWeb.Api.Controllers
             _context.SaveChanges();
             return Ok(midiaTag);
         }
+        #endregion
     }
-    #endregion
 }

@@ -20,8 +20,15 @@ namespace NextMidiaWeb.Domain.Services
 
         public MidiaFavoritada GetById(long idMidia, long idUsuario)
         {
-            return _context.midia_Favoritada                
+            return _context.midia_Favoritada
                 .SingleOrDefault(s => s.Midia_Id == idMidia && s.Usuario_Id == idUsuario);
+        }
+
+        public List<MidiaFavoritada> GetByUserId(int idUsuario)
+        {
+            return _context.midia_Favoritada
+                .Where(s => s.Usuario_Id == idUsuario)
+                .ToList();
         }
     }
 }
