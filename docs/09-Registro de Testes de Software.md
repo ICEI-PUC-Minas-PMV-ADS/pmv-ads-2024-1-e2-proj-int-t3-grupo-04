@@ -4,11 +4,13 @@
 |:---:	|:---:	|
 |	Requisito Associado 	| RF 001 - O sistema deve ter página de cadastro de usuário |
 |Registro de evidência | ![alt text](/docs/img/registro-teste-de-software/cadastro.png) |
+|Registro de evidência | ![alt text](/docs/img/registro-teste-de-software/Cadastro%20perfil%20r1.png) |
 
 | **Caso de Teste** 	| **CT-02 – Realizar login** 	|
 |:---:	|:---:	|
 |Requisito Associado | RF 002 - O sistema deve ter página de login|
-|Registro de evidência | ![alt text](/docs/img/registro-teste-de-software/login.png) |
+|Registro de evidência | ![alt text](/docs/img/registro-teste-de-software/login%20usuario%20r2.png)|
+|Registro de evidência | ![alt text](/docs/img/registro-teste-de-software/login%20sucesso%20r2.png)|
 
 | **Caso de Teste** 	| **CT-03 – Cadastro de Dados**	|
 |:---:	|:---:	|
@@ -38,7 +40,8 @@
 | **Caso de Teste** 	| **CT-08 – O Sistema Deve Permitir Exibir o Perfil do Usuário**	|
 |:---:	|:---:	|
 |Requisito Associado | RF – 008 Acessar a página e o perfil do usuário|
-|Registro de evidência | - Funcionalidade a ser implementada. |
+|Registro de evidência | ![alt text](/docs/img/registro-teste-de-software/exibição%20perfim%20do%20usuario%20r8.png) |
+ |
 
 | **Caso de Teste** 	| **CT-09 – Verificar o Perfil da Mídia Cadastrada**	|
 |:---:	|:---:	|
