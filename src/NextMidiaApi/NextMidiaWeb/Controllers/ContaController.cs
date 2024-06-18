@@ -230,6 +230,27 @@ namespace NextMidiaWeb.Controllers
                 return Content($"Erro no endpoint ContaController: {e.Message}");
             }
         }
+
+        [Route("Conta/{id}/RemoverFavorito")]
+        public IActionResult RemoverFavorito(int id)
+        {
+            try
+            {
+                var idUsuario = HttpContext.Session.GetString("UserId") ?? "";
+                if (idUsuario != "")
+                {
+                    var midiaFav = _serviceMidiaFavorita.GetById(id, int.Parse(idUsuario));
+                    _serviceMidiaFavorita.Delete(midiaFav);
+                    return this.RedirectToIndex();
+                }
+                else
+                    return Content("É necessário fazer o login para favoritar esta mídia.");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         #endregion
     }
 }

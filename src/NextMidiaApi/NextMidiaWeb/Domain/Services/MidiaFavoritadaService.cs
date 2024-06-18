@@ -18,6 +18,12 @@ namespace NextMidiaWeb.Domain.Services
             _context.SaveChanges();
         }
 
+        public void Delete(MidiaFavoritada fav)
+        {
+            _context.midia_Favoritada.Remove(fav);
+            _context.SaveChanges();
+        }
+
         public MidiaFavoritada GetById(long idMidia, long idUsuario)
         {
             return _context.midia_Favoritada

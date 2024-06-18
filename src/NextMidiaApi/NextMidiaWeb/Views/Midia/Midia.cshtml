@@ -2,6 +2,9 @@
 @model MidiaViewModel
 @using NextMidiaWeb.Views.Componentes
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Home";
+}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -15,83 +18,136 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
-<body>
-    <main>
+<body style="background-color: #90cbf9;">
+    <main >
         <section>
-            <div class="page-wrapper">
-                <h1>Midia do Dia</h1>
+            <div class="page-wrapper">                
                 @if (Model != null)
                 {
-                    <component type="typeof(MidiaInfo)"
-                               render-mode="ServerPrerendered"
-                               param-midia="@Model.midiaDia"
-                               param-idUsuario="@Html.ViewContext.HttpContext.Session.GetString("UserId")" />
+                    @***************** Midia do Dia *****************@
+                    <section style="background-color: #90cbf9; color:white; padding: 45px; margin-bottom: 9rem;">
+                        <h1>Midia do Dia</h1>
+                        <component type="typeof(MidiaInfo)"
+                                   render-mode="ServerPrerendered"
+                                   param-midia="@Model.midiaDia"
+                                   param-idUsuario="@Html.ViewContext.HttpContext.Session.GetString("UserId")" />
+                        <div class="custom-btn">
+                            <a class="btn-link"
+                               onclick="window.location.href='@Url.Action("Midia", "Midia", new { id = Model.midiaDia.Id })';">Acessar</a>
+                        </div>
+                    </section>
 
-                    <div class="carrousel-container">
-                        <h3>Sua próxima mídia:</h3>
-                        <div class="carrousel-wrappper">
-                            <div class="container">
-                                <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                                    <!-- Indicators -->
-                                    <ol class="carousel-indicators">
-                                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                                        <li data-target="#myCarousel" data-slide-to="2"></li>
-                                    </ol>
+                    @***************** Melhores Mídias *****************@
+                    <section style="background-color: white; margin-top: 9rem; padding:45px;">
+                        <h2>Melhores Midias</h2>
+                        <div>
+                            <component type="typeof(MidiaInfo)"
+                                       render-mode="ServerPrerendered"
+                                       param-midia="@Model.midias.OrderByDescending(md => md.MediaDeVotos).FirstOrDefault()"
+                                       param-idUsuario="@Html.ViewContext.HttpContext.Session.GetString("UserId")"
+                                       param-ImagemCapa="true" />
+                            <div class="custom-btn">
+                                <a class="btn-link"
+                                   onclick="window.location.href='@Url.Action("Midia", "Midia", new { id = @Model.midias.OrderByDescending(md => md.MediaDeVotos).FirstOrDefault().Id })';">Acessar</a>
+                            </div>
+                            <br />
+                            <br />
+                            <br />
+                            <br />
 
-                                    <!-- Wrapper for slides -->
-                                    <div class="carousel-inner">
-                                        <div class="item active">
-                                            <div class="next-media-wrapper">
-                                                <span>@Model.midias[1].Nome - @Model.midias[1].DataLancamento.ToShortDateString()</span>
-                                            </div>
-                                            <img class="image-next-media"
-                                                 alt="Sua próxima mídia"
-                                                 src="@Url.Content("https://image.tmdb.org/t/p/w500" + Model.midias[1].ImagemCapa)"
-                                                 style="width:100%;"
-                                                 onclick="window.location.href='@Url.Action("Midia", "Midia", new { id = Model.midias[1].Id })';" />
-                                            />
-                                        </div>
+                            @if (Model.midias.Count >= 6)
+                            {
+                                @for (int i = 1; i < 5; ++i)
+                                {
+                                    <div>
+                                        <component type="typeof(MidiaInfo)"
+                                                   render-mode="ServerPrerendered"
+                                                   param-midia="@Model.midias.OrderByDescending(md => md.MediaDeVotos).ToList()[i]"
+                                                   param-idUsuario="@Html.ViewContext.HttpContext.Session.GetString("UserId")"
+                                                   param-ImagemCapa="true" />
 
-                                        <div class="item">
-                                            <div class="next-media-wrapper">
-                                                <span>@Model.midias[2].Nome - @Model.midias[2].DataLancamento.ToShortDateString()</span>
-                                            </div>
-                                            <img class="image-next-media"
-                                                 alt="Sua próxima mídia"
-                                                 src="@Url.Content("https://image.tmdb.org/t/p/w500" + Model.midias[2].ImagemCapa)"
-                                                 style="width:100%;"
-                                                 onclick="window.location.href='@Url.Action("Midia", "Midia", new { id = Model.midias[2].Id })';" />
-
-                                            />
-                                        </div>
-
-                                        <div class="item">
-                                            <div class="next-media-wrapper">
-                                                <span>@Model.midias[3].Nome - @Model.midias[3].DataLancamento.ToShortDateString()</span>
-                                            </div>
-                                            <img class="image-next-media"
-                                                 alt="Sua próxima mídia"
-                                                 src="@Url.Content("https://image.tmdb.org/t/p/w500" + Model.midias[3].ImagemCapa)"
-                                                 style="width:100%;"
-                                                 onclick="window.location.href='@Url.Action("Midia", "Midia", new { id = Model.midias[3].Id })';" />
-                                            />
+                                        <div class="custom-btn">
+                                            <a class="btn-link"
+                                               onclick="window.location.href='@Url.Action("Midia", "Midia", new { id = @Model.midias.OrderByDescending(md => md.MediaDeVotos).ToList()[i].Id })';">Acessar</a>
                                         </div>
                                     </div>
+                                    <br />
+                                    <br />
+                                    <br />
+                                    <br />
+                                }
+                            }
+                        </div>
+                    </section>
 
-                                    <!-- Left and right controls -->
-                                    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                                        <span class="glyphicon glyphicon-chevron-left"></span>
-                                        <span class="sr-only">Previous</span>
-                                    </a>
-                                    <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                                        <span class="glyphicon glyphicon-chevron-right"></span>
-                                        <span class="sr-only">Next</span>
-                                    </a>
+                    @***************** Descubra *****************@
+                    <section>
+                        <div class="carrousel-container">
+                            <h2>Descubra</h2>
+                            <div class="carrousel-wrappper">
+                                <div class="container">
+                                    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                        <!-- Indicators -->
+                                        <ol class="carousel-indicators">
+                                            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                            <li data-target="#myCarousel" data-slide-to="1"></li>
+                                            <li data-target="#myCarousel" data-slide-to="2"></li>
+                                        </ol>
+
+                                        <!-- Wrapper for slides -->
+                                        <div class="carousel-inner">
+                                            <div class="item active">
+                                                <div class="next-media-wrapper">
+                                                    <span>@Model.midias[1].Nome - @Model.midias[1].DataLancamento.ToShortDateString()</span>
+                                                </div>
+                                                <img class="image-next-media"
+                                                     alt="Sua próxima mídia"
+                                                     src="@Url.Content("https://image.tmdb.org/t/p/w500" + Model.midias[1].ImagemCapa)"
+                                                     style="width:100%;"
+                                                     onclick="window.location.href='@Url.Action("Midia", "Midia", new { id = Model.midias[1].Id })';" />
+                                                />
+                                            </div>
+
+                                            <div class="item">
+                                                <div class="next-media-wrapper">
+                                                    <span>@Model.midias[2].Nome - @Model.midias[2].DataLancamento.ToShortDateString()</span>
+                                                </div>
+                                                <img class="image-next-media"
+                                                     alt="Sua próxima mídia"
+                                                     src="@Url.Content("https://image.tmdb.org/t/p/w500" + Model.midias[2].ImagemCapa)"
+                                                     style="width:100%;"
+                                                     onclick="window.location.href='@Url.Action("Midia", "Midia", new { id = Model.midias[2].Id })';" />
+
+                                                />
+                                            </div>
+
+                                            <div class="item">
+                                                <div class="next-media-wrapper">
+                                                    <span>@Model.midias[3].Nome - @Model.midias[3].DataLancamento.ToShortDateString()</span>
+                                                </div>
+                                                <img class="image-next-media"
+                                                     alt="Sua próxima mídia"
+                                                     src="@Url.Content("https://image.tmdb.org/t/p/w500" + Model.midias[3].ImagemCapa)"
+                                                     style="width:100%;"
+                                                     onclick="window.location.href='@Url.Action("Midia", "Midia", new { id = Model.midias[3].Id })';" />
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <!-- Left and right controls -->
+                                        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                                            <span class="glyphicon glyphicon-chevron-left"></span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                                            <span class="glyphicon glyphicon-chevron-right"></span>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </section>
                 }
         </section>
     </main>

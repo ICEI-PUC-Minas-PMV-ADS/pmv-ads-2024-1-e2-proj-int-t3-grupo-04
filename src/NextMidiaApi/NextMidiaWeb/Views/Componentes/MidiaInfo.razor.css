@@ -1,13 +1,20 @@
-﻿h2 {
+﻿h1 {
     font-size: 5rem;
+    font-weight: bold;
 }
+
+h2 {
+    font-size: 4rem;
+    font-weight: bold;
+}
+
 
 /*----------------------- */
 /*-------- Midia Info --------- */
 /*----------------------- */
 .midia-wrapper {
     display: flex;
-    padding: 35px;
+    /*padding: 35px;*/
     font-size: 2rem;
 }
 
@@ -17,7 +24,7 @@
 }
 
     .midia-info-wrapper .sinopse-wrapper {
-        width: inherit;
+        width: fit-content;
         font-size: 2rem;
     }
 
@@ -36,10 +43,10 @@
     .midia-info-wrapper .tag {
         width: 15px;
         height: 15px;
-        background-color: royalblue;
+        background-color: cornflowerblue;
         color: white;
-        border: 2px solid black;
-        border-radius: 20px;
+  /*      border: 2px solid black;
+        border-radius: 20px;*/
         padding: 5px;
         margin-top: 20px;
         margin-left: 10px;
@@ -55,17 +62,38 @@
 /*----------------------- */
 .midia-image-wrapper {
     width: 40%;
-    align-content: center;
-    align-items: center;
-    justify-items: center;
-    text-align: center;
+    align-content: flex-start;
+    align-items: start;
+    justify-items: start;
+    text-align: star35;
 }
 
     .midia-image-wrapper .vote-info-wrapper {
-        text-align: center;
+        text-align: left;
         width: initial;
         height: 50px;
         padding: 5px;
         font-size: 2.5rem;
         margin-top: 15px;
     }
+
+
+
+
+
+
+
+
+/* Add a card effect for articles */
+.card {
+    background-color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}

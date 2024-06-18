@@ -1,8 +1,6 @@
 ﻿/**************************/
 /******** Main ***********/
 /**************************/
-
-
 h1 {
     margin-top: 20px;
     font-weight: bold;
@@ -24,26 +22,60 @@ section {
     display: flex;
 }
 
+img {
+    transform: scale(0.9);
+    transition: ease-in-out 0.5s;
+}
+
+    img:hover {
+        transform: scale(1);
+        cursor: pointer;
+        opacity: 85%;
+    }
+
 /**************************/
 /******** NAV ***********/
 /**************************/
 
 nav {
-    width: 500px;
+    padding: 15px;
+    width: max-content;
     height: stretch;
     background-color: cornflowerblue;
 }
 
 ul {
-    text-align: center;
-    padding: 10px;
+    list-style-type: none;
+    text-align: center;    
+    width: fit-content;
+}
+
+.nav-list:hover {
+    
 }
 
 li {
+    transform: scale(0.9);
+    transition: ease-in-out 0.3s;
+    opacity: 50%;
+    color: white;    
+    width: max-content;
     font-size: 4rem;
     margin-top: auto;
     margin-bottom: auto;
     text-align: center;
+}
+
+    li:hover {
+        opacity: 100%;
+        transform: scale(1);
+        /*background-color: dodgerblue;*/
+    }
+
+button {
+    background-color: transparent;
+    width: stretch;
+    border: 0px transparent solid;
 }
 
 /**************************/
@@ -53,3 +85,103 @@ li {
 .page-wrapper {
     padding: 40px;
 }
+
+h2 {
+    font-size: 5rem;
+}
+
+/*----------------------- */
+/*-------- Midia Info --------- */
+/*----------------------- */
+.midia-wrapper {
+    display: flex;
+    padding: 10px;
+    margin-top: 10px;
+    font-size: 2rem;
+}
+
+.midia-info-wrapper {
+    width: 60%;
+    text-align: left;
+}
+
+    .midia-info-wrapper .sinopse-wrapper {
+        width: inherit;
+        font-size: 2rem;
+    }
+
+    .midia-info-wrapper .extra-info-wrapper {
+        margin-top: 35px;
+        margin-bottom: 35px;
+        font-size: 2rem;
+    }
+
+    .midia-info-wrapper .tags-wrapper {
+        font-size: 20px;
+        margin-top: 30px;
+        display: flex;
+    }
+
+    .midia-info-wrapper .tag {
+        width: 15px;
+        height: 15px;
+        background-color: royalblue;
+        color: white;
+        border: 2px solid black;
+        border-radius: 20px;
+        padding: 5px;
+        margin-top: 20px;
+        margin-left: 10px;
+        padding: 10px;
+    }
+
+        .midia-info-wrapper .tag :hover {
+            cursor: pointer;
+        }
+
+
+
+.custom-btn {
+    background-color: darkred;
+    padding: 5px;
+    width: fit-content;
+    text-align: left;
+    margin-top: auto;
+    /*   margin-left: auto;
+    margin-right: auto;*/
+}
+
+    .custom-btn:hover {
+        cursor: pointer;
+        background-color: #ff0000;
+    }
+
+    .custom-btn .btn-link {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+
+/*----------------------- */
+/*-------- Banner e Midias Associadas --------- */
+/*----------------------- */
+.midia-image-wrapper {
+    width: 40%;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+
+    .midia-image-wrapper .vote-info-wrapper {
+        text-align: center;
+        width: initial;
+        height: 50px;
+        padding: 5px;
+        font-size: 2.5rem;
+        margin-top: 15px;
+    }

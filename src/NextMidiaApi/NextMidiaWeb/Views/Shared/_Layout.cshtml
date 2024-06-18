@@ -18,10 +18,11 @@
 else
 {
     <header class="header">
-        <img src="Images/logotype.webp"
+        <img src="~/Images/logotype.webp"
              alt="Nextmidia logo"
              class="logo"
              onclick="window.location.href='@Url.Action("Index", "Midia")'" />
+
         <nav class="main-nav">
             <ul class="main-nav-list">
                 <ul class="main-nav-list">
@@ -42,7 +43,13 @@ else
 
                         @if (this.Context.Session.GetString("UserId") != null)
                         {
-                            <li class="nav-item"> <a class="main-nav-link" href="#" onclick="window.location.href='@Url.Action("Index", "Conta")';"> Conta </a> </li>
+                            <li class="nav-item">
+                                <a class="main-nav-link" href="#" onclick="window.location.href='@Url.Action("Index", "Conta")';">
+                                    <svg class="w-[48px] h-[48px] text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                        <path fill-rule="evenodd" d="M12 20a7.966 7.966 0 0 1-5.002-1.756l.002.001v-.683c0-1.794 1.492-3.25 3.333-3.25h3.334c1.84 0 3.333 1.456 3.333 3.25v.683A7.966 7.966 0 0 1 12 20ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10c0 5.5-4.44 9.963-9.932 10h-.138C6.438 21.962 2 17.5 2 12Zm10-5c-1.84 0-3.333 1.455-3.333 3.25S10.159 13.5 12 13.5c1.84 0 3.333-1.455 3.333-3.25S13.841 7 12 7Z" clip-rule="evenodd" />
+                                    </svg>
+                                </a>
+                            </li>
                             <li class="nav-item">@this.Context.Session.GetString("UserId") - @this.Context.Session.GetString("UserUsername")</li>
                         }
                     }
@@ -59,23 +66,33 @@ else
     </div>
     <footer>
         <footer class="footer">
-            <div class="container grid grid--5-cols grid--footer">
+            <div class="container grid grid-5-cols grid--footer">
                 <div class="logo-col">
                     <a href="#" class="footer-logo">
-                        <img src="Images/logotype.webp" alt="Nextmidia logo" class="logo" />
+                        <img src="~/Images/logotype.webp" alt="Nextmidia logo" class="logo" />
                     </a>
-
                     <ul class="social-links">
-                        <li><a class="footer-link" href="#"><ion-icon class="social-icon" name="logo-instagram"></ion-icon></a></li>
-                        <li><a class="footer-link" href="#"><ion-icon class="social-icon" name="logo-facebook"></ion-icon></a></li>
-                        <li><a class="footer-link" href="#"><ion-icon class="social-icon" name="logo-twitter"></ion-icon></a></li>
-
+                        <li>
+                            <svg class="w-[40px] h-[40px] text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd" d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z" clip-rule="evenodd" />
+                            </svg>
+                        </li>
+                        <li>
+                            <svg class="w-[40px] h-[40px] text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                <path fill="currentColor" fill-rule="evenodd" d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z" clip-rule="evenodd" />
+                            </svg>
+                        </li>
+                        <li>
+                            <svg class="w-[40px] h-[40px] text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd" d="M22 5.892a8.178 8.178 0 0 1-2.355.635 4.074 4.074 0 0 0 1.8-2.235 8.343 8.343 0 0 1-2.605.981A4.13 4.13 0 0 0 15.85 4a4.068 4.068 0 0 0-4.1 4.038c0 .31.035.618.105.919A11.705 11.705 0 0 1 3.4 4.734a4.006 4.006 0 0 0 1.268 5.392 4.165 4.165 0 0 1-1.859-.5v.05A4.057 4.057 0 0 0 6.1 13.635a4.192 4.192 0 0 1-1.856.07 4.108 4.108 0 0 0 3.831 2.807A8.36 8.36 0 0 1 2 18.184 11.732 11.732 0 0 0 8.291 20 11.502 11.502 0 0 0 19.964 8.5c0-.177 0-.349-.012-.523A8.143 8.143 0 0 0 22 5.892Z" clip-rule="evenodd" />
+                            </svg>
+                        </li>
                     </ul>
                     <p class="copyright">Copyright &copy; 2024. Todos os direitos reservados.</p>
 
                 </div>
                 <div class="address-col">
-                    <p class="footer-heading">Entre em contato.</p>
+                    <p class="footer-heading"><strong>Entre em contato.</strong></p>
                     <address class="contacts">
                         <p class="address">
                             Local, Bairro, Belo Horizonte, MG, Brasil.
@@ -86,31 +103,35 @@ else
                         </p>
                     </address>
                 </div>
+                @if (this.Context.Session.GetString("UserId") == null)
+                {
+                    <div class="nav-col">
+                        <p class="footer-heading"><strong>Conta</strong></p>
+                        <ul class="footer-nav">
+                            <li>
+                                <a class="footer-link"
+                                   onclick="window.location.href='@Url.Action("CriarConta", "Conta")';">
+                                    Criar Conta
+                                </a>
+                            </li>
+                            <li>
+                                <a class="footer-link"
+                                   onclick="window.location.href='@Url.Action("Index", "Login")';">
+                                    Realizar Login
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                }
                 <div class="nav-col">
-                    <p class="footer-heading">Conta</p>
+                    <p class="footer-heading"><strong>Recursos</strong></p>
                     <ul class="footer-nav">
-                        <li> <a class="footer-link" href="#">Criar conta</a></li>
-                        <li> <a class="footer-link" href="#">Entrar</a></li>
-                        <li> <a class="footer-link" href="#">Criar conta</a></li>
-                        <li> <a class="footer-link" href="#">Criar conta</a></li>
-                    </ul>
-                </div>
-                <div class="nav-col">
-                    <p class="footer-heading">Recursos</p>
-                    <ul class="footer-nav">
-                        <li> <a class="footer-link" href="#">Saiba mais</a></li>
-                        <li> <a class="footer-link" href="#">Criar conta</a></li>
-                        <li> <a class="footer-link" href="#">Criar conta</a></li>
-                        <li> <a class="footer-link" href="#">Criar conta</a></li>
-                    </ul>
-                </div>
-                <div class="nav-col">
-                    <p class="footer-heading">Sobre</p>
-                    <ul class="footer-nav">
-                        <li> <a class="footer-link" href="#">Criar conta</a></li>
-                        <li> <a class="footer-link" href="#">Criar conta</a></li>
-                        <li> <a class="footer-link" href="#">Criar conta</a></li>
-                        <li> <a class="footer-link" href="#">Criar conta</a></li>
+                        <li>
+                            <a class="footer-link"
+                               onclick="window.location.href='@Url.Action("Index", "Sobre")';">
+                                Sobre
+                            </a>
+                        </li>
                     </ul>
                 </div>
             </div>

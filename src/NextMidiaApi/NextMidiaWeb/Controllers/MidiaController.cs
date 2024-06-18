@@ -96,7 +96,7 @@ namespace NextMidiaWeb.Api.Controllers
             {
                 var midias =
                 (TMDBMediaListReponseObject)GetRequestContent(
-                    "https://api.themoviedb.org/3/trending/all/day",
+                    $"https://api.themoviedb.org/3/movie/now_playing?language={Lang}&page=1",
                     ReponseType.List
                 ).Result;
 
@@ -137,7 +137,7 @@ namespace NextMidiaWeb.Api.Controllers
 
                     var midiaObj =
                    (TMDBMediaDetailObject)GetRequestContent(
-                       $"https://api.themoviedb.org/3/movie/{listaMidiasDTO[0].Id.ToString()}",
+                       $"https://api.themoviedb.org/3/movie/{listaMidiasDTO[0].Id.ToString()}?language={Lang}",
                        ReponseType.Object
                    ).Result;
 
@@ -150,7 +150,6 @@ namespace NextMidiaWeb.Api.Controllers
                     if (midiaObj.production_companies != null)
                         foreach (var produtora in midiaObj.production_companies)
                             produtoras.Add(new Produtora { Id = produtora.id, Nome = produtora.name, Logo = produtora.logo_path, PaisOrigem = produtora.origin_country }); ;
-
 
                     var midiaDTO = new Midia
                     {
@@ -167,7 +166,7 @@ namespace NextMidiaWeb.Api.Controllers
                         Generos = generos,
                         Status = midiaObj.status,
                         Produtoras = produtoras,
-                        Trailer = traillerDTO.key
+                        Trailer = traillerDTO == null ? string.Empty : traillerDTO.key
                     };
 
                     listaMidiasDTO.RemoveAt(0);
@@ -192,7 +191,7 @@ namespace NextMidiaWeb.Api.Controllers
                 var midiaDTO = new List<Midia>();
                 var midias =
                 (TMDBMediaListReponseObject)GetRequestContent(
-                    $"https://api.themoviedb.org/3/movie/top_rated?language={Lang}&page={page}",
+                    $"https://api.themoviedb.org/3/movie/popular?language={Lang}&page={page}",
                     ReponseType.List
                 ).Result;
 
@@ -215,7 +214,7 @@ namespace NextMidiaWeb.Api.Controllers
             {
                 var midiaObj =
                     (TMDBMediaDetailObject)GetRequestContent(
-                        $"https://api.themoviedb.org/3/movie/{id}language={Lang}",
+                        $"https://api.themoviedb.org/3/movie/{id}?language=pt-BR",
                         ReponseType.Object
                     ).Result;
 
@@ -306,6 +305,27 @@ namespace NextMidiaWeb.Api.Controllers
             }
         }
 
+        [Route("Midia/{id}/RemoverFavorito")]
+        public IActionResult RemoverFavorito(int id)
+        {
+            try
+            {
+                var idUsuario = HttpContext.Session.GetString("UserId") ?? "";
+                if (idUsuario != "")
+                {
+                    var midiaFav = _midiaFavoritadaService.GetById(id, int.Parse(idUsuario));
+                    _midiaFavoritadaService.Delete(midiaFav);
+                    return View("~/Views/Conta/Index.cshtml");
+                }
+                else
+                    return Content("É necessário fazer o login para favoritar esta mídia.");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         [HttpPost]
         [Route("Midia/RealizarBusca")]
         public IActionResult RealizarBusca([FromForm] PesquisaFiltrosInput input)
@@ -317,7 +337,7 @@ namespace NextMidiaWeb.Api.Controllers
 
                 var midias =
                (TMDBMediaListReponseObject)GetRequestContent(
-                    $"https://api.themoviedb.org/3/search/collection?query={input.TextoLivre}&language={Lang}",
+                    $"https://api.themoviedb.org/3/search/movie?query={input.TextoLivre}&include_adult=false&language=pt-BR&page=1",
                    ReponseType.List
                ).Result;
 

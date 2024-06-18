@@ -1,12 +1,11 @@
 ﻿h1 {
-    margin-top: 20px;
     font-weight: bold;
-    font-size: 80px;
+    font-size: 8rem;
 }
 
 h2 {
     font-weight: bold;
-    font-size: x-large;
+    font-size: 6rem;
 }
 
 h3 {
@@ -15,25 +14,29 @@ h3 {
     text-decoration: underline;
 }
 
+/*----------------------- */
+/*-------- Main --------- */
+/*----------------------- */
 .page-wrapper {
-    padding: 40px;
+    background-color: #90cbf9;
 }
 
     .page-wrapper .midia-dia-wrapper {
         display: flex;
-        margin-top: 50px;
     }
 
-/* Style for carousel controls */
+/*----------------------- */
+/*-------- Carousel --------- */
+/*----------------------- */
 .carrousel-container {
-    padding: 5px;
-    margin-top: 150px;
-    margin-bottom: 150px;
+    background-color: gray;
+    color: white;
+    padding: 45px;
 }
 
     .carrousel-container .carrousel-wrappper {
         margin-top: 50px;
-    } 
+    }
 
 .image-next-media:hover {
     cursor: pointer;
@@ -45,3 +48,31 @@ h3 {
     text-align: center;
     font-weight: bold;
 }
+
+/*----------------------- */
+/*-------- Buttons --------- */
+/*----------------------- */
+.custom-btn {
+    background-color: mediumspringgreen;
+    padding: 10px;
+    width: min-content;
+    text-align: left;
+    margin-top: auto;
+    font-size: 2.5rem;
+    border: 2px solid initial;
+    border-radius: 20px;
+}
+
+    .custom-btn:hover {
+        cursor: pointer;
+        background-color: lightgreen;
+    }
+
+    .custom-btn .btn-link {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        text-align: left;
+        margin-left: auto;
+        margin-right: auto;
+    }

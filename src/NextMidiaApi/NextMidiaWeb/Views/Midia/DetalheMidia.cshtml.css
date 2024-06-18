@@ -2,6 +2,10 @@
     padding: 40px;
 }
 
+.midia-wrapper {
+
+}
+
 .trailer-wrapper {
     padding: 5px;
     justify-items: center;
@@ -10,15 +14,19 @@
     text-align: center;
 }
 
+/*----------------------- */
+/*-------- Buttons --------- */
+/*----------------------- */
 
 .custom-btn {
     background-color: goldenrod;
-    padding: 5px;
+    padding: 10px;
     width: min-content;
     text-align: left;
-    margin-top: auto;
- /*   margin-left: auto;
-    margin-right: auto;*/
+    margin-bottom: 70px;
+    font-size: 2.5rem;
+    border: 2px solid initial;
+    border-radius: 20px;
 }
 
     .custom-btn:hover {

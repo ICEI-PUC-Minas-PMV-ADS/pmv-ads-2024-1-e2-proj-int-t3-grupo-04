@@ -1,10 +1,17 @@
 ﻿<div class="midia-wrapper">
     @* Banner e Midias Associadas *@
     <div class="midia-image-wrapper">
-        <img src=@("https://image.tmdb.org/t/p/w500" + @midia.ImagemPoster) />
+        @if (this.ImagemCapa)
+        {
+            <img src=@("https://image.tmdb.org/t/p/w500" + midia.ImagemCapa) />
+        }
+        else
+        {
+            <img src=@("https://image.tmdb.org/t/p/w500" + midia.ImagemPoster) />
+        }
         <div class="vote-info-wrapper">
             <div><strong>@midia.MediaDeVotos/10 ⭐ - @midia.ContagemDeVotos voto(os)</strong></div>
-        </div>        
+        </div>
         <div class="midia-associada-wrapper">
             @* Lógica de Mídia Associada *@
         </div>
@@ -12,7 +19,7 @@
 
     @* Info *@
     <div class="midia-info-wrapper">
-        <h2>@midia.Nome</h2>
+        <h1>@midia.Nome</h1>
         <div class="sinopse-wrapper">
             @midia.Sinopse
         </div>
@@ -43,10 +50,12 @@
                 @if (midia.Generos != null)
                 {
                     <h2>Tags</h2>
-                    @foreach (var genero in midia.Generos)
-                    {
-                        <span class="tag">@genero.Nome</span>
-                    }
+                    <div>
+                        @foreach (var genero in midia.Generos)
+                        {
+                            <span class="tag">@genero.Nome</span>
+                        }
+                    </div>
                 }
                 else
                 if (midia.IdsGenero != null)
@@ -65,4 +74,7 @@
 
     [Parameter]
     public string? idUsuario { get; set; }
+
+    [Parameter]
+    public bool ImagemCapa { get; set; } = false;
 }

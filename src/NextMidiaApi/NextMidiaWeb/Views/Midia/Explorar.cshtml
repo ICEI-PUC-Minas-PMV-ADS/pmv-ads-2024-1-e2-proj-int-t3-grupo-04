@@ -1,8 +1,9 @@
 ﻿@using NextMidiaWeb.Models.ViewModel
 @using NextMidiaWeb.Views.Componentes
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @model MidiaViewModel
 @{
-    var contador = 0;
+    ViewData["Title"] = "Explorar";
 }
 
 <!DOCTYPE html>
@@ -17,95 +18,106 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
-<body>
-    <div class="page-wrapper">
-        <h1>
-            Explorar
-        </h1>
-        <div class="midia-grid-container">
-            @if (Model != null)
-            {
-                <div class="">
-                    @************* Filtros ************@
-                    @using (Html.BeginForm("RealizarBusca", "Midia", FormMethod.Post))
+<body style="background-color: #90cbf9;">
+    <main>
+        <section>
+            <div class="page-wrapper">
+                <h1>
+                    Explorar
+                </h1>
+                <div class="midia-grid-container">
+                    @if (Model != null)
                     {
-                        <div class="explorar-buttons">
-                            <div class="nav-item">
-                                <div class="selecao-filtro-wrappper">
-                                    <label for="filter-selection">Filtrar Por:</label>
-                                    <input type="text" id="FiltrarPor" name="FiltrarPor" list="Filtros">
-                                    <datalist id="Filtros">
-                                        <option value="Popularidade" />
-                                        <option value="Nota" />
-                                        <option value="Mais Recente" />
-                                        <option value="Mais Antigos" />
-                                    </datalist>
-                                </div>
-                            </div>
-                            <div class="nav-item">
-                                <label for="filter-selection">Pesquise o nome da mídia:</label>
-                                <div class="selecao-filtro-wrappper">
-                                    <input type="text" id="TextoLivre" name="TextoLivre" />
-                                </div>
-                            </div>
-                            <div class="nav-item">
-                                <div class="selecao-filtro-wrappper">
-                                    <button type="submit">Buscar</button>
-                                </div>
-                            </div>
-                        </div>
-                    }
-                    <div class="nav-item">
-                        <div class="selecao-filtro-wrappper">
-                            <button onclick="window.location.href='@Url.Action("Explorar", "Midia", new { page = 
-                                (string.IsNullOrEmpty(Html.ViewContext.HttpContext.Request.Query["page"]) ? 
-                                0 
-                                : long.Parse(Html.ViewContext.HttpContext.Request.Query["page"])) + 1 })';">
-                                Atualizar Busca
-                            </button>
-                        </div>
-                    </div>
-
-                    @************* Exibiçao ************@
-                    <div class="explorar-midias-wrapper">
-                        <div class="row">
-                            @if (Model.midias.Count >= 4)
-                                @for (int i = contador; i <= contador + 3; ++i)
-                                {
-                                    <div class="col-3">
-                                        <img alt="@Model.midias[i].Nome"
-                                             src="@Url.Content("https://image.tmdb.org/t/p/w500" + Model.midias[i].ImagemCapa)"
-                                             onclick="window.location.href='@Url.Action("Midia", "Midia", new { id = Model.midias[i].Id })';" />
+                        <div class="filters-wrapper">
+                            @************* Filtros ************@
+                            @using (Html.BeginForm("RealizarBusca", "Midia", FormMethod.Post))
+                            {
+                                <div class="input-wrapper">
+                                    <div class="text-input-wrapper">
+                                        <input type="text" id="TextoLivre" name="TextoLivre" placeholder="Insira nomes, atores, produtoras." />
                                     </div>
-                                }
-                            <div class="row-gap"></div>
-                            @if (Model.midias.Count >= 8)
-                                @for (int i = contador + 4; i <= contador + 7; ++i)
-                                {
-                                    <div class="col-3">
-                                        <img alt="@Model.midias[i].Nome"
-                                             src="@Url.Content("https://image.tmdb.org/t/p/w500" + Model.midias[i].ImagemCapa)"
-                                             onclick="window.location.href='@Url.Action("Midia", "Midia", new { id = Model.midias[i].Id })';" />
+                                    <div class="nav-item">
+                                        <div class="selecao-filtro-wrappper">
+                                            <input type="text" id="FiltrarPor" name="FiltrarPor" list="Filtros" placeholder="Escolha o filtro">
+                                            <datalist id="Filtros">
+                                                <option value="Popularidade" />
+                                                <option value="Nota" />
+                                                <option value="Mais Recente" />
+                                                <option value="Mais Antigos" />
+                                            </datalist>
+                                        </div>
                                     </div>
-                                }
-                        </div>
-                    </div>
+                                    <div class="nav-item">
+                                        <div class="selecao-filtro-wrappper">
+                                            <button type="button" onclick="window.location.href='@Url.Action("Explorar", "Midia", new { page =
+                                            (string.IsNullOrEmpty(Html.ViewContext.HttpContext.Request.Query["page"]) ?
+                                            0
+                                            : long.Parse(Html.ViewContext.HttpContext.Request.Query["page"])) + 1 })';">
+                                                Atualizar Página
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <button type="submit">
+                                        <svg class="w-[46px] h-[46px] text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" />
+                                        </svg>
+                                    </button>
+                                </div>
+                            }
 
-                    @************* Melhores Midias ************@
-                    <div class="melhores-midias-wrapper">
+
+                            @************* Exibição ************@
+                            <div class="explorar-midias-wrapper">
+                                <div class="row">
+                                    @if (Model.midias.Count >= 4)
+                                        @for (int i = 0; i <= 3; ++i)
+                                        {
+                                            <div class="col-3">
+                                                <img alt="@Model.midias[i].Nome"
+                                                     src="@Url.Content("https://image.tmdb.org/t/p/w500" + Model.midias[i].ImagemCapa)"
+                                                     onclick="window.location.href='@Url.Action("Midia", "Midia", new { id = Model.midias[i].Id })';" />
+                                            </div>
+                                        }
+                                    <div class="row-gap"></div>
+                                    @if (Model.midias.Count >= 8)
+                                        @for (int i = 4; i <= 7; ++i)
+                                        {
+                                            <div class="col-3">
+                                                <img alt="@Model.midias[i].Nome"
+                                                     src="@Url.Content("https://image.tmdb.org/t/p/w500" + Model.midias[i].ImagemCapa)"
+                                                     onclick="window.location.href='@Url.Action("Midia", "Midia", new { id = Model.midias[i].Id })';" />
+                                            </div>
+                                        }
+                                    <div class="row-gap"></div>
+                                    @if (Model.midias.Count >= 12)
+                                        @for (int i = 8; i <= 11; ++i)
+                                        {
+                                            <div class="col-3">
+                                                <img alt="@Model.midias[i].Nome"
+                                                     src="@Url.Content("https://image.tmdb.org/t/p/w500" + Model.midias[i].ImagemCapa)"
+                                                     onclick="window.location.href='@Url.Action("Midia", "Midia", new { id = Model.midias[i].Id })';" />
+                                            </div>
+                                        }
+                                </div>
+                            </div>
+
+                            @************* Melhores Midias ************@
+                            @*    <div class="melhores-midias-wrapper">
                         <h2>Melhores Mídias</h2>
                         <component type="typeof(MidiaInfo)"
-                                   render-mode="ServerPrerendered"
-                                   param-midia="@Model.midias.OrderBy(md => md.MediaDeVotos).FirstOrDefault()"
-                                   param-idUsuario="@Html.ViewContext.HttpContext.Session.GetString("UserId")" />
+                        render-mode="ServerPrerendered"
+                        param-midia="@Model.midias.OrderBy(md => md.MediaDeVotos).FirstOrDefault()"
+                        param-idUsuario="@Html.ViewContext.HttpContext.Session.GetString("UserId")" />
                         <div class="gap"></div>
                         <br />
                         <component type="typeof(MidiaInfo)"
-                                   render-mode="ServerPrerendered"
-                                   param-midia="@Model.midias.OrderBy(md => md.MediaDeVotos).ToList<NextMidiaWeb.Domain.Entities.Midia>()[1]"
-                                   param-idUsuario="@Html.ViewContext.HttpContext.Session.GetString("UserId")" />
-                    </div>
-                </div>
-            }
+                        render-mode="ServerPrerendered"
+                        param-midia="@Model.midias.OrderBy(md => md.MediaDeVotos).ToList<NextMidiaWeb.Domain.Entities.Midia>()[1]"
+                        param-idUsuario="@Html.ViewContext.HttpContext.Session.GetString("UserId")" />
+                        </div> *@
+                        </div>
+                    }
+        </section>
+    </main>
 </body>
 </html>

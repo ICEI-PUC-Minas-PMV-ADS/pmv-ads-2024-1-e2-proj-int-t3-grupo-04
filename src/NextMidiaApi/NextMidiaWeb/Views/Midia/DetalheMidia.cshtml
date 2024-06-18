@@ -10,7 +10,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    @* <title>@ViewData["Title"] - NextMidiaWeb</title> *@
+    <title>@ViewData["Title"] - NextMidiaWeb</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -23,15 +23,17 @@
             <div class="page-wrapper">
                 @if (@Model != null)
                 {
-                    <div class="custom-btn">
-                        <a class="btn-link"
-                           onclick="window.location.href='@Url.Action("FavoritarMidia", "Midia", new { id = Model.midia.Id })';">Favoritar</a>
-                    </div>
-                    <div>
-                        <component type="typeof(MidiaInfo)"
-                                   render-mode="ServerPrerendered"
-                                   param-midia="@Model.midia"
-                                   param-idUsuario="@Html.ViewContext.HttpContext.Session.GetString("")" />
+                    <div class="midia-wrapper">                     
+                        <div>
+                            <component type="typeof(MidiaInfo)"
+                                       render-mode="ServerPrerendered"
+                                       param-midia="@Model.midia"
+                                       param-idUsuario="@Html.ViewContext.HttpContext.Session.GetString("")" />
+                        </div>
+                        <div class="custom-btn">
+                            <a class="btn-link"
+                               onclick="window.location.href='@Url.Action("FavoritarMidia", "Midia", new { id = Model.midia.Id })';">Favoritar</a>
+                        </div>
                     </div>
                     @if (@Model.midia.Trailer != null)
                     {

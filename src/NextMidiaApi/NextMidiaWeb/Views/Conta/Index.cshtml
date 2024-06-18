@@ -1,10 +1,13 @@
 ﻿@model NextMidiaWeb.Models.ViewModel.ContaVidewModel
-
+@{
+    ViewData["Title"] = "Minha Conta";
+}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - NextMidiaWeb</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -16,8 +19,22 @@
         <section>
             <nav>
                 <ul>
-                    <li><button onclick="window.location.href='@Url.Action("Index", "Conta")';">Conta</button></li>
-                    <li><button onclick="window.location.href='@Url.Action("MidiasFavoritas", "Conta")';">Mídias Favoritas</button></li>
+                    <li>
+                        <button onclick="window.location.href='@Url.Action("Index", "Conta")';">
+                            <svg class="w-[48px] h-[48px] text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path fill-rule="evenodd" d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z" clip-rule="evenodd" />
+                            </svg>
+                            Conta
+                        </button>
+                    </li>
+                    <li>
+                        <button onclick="window.location.href='@Url.Action("MidiasFavoritas", "Conta")';">
+                            <svg class="w-[48px] h-[48px] text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M7.833 2c-.507 0-.98.216-1.318.576A1.92 1.92 0 0 0 6 3.89V21a1 1 0 0 0 1.625.78L12 18.28l4.375 3.5A1 1 0 0 0 18 21V3.889c0-.481-.178-.954-.515-1.313A1.808 1.808 0 0 0 16.167 2H7.833Z" />
+                            </svg>
+                            Favoritos
+                        </button>
+                    </li>
                 </ul>
             </nav>
             <div class="page-wrapper">
