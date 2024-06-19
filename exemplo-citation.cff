@@ -1,0 +1,26 @@
+message: Please cite this software using these metadata.
+title: Prevenir Gestão de Biblioteca
+authors:
+  - family-names: de Souza Galdino
+    given-names:  Alex
+  - family-names: Martins Cândido
+    given-names: Aline
+  - family-names: Carolina de Almeida Siqueira Damião
+    given-names: Isabella
+  - family-names: Luiz Braga Andrade Leite
+    given-names: Pedro
+  - family-names: Cristina Souza de Oliveira
+    given-names: Rafaela
+  - family-names: Gabriella Maffei Corrêa Rocha
+    given-names: Vitória
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: Maria Silveira
+    given-names: Sandra
+keywords:
+  - Gestão
+  - Biblioteca
+  - Livros
+repository-code: https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e5-proj-empext-t1-pmv-ads-2023-2-e5-projgestaobiblioteca
+version: 1.0.0
+date-released: 2023-12-14
