@@ -25,7 +25,8 @@
 | **Caso de Teste** 	| **CT-05 – Listagem das Tags**	|
 |:---:	|:---:	|
 |Requisito Associado | RF 005 - O sistema deve listar as tags por ordem de 'força'|
-|Registro de evidência | - Funcionalidade a ser implementada. |
+|Registro de evidência | ![alt text](/docs/img/registro-teste-de-software/ct%5.png)|
+
 
 | **Caso de Teste** 	| **CT-06 – Permissão aos Usuários Criar Tags**	|
 |:---:	|:---:	|
@@ -61,7 +62,7 @@
 | **Caso de Teste** 	| **CT-12 – Busca de Mídias**	|
 |:---:	|:---:	|
 |Requisito Associado |RF 012 – O sistema deve permitir buscas de mídias.|
-|Registro de evidência | ![alt text](/docs/img/registro-teste-de-software/buscar-midias.png) |
+|Registro de evidência | ![alt text](/docs/img/registro-teste-de-software/ct%12.png) |
 
 | **Caso de Teste** 	| **CT 13 – Teste exibição mídias top 10**	|
 |:---:	|:---:	|
