@@ -28,19 +28,10 @@
                             <component type="typeof(MidiaInfo)"
                                        render-mode="ServerPrerendered"
                                        param-midia="@Model.midia"
-                                       param-idUsuario="@Html.ViewContext.HttpContext.Session.GetString("")" />
-                        </div>
-                        <div class="custom-btn">
-                            <a class="btn-link"
-                               onclick="window.location.href='@Url.Action("FavoritarMidia", "Midia", new { id = Model.midia.Id })';">Favoritar</a>
-                        </div>
-                    </div>
-                    @if (@Model.midia.Trailer != null)
-                    {
-                        <div class="trailer-wrapper">
-                            <iframe width="1728" height="972" src=@($"https://youtube.com/embed/{@Model.midia.Trailer}?controls=0")></iframe>
-                        </div>
-                    }
+                                       param-idUsuario="@Html.ViewContext.HttpContext.Session.GetString("")"
+                                       param-ExibeTrailer="true" />
+                        </div>                    
+                    </div>                  
                 }
             </div>
         </section>

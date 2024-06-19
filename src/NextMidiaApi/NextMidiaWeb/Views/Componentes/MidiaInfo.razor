@@ -3,11 +3,13 @@
     <div class="midia-image-wrapper">
         @if (this.ImagemCapa)
         {
-            <img src=@("https://image.tmdb.org/t/p/w500" + midia.ImagemCapa) />
+            <img src=@("https://image.tmdb.org/t/p/w500" + midia.ImagemCapa)
+                 onclick="window.location.pathname= '@string.Concat("Midia/", midia.Id)'" />
         }
         else
         {
-            <img src=@("https://image.tmdb.org/t/p/w500" + midia.ImagemPoster) />
+            <img src=@("https://image.tmdb.org/t/p/w500" + midia.ImagemPoster)
+                 onclick="window.location.pathname= '@string.Concat("Midia/", midia.Id)'" />
         }
         <div class="vote-info-wrapper">
             <div><strong>@midia.MediaDeVotos/10 ⭐ - @midia.ContagemDeVotos voto(os)</strong></div>
@@ -53,7 +55,7 @@
                     <div>
                         @foreach (var genero in midia.Generos)
                         {
-                            <span class="tag">@genero.Nome</span>
+                            <a class="tag" onclick="window.location.pathname= '@string.Concat("Tag/", @genero.Nome.Trim(), '/', @genero.Id)'">@genero.Nome</a>
                         }
                     </div>
                 }
@@ -65,8 +67,20 @@
                     }
             </div>
         </div>
-    </div>
+        <div class="fav-btn-wrapper">
+            <div class="custom-btn">
+                <a class="btn-link"
+                   onclick="window.location.href='@string.Concat("Midia/", midia.Id, "/Favoritar")'">Favoritar</a>
+            </div>
+        </div>        
+    </div>   
 </div>
+@if (@midia.Trailer != null && @ExibeTrailer)
+{
+    <div class="trailer-wrapper">
+        <iframe width="1200" height="675" src=@($"https://youtube.com/embed/{@midia.Trailer}?controls=0")></iframe>
+    </div>
+}
 
 @code {
     [Parameter]
@@ -77,4 +91,7 @@
 
     [Parameter]
     public bool ImagemCapa { get; set; } = false;
+
+    [Parameter]
+    public bool ExibeTrailer { get; set; } = false;
 }

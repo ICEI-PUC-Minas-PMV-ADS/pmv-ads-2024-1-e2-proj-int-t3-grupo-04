@@ -31,33 +31,16 @@
                                    render-mode="ServerPrerendered"
                                    param-midia="@Model.midiaDia"
                                    param-idUsuario="@Html.ViewContext.HttpContext.Session.GetString("UserId")" />
-                        <div class="custom-btn">
-                            <a class="btn-link"
-                               onclick="window.location.href='@Url.Action("Midia", "Midia", new { id = Model.midiaDia.Id })';">Acessar</a>
-                        </div>
+                       
                     </section>
 
                     @***************** Melhores Mídias *****************@
                     <section style="background-color: white; margin-top: 9rem; padding:45px;">
                         <h2>Melhores Midias</h2>
-                        <div>
-                            <component type="typeof(MidiaInfo)"
-                                       render-mode="ServerPrerendered"
-                                       param-midia="@Model.midias.OrderByDescending(md => md.MediaDeVotos).FirstOrDefault()"
-                                       param-idUsuario="@Html.ViewContext.HttpContext.Session.GetString("UserId")"
-                                       param-ImagemCapa="true" />
-                            <div class="custom-btn">
-                                <a class="btn-link"
-                                   onclick="window.location.href='@Url.Action("Midia", "Midia", new { id = @Model.midias.OrderByDescending(md => md.MediaDeVotos).FirstOrDefault().Id })';">Acessar</a>
-                            </div>
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-
+                        <div>                            
                             @if (Model.midias.Count >= 6)
                             {
-                                @for (int i = 1; i < 5; ++i)
+                                @for (int i = 0; i < 5; ++i)
                                 {
                                     <div>
                                         <component type="typeof(MidiaInfo)"
@@ -65,11 +48,7 @@
                                                    param-midia="@Model.midias.OrderByDescending(md => md.MediaDeVotos).ToList()[i]"
                                                    param-idUsuario="@Html.ViewContext.HttpContext.Session.GetString("UserId")"
                                                    param-ImagemCapa="true" />
-
-                                        <div class="custom-btn">
-                                            <a class="btn-link"
-                                               onclick="window.location.href='@Url.Action("Midia", "Midia", new { id = @Model.midias.OrderByDescending(md => md.MediaDeVotos).ToList()[i].Id })';">Acessar</a>
-                                        </div>
+                                
                                     </div>
                                     <br />
                                     <br />

@@ -1,0 +1,130 @@
+﻿main {
+    background-color: #90cbf9;
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 6rem;
+    padding: 5rem;
+    color: white;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 4rem;
+    margin-bottom: 40px;
+}
+
+h3 {
+    font-weight: bold;
+}
+
+.page-wrapper {
+}
+
+/*----------------------- */
+/*-------- Midia Grid --------- */
+/*----------------------- */
+
+.midia-grid-container {
+    margin-top: 4rem;
+    display: flex;
+    background-color: white;
+    padding: 5rem;    
+}
+
+    .midia-grid-container .midia-container {
+        transition: ease-in-out 0.3s;
+        padding: 3rem;
+        transform: scale(0.9);
+    }
+
+        .midia-grid-container .midia-container:hover {
+            background-color: lightsteelblue;
+        }
+
+container {
+    margin-top: 10px;
+    padding: 30px;
+}
+
+.row-gap {
+    height: 25px;
+}
+
+.explorar-buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+label {
+    font-size: 2rem;
+}
+
+.filter-selection {
+    width: stretch;
+    position: relative;
+}
+
+    .filter-selection::after {
+        width: 10px;
+        background-color: cornflowerblue;
+        margin: 5px;
+    }
+
+.explorar-buttons {
+    display: flex;
+    padding: 5px;
+}
+
+.explorar-midias-wrapper {
+    padding: 35px;
+    background-color: white;
+}
+
+img {
+    height: 280px;
+    width: 380px;
+    transition: 0.3s ease-in-out;
+}
+
+    img:hover {
+        transform: scale(1.1);
+        outline: 5px solid cornflowerblue;
+        cursor: pointer;
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    }
+
+/*----------------------- */
+/*-------- Inputs --------- */
+/*----------------------- */
+.input-wrapper {
+    gap: 35px;
+    padding: 25px;
+    display: flex;
+    height: min-content;
+}
+
+input, button {
+    border: none;
+    outline: none;
+    display: inline-block;
+    height: 34px;
+    vertical-align: middle;
+    position: relative;
+    bottom: 14px;
+    right: 9px;
+    border-radius: 22px;
+    width: 220px;
+    box-sizing: border-box;
+    padding: 0 18px;
+}
+
+    button:hover {
+        background-color: cornflowerblue;
+    }
+
+    button:focus {
+        transform: scale(1.1);
+    }

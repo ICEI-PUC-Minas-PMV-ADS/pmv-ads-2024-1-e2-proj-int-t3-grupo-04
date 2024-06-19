@@ -17,7 +17,12 @@ builder.Services.AddDbContext<CategoriaDbContext>(options => options.UseSqlServe
 builder.Services.AddDbContext<ComentarioDbContext>(options => options.UseSqlServer(connectionString));
 builder.Services.AddDbContext<MidiaDbContext>(options => options.UseSqlServer(connectionString));
 builder.Services.AddDbContext<MidiaTagDbContext>(options => options.UseSqlServer(connectionString));
-builder.Services.AddDbContext<UsuarioDbContext>(options => options.UseSqlServer(connectionString));
+builder.Services.AddDbContext<UsuarioDbContext>(options => options.UseSqlServer(connectionString,
+                options => options.EnableRetryOnFailure(
+                    maxRetryCount: 3,
+                    maxRetryDelay: System.TimeSpan.FromSeconds(15),
+                    errorNumbersToAdd: null)
+                ));
 builder.Services.AddDbContext<TagDbContext>(options => options.UseSqlServer(connectionString));
 builder.Services.AddDbContext<MidiaFavoritadaDbContext>(options => options.UseSqlServer(connectionString));
 #endregion

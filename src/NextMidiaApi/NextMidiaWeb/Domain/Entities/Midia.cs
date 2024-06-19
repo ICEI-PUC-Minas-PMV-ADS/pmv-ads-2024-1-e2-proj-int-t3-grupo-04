@@ -44,7 +44,7 @@ namespace NextMidiaWeb.Domain.Entities
         [NotMapped]
         public List<Produtora>? Produtoras { get; set; }
         [NotMapped]
-        public string? Trailer { get; set; }
+        public string? Trailer { get; set; }        
         #endregion
 
         #region Methods
