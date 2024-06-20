@@ -1,29 +1,21 @@
 message: Please cite this software using these metadata.
-title:
+title: NextMidia
 authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - name-suffix: Professor
+  - family-names: Carvalho Balbino
+    given-names: Aaron
+  - family-names: Nogueira Martins Cardoso
+    given-names: Bruno
+  - family-names: Marinho Ribeiro Guimarães
+    given-names: Lucas
+  - family-names: Barbosa Lima
+    given-names: Reinaldo
+   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
-  - name-suffix: Professor
-    affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: Wilson da Costa
+    given-names: José
 keywords:
-  - 
-  - 
-repository-code: 
+  - Biblioteca
+  - Midias
+repository-code: https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2024-1-e2-proj-int-t3-grupo-04
 version: 1.0.0
-date-released: 2023-10-31
+date-released: 2024-02-01
