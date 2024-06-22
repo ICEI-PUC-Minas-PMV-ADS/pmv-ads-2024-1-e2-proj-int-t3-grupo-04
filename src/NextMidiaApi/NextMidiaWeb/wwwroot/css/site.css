@@ -144,7 +144,7 @@ body {
 }
 
 .input-group-wrapper .btn--contrast {
-    display: inline-block;
+    display: block;
     font-size: 2rem;
     font-weight: 600;
     padding: 1.6rem 3.2rem;
