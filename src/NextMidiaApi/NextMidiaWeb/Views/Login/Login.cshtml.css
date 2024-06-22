@@ -1,4 +1,4 @@
-﻿.page-wrapper {
+﻿/*.page-wrapper {
     display: flex;
     background: radial-gradient(circle at bottom left,transparent 25%,#46abe3 25.5%, #46abe3 36%, transparent 37%, transparent 100%),radial-gradient(circle at top right,transparent 34%,#46abe3 34.5%, #46abe3 45.5%, transparent 46%, transparent 100%);
     background-size: 6em 6em;
@@ -14,12 +14,12 @@
     padding: 20px;
     padding-top: 200px;
     text-align: center;
-}
+}*/
 
 /**************************/
 /********* INPUTS **********/
 /**************************/
-.input-group-wrapper {
+/*.input-group-wrapper {
     margin-bottom: 35px;
 }
 
@@ -89,13 +89,13 @@ input[type=email] {
         outline: none;
         border: 1px solid #a0d18c;
         color: #2d9fd9;
-    }
+    }*/
 
 /**************************/
 /* BUTTON */
 /**************************/
 
-.buttom-group-wrapper {
+/*.buttom-group-wrapper {
     width: stretch;
     text-align: center;
     justify-items: center;
@@ -170,13 +170,13 @@ home-btn-link:active {
 
 .home-create-btn:active {
     text-decoration: none;
-}
+}*/
 
 /**************************/
 /* INFO SECTION */
 /**************************/
 
-.info-divisor {
+/*.info-divisor {
     width: 100vh;
     padding: 20px;
     margin-left: 45px;
@@ -204,4 +204,4 @@ home-btn-link:active {
     font-size: 2rem;
     line-height: 1.6;
     margin-bottom: 4.8rem;
-}
+}*/
