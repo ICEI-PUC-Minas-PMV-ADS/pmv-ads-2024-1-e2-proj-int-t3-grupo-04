@@ -64,36 +64,36 @@ Medium: 11px
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
 */
 
-* {
+/** {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 
-html {
+html {*/
     /* font-size: 10px; */
     /* 10px / 16px = 0.625 = 62.5% */
     /* Percentage of user's browser font-size setting */
-    font-size: 62.5%;
-    overflow-x: hidden;
+    /*font-size: 62.5%;
+    overflow-x: hidden;*/
     /* maybe do not work on safari and edge */
     /* scroll-behavior: smooth; */
-}
+/*}
 
 body {
     font-family: "inter", sans-serif;
     line-height: 1;
     font-weight: 400;
-    color: #333;
+    color: #333;*/
     /* Only works if there is nothing absolutely positioned in relation to body */
-    overflow-x: hidden;
-}
+    /*overflow-x: hidden;
+}*/
 
 /**************************/
 /* REUSABLE               */
 /**************************/
 
-.container {
+/*.container {
     max-width: 120rem;
     padding: 0 3.2rem;
     margin: 0 auto;
@@ -174,9 +174,9 @@ body {
 
 .btn--outline:hover,
 .btn--outline:active {
-    background-color: #90cbf9;
+    background-color: #90cbf9;*/
     /* border: 3px solid white; */
-    box-shadow: inset 0 0 0 3px #fff;
+    /*box-shadow: inset 0 0 0 3px #fff;
 }
 
 .link:link,
@@ -193,11 +193,11 @@ body {
 .link:active {
     color: #1e87db;
     border-bottom: 1px solid transparent;
-}
+}*/
 
 /* Helper classes */
 
-.center-text {
+/*.center-text {
     text-align: center;
 }
 
@@ -212,7 +212,7 @@ strong {
 .center-element {
     display: flex;
     margin: 0 auto;
-}
+}*/
 
 /**************************/
 /* Style.cs*/
@@ -222,7 +222,7 @@ strong {
 /* HEADER                 */
 /**************************/
 
-.logo {
+/*.logo {
     height: 2.2rem;
 }
 
@@ -233,13 +233,13 @@ strong {
     background-color: #90cbf9;
     height: 9.6rem;
     padding: 0 4.8rem;
-}
+}*/
 
 /**************************/
 /* NAVIGATION             */
 /**************************/
 
-.main-nav-list {
+/*.main-nav-list {
     list-style: none;
     display: flex;
     align-items: center;
@@ -272,12 +272,12 @@ strong {
 .main-nav-link.nav-cta:hover,
 .main-nav-link.nav-cta:active {
     background-color: #1a78c2;
-}
+}*/
 
 /**************************/
 /* HERO                   */
 /**************************/
-.hero {
+/*.hero {
     max-width: 130rem;
     margin: 0 auto;
     padding: 0 3.2rem;
@@ -297,9 +297,9 @@ strong {
 .heading-secondary,
 .heading-tertiary {
     font-weight: 700;
-    color: #212121;
+    color: #212121;*/
     /* color: #333; */
-}
+/*}
 
 .heading-primary {
     font-size: 5.2rem;
@@ -331,13 +331,13 @@ strong {
 
 .hero-img {
     width: 100%;
-}
+}*/
 
 /**************************/
 /* HOW IT WORKS           */
 /**************************/
 
-.section-how {
+/*.section-how {
     padding: 9.6rem 0;
 }
 
@@ -378,32 +378,32 @@ strong {
     }
 
     .step-img-box::before {
-        width: 60%;
+        width: 60%;*/
         /* height: 60%; */
 
-        padding-bottom: 60%;
+        /*padding-bottom: 60%;
         background-color: #90cbf9;
         z-index: -2;
     }
 
     .step-img-box::after {
-        width: 45%;
+        width: 45%;*/
         /* height: 60%; */
 
-        padding-bottom: 45%;
+        /*padding-bottom: 45%;
         background-color: #7ac0f8;
         z-index: -1;
     }
 
 .step-img {
     width: 35%;
-}
+}*/
 
 /**************************/
 /* TAGS SECTION           */
 /**************************/
 
-.section-tags {
+/*.section-tags {
     padding: 9.6rem;
 }
 
@@ -499,13 +499,13 @@ strong {
     display: flex;
     align-items: center;
     gap: 1.6rem;
-}
+}*/
 
 /**************************/
 /* FEATURES SECTION           */
 /**************************/
 
-.features-details {
+/*.features-details {
     font-size: 1.6rem;
     line-height: 1.6rem;
     text-align: center;
@@ -531,13 +531,13 @@ strong {
 .feature-text {
     font-size: 1.8rem;
     line-height: 1.8;
-}
+}*/
 
 /**************************/
 /* FOOTER SECTION           */
 /**************************/
 
-.footer {
+/*.footer {
     padding: 12.8rem 0;
     background-color: #90cbf9;
 }
@@ -603,13 +603,13 @@ strong {
 .footer-link:hover,
 .footer-link:active {
     color: #555;
-}
+}*/
 
 /**************************/
 /* LOGIN SECTION           */
 /**************************/
 
-.section-login {
+/*.section-login {
     padding: 4.8rem 0 9.6rem 0;
     background-color: #7ac0f8;
 }
@@ -648,9 +648,9 @@ strong {
     font-size: 1.8rem;
     font-family: inherit;
     color: inherit;
-    border: none;
+    border: none;*/
     /*    background-color: #2196f3;*/
-    border-radius: 9px;
+    /*border-radius: 9px;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
@@ -660,4 +660,4 @@ strong {
 
 .login-buttons {
     display: flex;
-}
+}*/

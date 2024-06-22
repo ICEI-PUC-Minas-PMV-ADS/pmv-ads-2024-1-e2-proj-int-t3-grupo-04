@@ -143,8 +143,31 @@ body {
     justify-items: center;
 }
 
-.btn:link,
-.btn:visited {
+.input-group-wrapper .btn--contrast {
+    display: inline-block;
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 1.6rem 3.2rem;
+    margin: 0 auto;
+    margin-top: 2.4rem;
+    background-color: #2196f3;
+    border-radius: 9px;
+    transition: all 0.3s;
+}
+
+ .input-group-wrapper .btn--contrast:link,
+ .input-group-wrapper .btn--contrast:visited{
+        background-color: #2196f3;
+        color: #212121;
+    }
+
+    .input-group-wrapper .btn--contrast:hover,
+    .input-group-wrapper .btn--contrast:active {
+        background-color: #fff;
+        color: #212121;
+    }
+
+    .btn, .btn:link, .btn:visited {
     display: inline-block;
     background-color: #2196f3;
     font-size: 2rem;

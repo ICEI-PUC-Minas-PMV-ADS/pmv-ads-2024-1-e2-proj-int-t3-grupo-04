@@ -64,38 +64,38 @@ Medium: 11px
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
 */
 
-* {
+/** {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-html {
+html {*/
   /* font-size: 10px; */
 
   /* 10px / 16px = 0.625 = 62.5% */
   /* Percentage of user's browser font-size setting */
-  font-size: 62.5%;
-  overflow-x: hidden;
+  /*font-size: 62.5%;
+  overflow-x: hidden;*/
   /* maybe do not work on safari and edge */
   /* scroll-behavior: smooth; */
-}
+/*}
 
 body {
   font-family: "inter", sans-serif;
   line-height: 1;
   font-weight: 400;
-  color: #333;
+  color: #333;*/
 
   /* Only works if there is nothing absolutely positioned in relation to body */
-  overflow-x: hidden;
-}
+  /*overflow-x: hidden;
+}*/
 
 /**************************/
 /* REUSABLE               */
 /**************************/
 
-.container {
+/*.container {
   max-width: 120rem;
   padding: 0 3.2rem;
   margin: 0 auto;
@@ -179,10 +179,10 @@ body {
 
 .btn--outline:hover,
 .btn--outline:active {
-  background-color: #90cbf9;
+  background-color: #90cbf9;*/
 
   /* border: 3px solid white; */
-  box-shadow: inset 0 0 0 3px #fff;
+  /*box-shadow: inset 0 0 0 3px #fff;
 }
 
 .link:link,
@@ -200,11 +200,11 @@ body {
   color: #1e87db;
   border-bottom: 1px solid transparent;
 
-}
+}*/
 
 /* Helper classes */
 
-.center-text{
+/*.center-text{
   text-align: center;
 }
 
@@ -214,4 +214,4 @@ strong{
 
 .margin-bottom-md{
   margin-bottom: 3rem !important;
-}
+}*/
