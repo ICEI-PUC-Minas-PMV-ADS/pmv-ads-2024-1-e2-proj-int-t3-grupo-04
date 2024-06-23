@@ -42,7 +42,7 @@ namespace NextMidiaWeb.Domain.Entities
             _context.Usuario.Add(usuario);
             _context.SaveChanges();
         }
-
+        
         public void Update(Usuario usuario)
         {
             foreach (Midia md in usuario.MidiasFavoritas)

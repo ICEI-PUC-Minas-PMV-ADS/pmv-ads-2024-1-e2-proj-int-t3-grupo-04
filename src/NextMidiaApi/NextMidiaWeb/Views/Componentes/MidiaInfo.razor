@@ -83,7 +83,14 @@
 @if (@midia.Trailer != null && @ExibeTrailer)
 {
     <div class="trailer-wrapper">
-        <iframe width="1200" height="675" src=@($"https://youtube.com/embed/{@midia.Trailer}?controls=0")></iframe>
+        @if (ImagemCapa)
+        {
+            <iframe width="1200" height="675" src=@($"https://youtube.com/embed/{@midia.Trailer}?controls=0")></iframe>
+        }
+        else
+        {
+            <iframe width="1600" height="875" src=@($"https://youtube.com/embed/{@midia.Trailer}?controls=0")></iframe>
+        }
     </div>
 }
 

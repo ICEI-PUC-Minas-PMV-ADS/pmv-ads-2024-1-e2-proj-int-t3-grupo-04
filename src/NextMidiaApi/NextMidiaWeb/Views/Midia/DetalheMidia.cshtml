@@ -23,7 +23,8 @@
             <div class="page-wrapper">
                 @if (@Model != null)
                 {
-                    <div class="midia-wrapper">                     
+                    @******************** Midia e Trailer no Youtube ********************@
+                    <div class="midia-wrapper">
                         <div>
                             <component type="typeof(MidiaInfo)"
                                        render-mode="ServerPrerendered"
@@ -31,8 +32,40 @@
                                        param-idUsuario="@Html.ViewContext.HttpContext.Session.GetString("")"
                                        param-ExibeTrailer="true"
                                        param-ExibeFavoritar="true" />
-                        </div>                    
-                    </div>                  
+                        </div>
+                    </div>
+                    @******************** Comentarios ********************@
+                    <div class="comentario-wrapper">
+                        @if (Model.mostrarComentarios)
+                        {
+                            @using (Html.BeginForm("InserirComentarioMidia", "Conta", FormMethod.Post))
+                            {
+                                <container>
+                                    <h2>Comentários</h2>
+                                    <div>
+                                        <input type="number" name="IdMidia" id="IdMidia" value="@Model.midia.Id" readonly="true" />
+                                        <div class="comentario-usuario-wrapper">
+                                            <input type="text" name="Texto" id="Texto" placeholder="Insira um comentário nesta mídia." />
+                                            <button type="submit">Enviar</button>
+                                        </div>
+                                    </div>
+                                </container>
+                            }
+                            <div class="comentarios-midia-wrapper">
+                                @foreach (var comentario in Model.comentariosUsuario.OrderByDescending(com => com.Data))
+                                {
+                                    <div class="comentario-registrado-wrapper">
+                                        <div class="comentario-registrado-info-wrapper">
+                                            <div>@comentario.Data.Date </div>
+                                            <span > - Comentario Feito Por:</span>
+                                            <div>@comentario.NomeUsuario</div>
+                                        </div>
+                                        <div>@comentario.Texto</div>
+                                    </div>
+                                }
+                            </div>
+                        }
+                    </div>
                 }
             </div>
         </section>

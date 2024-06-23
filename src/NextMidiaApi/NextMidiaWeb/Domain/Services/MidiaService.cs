@@ -13,7 +13,7 @@ namespace NextMidiaWeb.Domain.Entities
 
         public Midia FindById(long id)
         {
-            return  _context.midia.SingleOrDefault(d => d.Id == id);
+            return _context.midia.SingleOrDefault(d => d.Id == id);
         }
 
         public Midia FindByNome(string nome)

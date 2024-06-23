@@ -1,22 +1,40 @@
-﻿.page-wrapper {
-    padding: 40px;
-}
-
-.midia-wrapper {
-
-}
-
-.trailer-wrapper {
-    padding: 5px;
-    justify-items: center;
-    align-items: center;
-    align-content: center;
-    text-align: center;
-
-}
+﻿/*----------------------- */
+/*-------- General --------- */
 /*----------------------- */
-/*-------- Buttons --------- */
-/*----------------------- */
+
+h2 {
+    color: white;
+    font-size: 7rem;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 1rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    font-size: 3rem;
+    /*border: 1px transparent solid;
+    border-radius: 20px;*/
+}
+
+    input[type="text"]:hover {
+    }
+
+button {
+    /*border-radius: 5rem;*/
+    padding: 1rem;
+}
+
+    button:hover {
+        background-color: royalblue;
+        color: white;
+    }
+
+input[type=number] {
+    border: 1px transparent solid;
+    background-color: transparent;
+    padding: 1rem;
+}
 
 .custom-btn {
     background-color: goldenrod;
@@ -41,4 +59,44 @@
         text-align: left;
         margin-left: auto;
         margin-right: auto;
+    }
+
+/*----------------------- */
+/*-------- Wrappers --------- */
+/*----------------------- */
+
+.page-wrapper {
+    padding: 40px;
+}
+
+.midia-wrapper {
+}
+
+.comentario-wrapper {
+    background-color: dimgray;
+    padding: 5rem;
+}
+
+.comentario-usuario-wrapper {
+    border-top: 5rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.comentarios-midia-wrapper {
+    padding: 2.5rem;
+    background-color: darkgray;
+    margin-top: 5rem;
+    gap: 2rem;
+}
+
+.comentario-registrado-wrapper {
+    background-color: lightgray;
+    margin-bottom: 2rem;
+    padding: 2rem;
+    font-size: 2rem;
+}
+
+    .comentario-registrado-wrapper .comentario-registrado-info-wrapper {
+        display: flex;
     }

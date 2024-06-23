@@ -6,9 +6,12 @@ namespace NextMidiaWeb.Models.Input
     public class ComentarioInput
     {
         [Required]
-        public string Texto { get; set; }
+        public int IdMidia { get; set; }
+        
         [Required]
-        public long Nota { get; set; }
-
+        public string Texto { get; set; }
+        
+        [Required]
+        public int Nota { get; set; }   
     }
 }

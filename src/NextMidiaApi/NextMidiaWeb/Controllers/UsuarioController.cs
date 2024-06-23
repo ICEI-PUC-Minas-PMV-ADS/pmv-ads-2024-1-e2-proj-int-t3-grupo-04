@@ -1,6 +1,7 @@
 ﻿using NextMidiaWeb.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using NextMidiaWeb.Models.Input;
+using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace NextMidiaWeb.Api.Controllers
 {
@@ -18,7 +19,7 @@ namespace NextMidiaWeb.Api.Controllers
         {
             _service = service;
         }
-        #endregion        
+        #endregion                
 
         #region Endpoints           
         public IActionResult Login(LoginInput input)
@@ -195,8 +196,8 @@ namespace NextMidiaWeb.Api.Controllers
 
             Comentario comentario = new Comentario()
             {
-                Usuario = usuario,
-                Midia = midia,
+                //Usuario = usuario,
+                //Midia = midia,
                 Texto = comentarioInput.Texto,
                 Nota = comentarioInput.Nota,
                 Data = DateTime.Now

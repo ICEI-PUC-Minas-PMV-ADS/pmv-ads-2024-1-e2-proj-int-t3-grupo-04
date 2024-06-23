@@ -16,16 +16,18 @@ namespace NextMidiaWeb.Controllers
     {
         #region Private Properties
         private readonly ILogger<ContaController> _logger;
-        private readonly UsuarioService _service;
+        private readonly UsuarioService _usuarioService;
+        private readonly ComentarioService _comentarioService;
         private readonly MidiaFavoritadaService _serviceMidiaFavorita;
         #endregion        
 
         #region Constructors
-        public ContaController(ILogger<ContaController> logger, UsuarioService service, MidiaFavoritadaService midiaFavService)
+        public ContaController(ILogger<ContaController> logger, UsuarioService service, MidiaFavoritadaService midiaFavService, ComentarioService comentarioService)
         {
             _logger = logger;
-            _service = service;
+            _usuarioService = service;
             _serviceMidiaFavorita = midiaFavService;
+            _comentarioService = comentarioService;
         }
         #endregion
 
@@ -35,7 +37,7 @@ namespace NextMidiaWeb.Controllers
             string email = HttpContext.Session.GetString("UserEmail") ?? "";
             string senha = HttpContext.Session.GetString("UserPassword") ?? "";
 
-            var user = _service.FindByEmailAndSenha(email, senha);
+            var user = _usuarioService.FindByEmailAndSenha(email, senha);
             if (user != null)
             {
                 ContaVidewModel model = new ContaVidewModel
@@ -49,6 +51,49 @@ namespace NextMidiaWeb.Controllers
             }
             else
                 return Content("Erro ao carregar perfil de usuário, tente novamente.");
+        }
+
+        private async Task<List<Midia>> PreencherModelMidiaFavorita()
+        {
+            var id = int.Parse(HttpContext.Session.GetString("UserId"));
+            var midiaIds = _serviceMidiaFavorita.GetByUserId(id);
+            var listaMidiasDTO = new List<Midia>();
+
+            foreach (var idMidia in midiaIds)
+            {
+                var token = Configuration.ConfigurationManager.AppSetting["IntegrationAPIKeys:TMDB_API_KEY"] ?? "";
+                var client = new RestClient(new RestClientOptions($"https://api.themoviedb.org/3/movie/{idMidia.Midia_Id}?language=pt-BR"));
+                var request = new RestRequest("");
+                request.AddHeaders(
+                   [KeyValuePair.Create("accept", "application/json"),
+                    KeyValuePair.Create("Authorization", $"Bearer {token}")]
+                );
+
+                var response = await client.GetAsync(request);
+                var midiaObj = JsonConvert.DeserializeObject<TMDBMediaDetailObject>(response.Content!);
+
+                if (midiaObj != null)
+                {
+                    listaMidiasDTO.Add(new Midia
+                    {
+                        Id = midiaObj.id,
+                        Nome = midiaObj.title,
+                        Sinopse = midiaObj.overview,
+                        MediaDeVotos = midiaObj.vote_average,
+                        ContagemDeVotos = midiaObj.vote_count,
+                        ImagemCapa = midiaObj.backdrop_path,
+                        ImagemPoster = midiaObj.poster_path,
+                        DataLancamento = midiaObj.release_date,
+                        Bilheteria = midiaObj.revenue,
+                        Generos = null,
+                        Status = midiaObj.status,
+                        Produtoras = null,
+                        Trailer = null
+                    });
+                }
+            }
+
+            return listaMidiasDTO;
         }
         #endregion
 
@@ -118,14 +163,14 @@ namespace NextMidiaWeb.Controllers
 
             if (!temErro)
             {
-                if (_service.FindAll()
+                if (_usuarioService.FindAll()
                     .Where(user => user.Nome == usuarioInpt.Nome).Count() > 0)
                     ViewBag.GeneralError = "Já existe um usuário com este username cadastrado.";
-                if (_service.FindAll()
+                if (_usuarioService.FindAll()
                    .Where(user => user.Email == usuarioInpt.Email).Count() > 0)
                     ViewBag.GeneralError = "Já existe um usuário com este email cadastrado.";
                 else
-                    _service.Create(new Usuario
+                    _usuarioService.Create(new Usuario
                     {
                         Nome = usuarioInpt.Nome,
                         Email = usuarioInpt.Email,
@@ -133,9 +178,41 @@ namespace NextMidiaWeb.Controllers
                     });
             }
             else
-                return View("~/Views/Login/CriarConta.cshtml");
+                return View("~/Views/Conta/CriarConta.cshtml");
 
             return View("~/Views/Login/Login.cshtml");
+        }
+
+        [Route("Conta/InserirComentarioMidia")]
+        [HttpPost]
+        public IActionResult InserirComentarioMidia([FromForm] ComentarioInput comentarioInput)
+        {
+            try
+            {
+                var idUsuario = HttpContext.Session.GetString("UserId") ?? "";
+                if (idUsuario != "")
+                {
+                    if (comentarioInput == null)
+                        return Content("Preencha a caixa de texto para inserir um comentário.");
+
+                    this._comentarioService.Create(new Comentario
+                    {
+                        Midia_Id = comentarioInput.IdMidia,
+                        Usuario_Id = int.Parse(idUsuario),
+                        Texto = comentarioInput.Texto,
+                        Data = DateTime.Now,
+                    });
+                    
+                    return RedirectToAction($"Midia", "Midia", new { id = comentarioInput.IdMidia});
+                }
+                else
+                    return Content("É necessário fazer o login para comentar nesta mídia.");
+
+            }
+            catch (Exception ex)
+            {
+                return Content($"Ocorreu um erro ao inserir o comentário na mídia: {ex.Message + ex.StackTrace + ex.InnerException}");
+            }
         }
 
         [Route("Conta/AtualizarCadastro")]
@@ -148,21 +225,21 @@ namespace NextMidiaWeb.Controllers
                 if (usuarioInput != null && HttpContext.Session.GetString("UserId") != null)
                 {
                     var id = long.Parse(HttpContext.Session.GetString("UserId"));
-                    var usuario = _service.FindById(id);
+                    var usuario = _usuarioService.FindById(id);
 
                     #region Validaçoes
-                    if (_service.FindAll().Where(user => user.Nome == usuarioInput.Nome && user.Id != id).Count() > 0)
+                    if (_usuarioService.FindAll().Where(user => user.Nome == usuarioInput.Nome && user.Id != id).Count() > 0)
                         return Content("Este login já está sendo utilizado, escolha outro.");
                     else
                         usuario.Nome = usuarioInput.Nome;
 
-                    if (_service.FindAll().Where(user => user.Email == usuarioInput.Email && user.Id != id).Count() > 0)
+                    if (_usuarioService.FindAll().Where(user => user.Email == usuarioInput.Email && user.Id != id).Count() > 0)
                         return Content("Este e-mail já está sendo utilizado, escolha outro.");
                     else
                         usuario.Nome = usuarioInput.Nome;
                     #endregion                    
 
-                    _service.Update(usuario);
+                    _usuarioService.Update(usuario);
                     return this.RedirectToIndex();
                 }
                 else
@@ -182,43 +259,7 @@ namespace NextMidiaWeb.Controllers
             {
                 if (HttpContext.Session.GetString("UserId") != null)
                 {
-                    var id = int.Parse(HttpContext.Session.GetString("UserId"));
-                    var midiaIds = _serviceMidiaFavorita.GetByUserId(id);
-                    var listaMidiasDTO = new List<Midia>();
-
-                    foreach (var idMidia in midiaIds)
-                    {
-                        var token = Configuration.ConfigurationManager.AppSetting["IntegrationAPIKeys:TMDB_API_KEY"] ?? "";
-                        var client = new RestClient(new RestClientOptions($"https://api.themoviedb.org/3/movie/{idMidia.Midia_Id}?language=pt-BR"));
-                        var request = new RestRequest("");
-                        request.AddHeaders(
-                           [KeyValuePair.Create("accept", "application/json"),
-                    KeyValuePair.Create("Authorization", $"Bearer {token}")]
-                        );
-
-                        var response = await client.GetAsync(request);
-                        var midiaObj = JsonConvert.DeserializeObject<TMDBMediaDetailObject>(response.Content!);
-
-                        if (midiaObj != null)
-                        {
-                            listaMidiasDTO.Add(new Midia
-                            {
-                                Id = midiaObj.id,
-                                Nome = midiaObj.title,
-                                Sinopse = midiaObj.overview,
-                                MediaDeVotos = midiaObj.vote_average,
-                                ContagemDeVotos = midiaObj.vote_count,
-                                ImagemCapa = midiaObj.backdrop_path,
-                                ImagemPoster = midiaObj.poster_path,
-                                DataLancamento = midiaObj.release_date,
-                                Bilheteria = midiaObj.revenue,
-                                Generos = null,
-                                Status = midiaObj.status,
-                                Produtoras = null,
-                                Trailer = null
-                            });
-                        }
-                    }
+                    List<Midia> listaMidiasDTO = await PreencherModelMidiaFavorita();
 
                     return View("~/Views/Conta/MidiasFavoritas.cshtml", new MidiaViewModel { midias = listaMidiasDTO });
                 }
@@ -241,7 +282,8 @@ namespace NextMidiaWeb.Controllers
                 {
                     var midiaFav = _serviceMidiaFavorita.GetById(id, int.Parse(idUsuario));
                     _serviceMidiaFavorita.Delete(midiaFav);
-                    return this.RedirectToIndex();
+
+                    return RedirectToAction($"Midia", "Midia", new { id = id });
                 }
                 else
                     return Content("É necessário fazer o login para favoritar esta mídia.");

@@ -20,7 +20,7 @@ builder.Services.AddDbContext<MidiaTagDbContext>(options => options.UseSqlServer
 builder.Services.AddDbContext<UsuarioDbContext>(options => options.UseSqlServer(connectionString,
                 options => options.EnableRetryOnFailure(
                     maxRetryCount: 3,
-                    maxRetryDelay: System.TimeSpan.FromSeconds(15),
+                    maxRetryDelay: System.TimeSpan.FromSeconds(7),
                     errorNumbersToAdd: null)
                 ));
 builder.Services.AddDbContext<TagDbContext>(options => options.UseSqlServer(connectionString));
@@ -34,6 +34,7 @@ builder.Services.AddScoped<MidiaService>();
 builder.Services.AddScoped<TagService>();
 builder.Services.AddScoped<UsuarioService>();
 builder.Services.AddScoped<MidiaFavoritadaService>();
+builder.Services.AddScoped<ComentarioService>();
 #endregion
 
 builder.Services.AddDistributedMemoryCache();

@@ -6,7 +6,7 @@ namespace NextMidiaWeb.Domain.Entities
     public class Midia
     {
         #region Properties
-        public long Id { get; set; }
+        public int Id { get; set; }
         [NotMapped]
         public string Nome { get; set; }
         [NotMapped]
@@ -44,7 +44,19 @@ namespace NextMidiaWeb.Domain.Entities
         [NotMapped]
         public List<Produtora>? Produtoras { get; set; }
         [NotMapped]
-        public string? Trailer { get; set; }        
+        public string? Trailer { get; set; }
+        #endregion
+
+        #region Constructors
+        public Midia()
+        {
+                
+        }
+
+        public Midia(int id)
+        {
+                
+        }
         #endregion
 
         #region Methods

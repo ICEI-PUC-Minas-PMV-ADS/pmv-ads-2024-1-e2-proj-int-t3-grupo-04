@@ -10,7 +10,7 @@ namespace NextMidiaWeb.Domain.Persistence
 
         }
 
-        public DbSet<Comentario> comentarios { get; set; }
+        public DbSet<Comentario> comentario { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

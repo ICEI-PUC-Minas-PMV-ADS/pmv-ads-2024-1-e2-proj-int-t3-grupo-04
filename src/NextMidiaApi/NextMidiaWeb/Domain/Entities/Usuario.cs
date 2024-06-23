@@ -15,6 +15,11 @@ namespace NextMidiaWeb.Domain.Entities
             Comentarios = new List<Comentario>();
             Is_Deleted = false;
         }        
+
+        public Usuario(int id)
+        {
+            
+        }
         #endregion
 
         #region Properties

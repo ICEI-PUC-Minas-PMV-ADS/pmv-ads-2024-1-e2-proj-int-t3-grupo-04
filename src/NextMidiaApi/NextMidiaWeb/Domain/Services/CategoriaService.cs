@@ -4,16 +4,21 @@ namespace NextMidiaWeb.Domain.Entities
 {
     public class CategoriaService
     {
+        #region Private Properties
         private readonly CategoriaDbContext _context;
+        #endregion
 
+        #region Constructors
         public CategoriaService(CategoriaDbContext context)
         {
             _context = context;
         }
+        #endregion
 
+        #region Methods
         public Categoria FindById(int id)
         {
-            return  _context.categoria.SingleOrDefault(d => d.Id == id);
+            return _context.categoria.SingleOrDefault(d => d.Id == id);
         }
 
         public Categoria FindByNome(string nome)
@@ -36,8 +41,9 @@ namespace NextMidiaWeb.Domain.Entities
         }
 
         public void Delete(Categoria categoria)
-        {            
+        {
             _context.SaveChanges();
         }
+        #endregion        
     }
 }

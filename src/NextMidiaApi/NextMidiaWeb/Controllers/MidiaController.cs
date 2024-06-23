@@ -20,6 +20,8 @@ namespace NextMidiaWeb.Api.Controllers
         private readonly MidiaService _service;
         private readonly TagService _tagService;
         private readonly MidiaFavoritadaService _midiaFavoritadaService;
+        private readonly ComentarioService _comentarioService;
+        private readonly UsuarioService _usuarioService;
         private readonly MidiaTagDbContext _context;
         private readonly string Lang = "pt-BR";
         private readonly string TMDB_API_KEY = Configuration.ConfigurationManager.AppSetting["IntegrationAPIKeys:TMDB_API_KEY"] ?? "";
@@ -27,11 +29,13 @@ namespace NextMidiaWeb.Api.Controllers
         #endregion
 
         #region Constructors
-        public MidiaController(MidiaService service, TagService tagService, MidiaFavoritadaService midiaFavoritadaService, MidiaTagDbContext context, ILogger<LoginController> logger)
+        public MidiaController(MidiaService service, TagService tagService, UsuarioService usuarioService, MidiaFavoritadaService midiaFavoritadaService, ComentarioService comentarioService, MidiaTagDbContext context, ILogger<LoginController> logger)
         {
             _service = service;
             _tagService = tagService;
             _midiaFavoritadaService = midiaFavoritadaService;
+            _comentarioService = comentarioService;
+            _usuarioService = usuarioService;
             _context = context;
             _logger = logger;
         }
@@ -208,7 +212,7 @@ namespace NextMidiaWeb.Api.Controllers
         }
 
         [Route("Midia/{id}")]
-        public async Task<IActionResult> Midia(int id)
+        public async Task<IActionResult> Midia(long id)
         {
             try
             {
@@ -260,7 +264,22 @@ namespace NextMidiaWeb.Api.Controllers
                         Trailer = traillerDTO == null ? null : traillerDTO.key
                     };
 
-                    return View("~/Views/Midia/DetalheMidia.cshtml", new DetalheMidiaViewModel { midia = midiaDTO });
+                    #region Comentários
+                    var listaComentariosDTO = new List<ComentarioUsuario>();
+                    var comentarios = this._comentarioService.GetCommentList(midiaObj.id);
+
+                    foreach (var comentario in comentarios)
+                    {
+                        listaComentariosDTO.Add(new ComentarioUsuario
+                        {
+                            NomeUsuario = this._usuarioService.FindById(comentario.Usuario_Id).Nome,
+                            Data = comentario.Data,
+                            Texto = comentario.Texto
+                        });
+                    }
+                    #endregion                    
+
+                    return View("~/Views/Midia/DetalheMidia.cshtml", new DetalheMidiaViewModel { midia = midiaDTO, mostrarComentarios = true, comentariosUsuario = listaComentariosDTO });
                 }
                 else
                     return Content("Ocorreu um erro ao retornar os dados, retorna a página e teste novamente.");
@@ -279,20 +298,26 @@ namespace NextMidiaWeb.Api.Controllers
                 var idUsuario = HttpContext.Session.GetString("UserId") ?? "";
                 if (idUsuario != "")
                 {
-                    var midia = this._service.FindById(id);
-                    if (midia == null || midia.Id < 0) // Criar referência da mídia no banco de dados caso não exista.
+                    // Criar referência da mídia no banco de dados caso não exista.
+                    var midia = this._service.FindById((int)id);
+                    if (midia == null || midia.Id < 0)
                         this._service.Create(new Midia
                         {
                             Id = id,
                             Nome = ""
                         });
 
-                    _midiaFavoritadaService.Create(new MidiaFavoritada
-                    {
-                        Data = DateTime.Now.Date,
-                        Midia_Id = id,
-                        Usuario_Id = int.Parse(idUsuario)
-                    }); ;
+                    // Favoritar
+                    var isFav = _midiaFavoritadaService
+                        .GetById(id, int.Parse(idUsuario)) != null;
+
+                    if (!isFav)
+                        _midiaFavoritadaService.Create(new MidiaFavoritada
+                        {
+                            Data = DateTime.Now.Date,
+                            Midia_Id = id,
+                            Usuario_Id = int.Parse(idUsuario)
+                        });
 
                     return this.Midia(id).Result;
                 }

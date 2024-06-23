@@ -24,7 +24,7 @@ namespace NextMidiaWeb.Domain.Services
             _context.SaveChanges();
         }
 
-        public MidiaFavoritada GetById(long idMidia, long idUsuario)
+        public MidiaFavoritada GetById(int idMidia, int idUsuario)
         {
             return _context.midia_Favoritada
                 .SingleOrDefault(s => s.Midia_Id == idMidia && s.Usuario_Id == idUsuario);
