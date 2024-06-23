@@ -13,7 +13,7 @@
         public int id { get; set; }
         public string original_language { get; set; }
         public string overview { get; set; }
-        public DateTime release_date { get; set; }
+        public DateTime? release_date { get; set; }
         public string title { get; set; }
         public bool video { get; set; }
         public decimal vote_average { get; set; }

@@ -83,7 +83,7 @@ namespace NextMidiaWeb.Controllers
                         ContagemDeVotos = midiaObj.vote_count,
                         ImagemCapa = midiaObj.backdrop_path,
                         ImagemPoster = midiaObj.poster_path,
-                        DataLancamento = midiaObj.release_date,
+                        DataLancamento = midiaObj.release_date == null ? DateTime.MinValue : midiaObj.release_date.Value,
                         Bilheteria = midiaObj.revenue,
                         Generos = null,
                         Status = midiaObj.status,

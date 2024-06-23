@@ -79,7 +79,7 @@ namespace NextMidiaWeb.Api.Controllers
                                     ContagemDeVotos = md.vote_count,
                                     ImagemCapa = md.backdrop_path,
                                     ImagemPoster = md.poster_path,
-                                    DataLancamento = md.release_date,
+                                    DataLancamento = md.release_date == null ? DateTime.MinValue : md.release_date.Value,
                                     IdsGenero = md.genre_ids
                                 }
                             );
@@ -120,7 +120,7 @@ namespace NextMidiaWeb.Api.Controllers
                                         ContagemDeVotos = md.vote_count,
                                         ImagemCapa = md.backdrop_path,
                                         ImagemPoster = md.poster_path,
-                                        DataLancamento = md.release_date,
+                                        DataLancamento = md.release_date == null ? DateTime.MinValue : md.release_date.Value,
                                         IdsGenero = md.genre_ids
                                     }
                                 );
@@ -164,7 +164,7 @@ namespace NextMidiaWeb.Api.Controllers
                         ContagemDeVotos = midiaObj.vote_count,
                         ImagemCapa = midiaObj.backdrop_path,
                         ImagemPoster = midiaObj.poster_path,
-                        DataLancamento = midiaObj.release_date,
+                        DataLancamento = midiaObj.release_date == null ? DateTime.MinValue : midiaObj.release_date.Value,
                         Bilheteria = midiaObj.revenue,
                         Verba = midiaObj.budget,
                         Generos = generos,
@@ -255,7 +255,7 @@ namespace NextMidiaWeb.Api.Controllers
                         ContagemDeVotos = midiaObj.vote_count,
                         ImagemCapa = midiaObj.backdrop_path,
                         ImagemPoster = midiaObj.poster_path,
-                        DataLancamento = midiaObj.release_date,
+                        DataLancamento = midiaObj.release_date == null ? DateTime.MinValue : midiaObj.release_date.Value,
                         Bilheteria = midiaObj.revenue,
                         Verba = midiaObj.budget,
                         Generos = generos,
