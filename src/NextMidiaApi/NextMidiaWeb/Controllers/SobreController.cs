@@ -4,7 +4,7 @@ namespace NextMidiaWeb.Controllers
 {
     public class SobreController : Controller
     {
-        [HttpGet]
+        [Route("Sobre")]
         public IActionResult Index()
         {
             return View();

@@ -1,20 +1,49 @@
-﻿<!DOCTYPE html>
+﻿@{
+    ViewData["Title"] = "Sobre";
+}
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>@ViewData["Title"] - NextMidiaWeb</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div>
-        O objetivo é desenvolver um sistema online de recomendação de mídias (filmes, jogos, séries)
-        baseado em análises feitas por usuários e tags associadas a cada mídia. Usuários podem criar e
-        atribuir tags distintas a diferentes mídias. O sistema recomenda mídias baseadas em filtros de tags
-        positivas e negativas, conforme especificado pelo usuário, no momento da busca.
+    <div style="padding: 5rem;">
+        <div style="padding: 5rem;">
+            <h1 style="font-weight:bold;">Objetivo</h1>
+            <div style="font-size:2rem;">
+                Desenvolver um sistema online de recomendação de mídias (filmes, jogos, séries)
+                baseado em análises feitas por usuários e tags associadas a cada mídia. Usuários podem criar e
+                atribuir tags distintas a diferentes mídias. O sistema recomenda mídias baseadas em filtros de tags
+                positivas e negativas, conforme especificado pelo usuário, no momento da busca.
+            </div>
+        </div>
+        <div style="padding: 5rem;">
+            <h1 style="font-weight:bold;">Justificativa</h1>
+            <div style="font-size:2rem;">
+                Este projeto se justifica pela necessidade crescente de plataformas que organizem e personalizem a experiência de consumo de entretenimento.
+                Ao oferecer uma ferramenta que não somente lista, mas também permite a interação e o compartilhamento de opiniões, busca-se enriquecer a experiência do usuário,
+                facilitando a descoberta de novos títulos e a formação de uma comunidade de entusiastas.
+            </div>
+        </div>
+        <div style="padding: 5rem;">
+            <h1 style="font-weight:bold;">Funcionalidades Principais</h1>
+            <div style="font-size:2rem;">
+                Busca Avançada: Permitir aos usuários pesquisar títulos por gênero, ano de lançamento, avaliações, entre outros filtros.
+
+                Sistema de Avaliação: Possibilitar que os usuários avaliem títulos e deixem comentários, contribuindo para a comunidade.
+
+                Recomendações Personalizadas: Oferecer recomendações baseadas nas preferências e atividades anteriores dos usuários.
+
+                Comunidade e Discussões: Integrar fóruns ou seções de comentários para promover discussões e trocas de opiniões entre os usuários.
+            </div>
+        </div>
     </div>
 </body>
 </html>
