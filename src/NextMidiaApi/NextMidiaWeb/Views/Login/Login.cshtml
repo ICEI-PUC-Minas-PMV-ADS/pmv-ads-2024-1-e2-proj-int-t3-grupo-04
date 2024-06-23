@@ -20,16 +20,9 @@
     <main>
         <section class="section-login">
             <div class="container">
-
                 <div class="login">
                     @* Login *@
-
                     <img src="~/Images/logotype.webp" alt="Nextmidia logo" class="logo-login" />
-
-                    @*<h1 class="heading-primary">
-            Login
-        </h1>*@
-
                     <p class="heading-login">
                         Entre ou crie sua conta!
                     </p>
@@ -44,60 +37,19 @@
                                 <div class="login-label">Senha</div>
                                 <input name="Senha" id="Senha" type="password" />
                             </div>
+                            <div>
+                                <button b-g6dx4866hr="" href="#" class="btn btn--full" type="submit">Login</button>
+                                <a b-g6dx4866hr="" href="#" class="btn btn--full"
+                                   onclick="window.location.href='@Url.Action("CriarConta", "Conta")';">
+                                    Criar Conta
+                                </a>
+                            </div>
                         </div>
-
-                    }
-                    <div>
-
-                        <a b-g6dx4866hr="" href="#" class="btn btn--full">Login</a>
-                        <a b-g6dx4866hr="" href="#" class="btn btn--full"
-                           onclick="window.location.href='@Url.Action("CriarConta", "Conta")';">
-                            Criar Conta
-                        </a>
-                        @*<button class="btn btn--full margin-right-sm"
-                    onclick="window.location.href='@Url.Action("CriarConta", "Conta")';">
-                Criar Conta
-            </button>*@
-                    </div>
-
-
+                    }                 
                     <a b-g6dx4866hr="" href="#" class="btn btn--outline"
                        onclick="window.location.href='@Url.Action("Index", "Midia")';">
                         Entrar como convidado
                     </a>
-
-
-
-
-                    @* Info *@
-                    @*<div class="info-divisor">
-            <div class="info-text-wrapper">
-                <div class="info-text">
-                    Com a diversidade de opções de entretenimento disponíveis hoje,
-                    torna-se cada vez mais importante oferecer aos consumidores uma forma eficiente de
-                    descobrir, avaliar e discutir seus filmes, séries, animes e jogos favoritos.
-                    Este projeto visa desenvolver uma aplicação web que não apenas liste estas opções de
-                    entretenimento, mas também permita que os usuários interajam com o conteúdo por
-                    meio de avaliações e comentários, enriquecendo a experiência de todos os usuários.
-                </div>
-                <div class="info-text">
-                    Objetivo Geral:
-                    <ul>
-                        <li>
-                            Desenvolver uma aplicação web centralizada para a listagem de filmes, séries, animes e jogos, oferecendo aos usuários a possibilidade de avaliar, comentar e descobrir novos
-                            títulos baseados em preferências comuns.
-                        </li>
-                    </ul>
-                    Objetivos específicos:
-                    <ul>
-                        <li>Oferecer uma interface intuitiva para a busca e descoberta de títulos de entretenimento.</li>
-                        <li>Permitir que os usuários registrem e compartilhem suas avaliações e comentários sobre cada título.</li>
-                        <li>Implementar sistemas de recomendação baseados nas preferências e avaliações dos usuários.</li>
-                        <li>Assegurar a criação de uma comunidade ativa e engajada em torno dos títulos listados.</li>
-                    </ul>
-                </div>
-            </div>
-        </div>*@
                 </div>
             </div>
         </section>
