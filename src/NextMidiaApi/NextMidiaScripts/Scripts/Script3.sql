@@ -1,0 +1,1 @@
+alter table [dbo].[USUARIO] alter column EMAIL varchar(25) NOT NULL

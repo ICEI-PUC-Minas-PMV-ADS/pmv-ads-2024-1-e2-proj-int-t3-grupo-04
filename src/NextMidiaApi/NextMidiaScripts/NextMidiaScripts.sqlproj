@@ -62,6 +62,7 @@
     <None Include="Scripts\Script1.sql" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Scripts\Script2.sql" />
+    <None Include="Scripts\Script2.sql" />
+    <None Include="Scripts\Script3.sql" />
   </ItemGroup>
 </Project>
