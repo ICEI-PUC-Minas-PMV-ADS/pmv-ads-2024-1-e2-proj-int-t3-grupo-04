@@ -1,9 +1,9 @@
-﻿@using NextMidiaWeb.Models.ViewModel
-@using NextMidiaWeb.Views.Componentes
+﻿@using NextMidiaWeb.Domain.Entities
+@using NextMidiaWeb.Models.Enums
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-@model TagViewModel
+@model NextMidiaWeb.Models.ViewModel.TagViewModel
 @{
-    ViewData["Title"] = Model.Tag;
+    ViewData["Title"] = Model.Tag ?? "Tags e Generos";
 }
 
 <!DOCTYPE html>
@@ -26,28 +26,102 @@
                     Tags - #@Model.Tag
                 </h1>
                 <div class="midia-grid-container">
-                    @if (Model != null)
+                    @if (Model != null && Model.Midias.Count > 0)
                     {
-                        <div>                           
-                            @if (Model.Midias.Count > 0)
-                            {
-                                @for (int i = 0; i < Model.Midias.Count; ++i)
+                        @***************** Genero ou Tag Específica(o) *****************@
+                        @if (Model.tagEspecifica)
+                        {
+                            <div>
+                                @foreach (var midia in Model
+                               .Midias
+                               .OrderByDescending(md => md.MediaDeVotos)
+                               .ToList())
                                 {
-                                    <div class="midia-container">
-                                        <component type="typeof(MidiaInfo)"
-                                                   render-mode="ServerPrerendered"
-                                                   param-midia="@Model.Midias.OrderByDescending(md => md.MediaDeVotos).ToList()[i]"
-                                                   param-idUsuario="@Html.ViewContext.HttpContext.Session.GetString("UserId")"
-                                                   param-ImagemCapa="true"
-                                                   param-ExibeTrailer="true" />
+                                    <div>
+                                        <div class="midia-container">
+                                            <component type="typeof(NextMidiaWeb.Views.Componentes.MidiaInfo)"
+                                                       render-mode="ServerPrerendered"
+                                                       param-midia="@midia"
+                                                       param-idUsuario="@Html.ViewContext.HttpContext.Session.GetString("UserId")"
+                                                       param-ImagemCapa="true"
+                                                       param-ExibeTrailer="true" />
+                                        </div>
+                                        <hr />
+                                        <br />
                                     </div>
-                                    <hr />
-                                    <br />
+                                }
+                            </div>
+                        }
+                        @***************** Lista de Generos *****************@
+                        else
+                        {
+                            @foreach (var genero in Enum.GetValues(typeof(eGenerosFilme)).Cast<eGenerosFilme>())
+                            {
+                                @if ((long)genero == (long)eGenerosFilme.Terror
+                               || (long)genero == (long)eGenerosFilme.Thriller
+                               || (long)genero == (long)eGenerosFilme.Documentário
+                               || (long)genero == (long)eGenerosFilme.Romance
+                               || (long)genero == (long)eGenerosFilme.Guerra
+                               || (long)genero == (long)eGenerosFilme.Crime
+                               || (long)genero == (long)eGenerosFilme.História)
+                                {
+                                }
+                                else
+                                {
+                                    <div class="genero-wrapper">
+                                        <button type="button" class="collapsible">#@Enum.GetName(typeof(NextMidiaWeb.Models.Enums.eGenerosFilme), (long)genero)</button>
+                                        <div class="content">
+                                            @foreach (var midia in Model
+                                           .Midias
+                                           .Where(md => md.IdsGenero.Contains(((long)genero).ToString()))
+                                           .OrderByDescending(md => md.MediaDeVotos)
+                                           .ToList())
+                                            {
+                                                <div>
+                                                    <div class="midia-container">
+                                                        <component type="typeof(NextMidiaWeb.Views.Componentes.MidiaInfo)"
+                                                                   render-mode="ServerPrerendered"
+                                                                   param-midia="@midia"
+                                                                   param-idUsuario="@Html.ViewContext.HttpContext.Session.GetString("UserId")"
+                                                                   param-ImagemCapa="true"
+                                                                   param-ExibeTrailer="true" />
+                                                    </div>
+                                                    <hr />
+                                                    <br />
+                                                </div>
+
+                                            }
+                                        </div>
+                                    </div>
                                 }
                             }
+                        }
+                    }
+                    @***************** Falha ao Preencher o Model *****************@
+                    else
+                    {
+                        <div>
+                            <component type="typeof(NextMidiaWeb.Views.Componentes.ErroCarregamentoDados)"
+                                       render-mode="ServerPrerendered" />
                         </div>
                     }
         </section>
     </main>
 </body>
 </html>
+<script>
+    var coll = document.getElementsByClassName("collapsible");
+    var i;
+
+    for (i = 0; i < coll.length; i++) {
+        coll[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    }
+</script>  

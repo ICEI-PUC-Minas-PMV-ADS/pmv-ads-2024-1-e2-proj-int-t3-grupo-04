@@ -1,4 +1,6 @@
-﻿<div class="midia-wrapper">
+﻿@using NextMidiaWeb.Models
+
+<div class="midia-wrapper">
     @* Banner e Midias Associadas *@
     <div class="midia-image-wrapper">
         @if (this.ImagemCapa)
@@ -63,17 +65,20 @@
                 if (midia.IdsGenero != null)
                     @foreach (var genero in midia.IdsGenero)
                     {
-                        <span class="tag">@genero</span>
+                        <span class="tag">@Enum.GetName(typeof(NextMidiaWeb.Models.Enums.eGenerosFilme), int.Parse(genero))</span>
                     }
             </div>
         </div>
-        <div class="fav-btn-wrapper">
-            <div class="custom-btn">
-                <a class="btn-link"
-                   onclick="window.location.href='@string.Concat("Midia/", midia.Id, "/Favoritar")'">Favoritar</a>
+        @if (ExibeFavoritar)
+        {
+            <div class="fav-btn-wrapper">
+                <div class="custom-btn">
+                    <a class="btn-link"
+                       onclick="window.location.href='@string.Concat(midia.Id, "/Favoritar")'">Favoritar</a>
+                </div>
             </div>
-        </div>        
-    </div>   
+        }
+    </div>
 </div>
 @if (@midia.Trailer != null && @ExibeTrailer)
 {
@@ -94,4 +99,7 @@
 
     [Parameter]
     public bool ExibeTrailer { get; set; } = false;
+
+    [Parameter]
+    public bool ExibeFavoritar { get; set; } = false;
 }

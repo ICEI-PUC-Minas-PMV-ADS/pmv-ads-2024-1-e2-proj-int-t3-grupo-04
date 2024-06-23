@@ -1,4 +1,4 @@
-﻿main {
+﻿body, main {
     background-color: #90cbf9;
 }
 
@@ -19,18 +19,13 @@ h3 {
     font-weight: bold;
 }
 
-.page-wrapper {
-}
-
 /*----------------------- */
 /*-------- Midia Grid --------- */
 /*----------------------- */
 
 .midia-grid-container {
     margin-top: 4rem;
-    display: flex;
-    background-color: white;
-    padding: 5rem;    
+    display: grid;
 }
 
     .midia-grid-container .midia-container {
@@ -95,6 +90,52 @@ img {
         cursor: pointer;
         box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
     }
+
+/*----------------------- */
+/*-------- cOLLAPSE --------- */
+/*----------------------- */
+.genero-wrapper {
+    padding: 5rem;
+    gap: 1.5rem;
+    text-align-last: center;
+    background-color: gray;
+    transition: ease-in-out 0.2s;
+}
+
+    .genero-wrapper:hover {
+        background-color: dimgray;
+    }
+
+button {
+    margin-bottom: 7rem;
+    font-size: 10rem;
+}
+
+.collapsible {
+    background-color: gray;
+    color: white;
+    cursor: pointer;
+    transition: ease-in-out 0.3s;
+    width: 70%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 3rem;
+    padding: 1.5rem;
+    font-weight: bold;
+}
+
+    .active, .genero-wrapper, .collapsible:hover {
+        background-color: gray;
+    }
+
+.content {
+    text-align-last: left;
+    display: none;
+    overflow: hidden;
+    color: white;
+    background-color: gray;
+}
 
 /*----------------------- */
 /*-------- Inputs --------- */
